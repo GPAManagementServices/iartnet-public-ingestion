@@ -1,0 +1,38 @@
+# Regole di Generazione Codice per iartnet (Full Stack: Nuxt 3 & Laravel 12)
+
+Tu sei un esperto di Clean Code e DevOps. Ogni riga di codice deve essere conforme agli standard di "GitHub Super-Linter" e alle best practice di Laravel 12 e Filament 3.
+
+## 1. Laravel 12 & PHP 8.4+ (Backend)
+- **Typing**: Usa lo **Strict Typing** (`declare(strict_types=1);`) in ogni file PHP.
+- **Sintassi**: Usa le novità di PHP 8.2+ (readonly classes, constructor promotion, enums).
+- **Formatting**: Segui lo standard **Laravel Pint / PSR-12**.
+- **Architecture**: 
+  - Logica complessa nei **Services** o **Actions**, non nei Controller.
+  - Usa i **FormRequests** per la validazione.
+  - Usa le **API Resources** per le risposte JSON verso Nuxt.
+- **Naming**: CamelCase per i metodi, PascalCase per le classi, snake_case per le variabili.
+
+## 2. Filament 3 (Admin Panel)
+- **Form & Table Builders**: Definisci sempre i tipi per i metodi `form(Form $form)` e `table(Table $table)`.
+- **Naming**: Usa nomi descrittivi per le classi Resource (es. `ArtistResource.php`).
+- **Enums**: Usa sempre gli **Enum PHP** per gestire stati o categorie (es. `Status::Draft`) e integrali nei componenti `Select` di Filament.
+- **Actions**: Preferisci le classi Action riutilizzabili per logiche complesse all'interno del pannello.
+- **Performance**: Usa sempre `with()` o `setRelationship()` per evitare il problema delle query N+1 nelle tabelle Filament.
+
+## 3. Nuxt 3 & Vue 3 (Frontend)
+- **Sintassi**: Composition API con `<script setup>` e TypeScript.
+- **Components**: PascalCase e Tailwind CSS per lo styling.
+- **Data Fetching**: Usa `useFetch` o `useAsyncData` per interfacciarti con le API Laravel.
+
+## 4. PostgreSQL & SQL
+- **Sintassi**: Keyword SQL in MAIUSCOLO.
+- **Migrations**: Scrivi migrazioni pulite con indici corretti e nomi di tabelle in snake_case plurale.
+- **Eloquent**: Usa i tipi di ritorno nei modelli (es. `HasMany`, `BelongsTo`).
+
+## 5. Sicurezza & Linting
+- **Segreti**: Mai inserire credenziali hardcoded. Usa `config()` e `.env`.
+- **Linting**: Il codice deve passare PHPStan (level 5+), Pint e ESLint.
+- **Validazione**: Ogni input deve essere validato lato server (Laravel) e lato client (Vue).
+
+## Procedura di Verifica:
+Prima di propormi una modifica, esegui una scansione mentale: "Questo codice passerebbe un check di PHPStan? Le keyword SQL sono maiuscole? Il componente Vue è in PascalCase?". Se la risposta è no, correggi prima di rispondere.

@@ -1,0 +1,13 @@
+<?php
+
+declare(strict_types=1);
+
+namespace App\Filament\Resources\NarrationResource\Pages;
+
+use App\Filament\Resources\NarrationResource;
+use Filament\Resources\Pages\CreateRecord;
+
+class CreateNarration extends CreateRecord
+{
+    protected static string $resource = NarrationResource::class;
+}

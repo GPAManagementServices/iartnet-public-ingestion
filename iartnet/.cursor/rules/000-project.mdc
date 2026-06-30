@@ -1,0 +1,5 @@
+﻿# 000 - IARTNET Global Context
+- Org: GPAManagementServices
+- Tech: Laravel 12, Nuxt 4, PostgreSQL 16 LTS
+- Standard: Dublin Core per DB Master
+- CI: Standard-Validation

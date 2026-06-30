@@ -1,0 +1,278 @@
+mappings:
+
+
+  # ============================================
+  # Campi aggiuntivi ICCD
+  # ============================================
+
+  - source_field: "CBST"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "ad_frame_type"
+    multiple: false
+    transform: "string"
+    lang: "en"
+    description: "Tipo cornice"
+
+  - source_field: "CBSD"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "ad_frame_description"
+    multiple: false
+    transform: "string"
+    lang: "en"
+    description: "Descrizione cornice"
+
+  - source_field: "CBSR"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "ad_frame_restoration"
+    multiple: false
+    transform: "string"
+    lang: "en"
+    description: "Restauro cornice"
+
+  - source_field: "FUO"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "ad_original_function"
+    multiple: false
+    transform: "string"
+    lang: "en"
+    description: "Funzione originale"
+
+  - source_field: "ADB"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "ad_analytical_description"
+    multiple: false
+    transform: "string"
+    lang: "en"
+    description: "Analisi dell'opera"     
+
+  - source_field: "ATC"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "ad_analytical_technique"
+    multiple: false
+    transform: "string"
+    lang: "en"
+    description: "Tecnica analitica"  
+
+  - source_field: "RSN"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "ad_restoration_description"
+    multiple: false
+    transform: "string"
+    lang: "en"
+    description: "Descrizione restauro"  
+
+  - source_field: "RSB"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "ad_restoration bibliography"
+    multiple: false
+    transform: "string"
+    lang: "en"
+    description: "Bibliografia restauro"  
+
+  - source_field: "ALB"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "ad_diagnostic_analysis"
+    multiple: false
+    transform: "string"
+    lang: "en"
+    description: "Analisi diagnostica"           
+
+  - source_field: "BIB"
+    target_table: "record_kv" 
+    target_field: "value_text"
+    kv_key: "ad_bibliography"
+    multiple: false
+    transform: "string"
+    lang: "en"
+    description: "Bibliografia"      
+
+  - source_field: "relazioni"
+    target_table: "record_kv" 
+    target_field: "value_text"
+    kv_key: "ad_relations"
+    multiple: false
+    transform: "string"
+    lang: "en"
+    description: "Relazioni"      
+
+  - source_field: "tags"
+    target_table: "record_kv" 
+    target_field: "value_text"
+    kv_key: "ad_tags"
+    multiple: false
+    transform: "string"
+    lang: "en"
+    description: "Tags"      
+
+  - source_field: "BID scheda madre"
+    target_table: "record_kv" 
+    target_field: "value_text"
+    kv_key: "ad_mother_card_bid"
+    multiple: false
+    transform: "string"
+    lang: "en"
+    description: "ad_mother_card_bid"       
+
+  - source_field: "Format"
+    target_table: "record_kv" 
+    target_field: "value_text"
+    kv_key: "ad_format"
+    multiple: false
+    transform: "string"
+    lang: "en"
+    description: "ad_format"  
+
+  - source_field: "Subject"
+    target_table: "record_kv" 
+    target_field: "value_text"
+    kv_key: "ad_subject"
+    multiple: false
+    transform: "string"
+    lang: "en"
+    description: Subject"              
+
+  - source_field: "Type"
+    target_table: "record_kv" 
+    target_field: "value_text"
+    kv_key: "ad_type"
+    multiple: false
+    transform: "string"
+    lang: "en"
+    description: "ad_type"  
+
+  - source_field: "Rights"
+    target_table: "record_kv" 
+    target_field: "value_text"
+    kv_key: "ad_rights"
+    multiple: false
+    transform: "string"
+    lang: "en"
+    description: "ad_rights"                     
+
+  - source_field: "Source"
+    target_table: "record_kv" 
+    target_field: "value_text"
+    kv_key: "ad_source"
+    multiple: false
+    transform: "string"
+    lang: "en"
+    description: "ad_source" 
+
+  - source_field: "Relation"
+    target_table: "record_kv" 
+    target_field: "value_text"
+    kv_key: "ad_relation"
+    multiple: false
+    transform: "string"
+    lang: "en"
+    description: "ad_relation"   
+
+  - source_field: "Relation link"
+    target_table: "record_kv" 
+    target_field: "value_text"
+    kv_key: "ad_relation_link"
+    multiple: false
+    transform: "string"
+    lang: "en"
+    description: "ad_relation_link"     
+
+  - source_field: "Inventario"
+    target_table: "record_kv" 
+    target_field: "value_text"
+    kv_key: "ad_inventory"
+    multiple: false
+    transform: "string"
+    lang: "en"
+    description: "ad_inventory"        
+
+  - source_field: "Legatura"
+    target_table: "record_kv" 
+    target_field: "value_text"
+    kv_key: "ad_legatory"
+    multiple: false
+    transform: "string"
+    lang: "en"
+    description: "ad_legatory"  
+
+  - source_field: "Particolarità dell'esemplare"
+    target_table: "record_kv" 
+    target_field: "value_text"
+    kv_key: "ad_itemnotes"
+    multiple: false
+    transform: "string"
+    lang: "en"
+    description: "ad_itemnotes"         
+
+  - source_field: "Stato di conservazione"
+    target_table: "record_kv" 
+    target_field: "value_text"
+    kv_key: "ad_conservation_status"
+    multiple: false
+    transform: "string"
+    lang: "en"
+    description: "ad_conservation_status"          
+
+  - source_field: "Collocazione"
+    target_table: "record_kv" 
+    target_field: "value_text"
+    kv_key: "ad_location"
+    multiple: false
+    transform: "string"
+    lang: "en"
+    description: "ad_location"    
+
+  - source_field: "Ente"
+    target_table: "record_kv" 
+    target_field: "value_text"
+    kv_key: "ad_ente"
+    multiple: false
+    transform: "string"
+    lang: "en"
+    description: "ad_ente"      
+
+  - source_field: "Istituzione"
+    target_table: "record_kv" 
+    target_field: "value_text"
+    kv_key: "ad_institution"
+    multiple: false
+    transform: "string"
+    lang: "en"
+    description: "ad_institution"     
+
+  - source_field: "Crest"
+    target_table: "record_kv" 
+    target_field: "value_text"
+    kv_key: "ad_crest"
+    multiple: false
+    transform: "string"
+    lang: "en"
+    description: "ad_crest"   
+
+  - source_field: "Permalink"
+    target_table: "record_kv" 
+    target_field: "value_text"
+    kv_key: "ad_permalink"
+    multiple: false
+    transform: "string"
+    lang: "en"
+    description: "ad_permalink"    
+
+  - source_field: "Titolo_alternativo"
+    target_table: "record_kv" 
+    target_field: "value_text"
+    kv_key: "ad_alternative_title"
+    multiple: false
+    transform: "string"
+    lang: "en"
+    description: "ad_alternative_title"          
+
+           

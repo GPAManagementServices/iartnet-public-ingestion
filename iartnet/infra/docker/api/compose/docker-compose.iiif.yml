@@ -1,0 +1,49 @@
+# file: /opt/Ingestion/iartnet/infra/docker/api/compose/docker-compose.iiif.yml
+name: iartnet-api
+
+services:
+  iiif:
+    image: uclalibrary/cantaloupe:5.0.7-0
+    container_name: iartnet_iiif
+    restart: unless-stopped
+
+    # Limiti (stage)
+    mem_limit: 4g
+    cpus: "1.5"
+    pids_limit: 256
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 65536
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+    networks:
+      - iartnet_net
+    ports:
+      # Se vuoi esporlo pubblicamente: lascia 0.0.0.0 (default)
+      # Se vuoi solo locale: cambia in "127.0.0.1:${IIIF_PORT:-8182}:8182"
+      - "127.0.0.1:${IIIF_PORT:-8182}:8182"
+    environment:
+      # Limite heap JVM (fondamentale per non ammazzare la RAM)
+      JAVA_OPTS: "-Xms1g -Xmx3g"
+      CANTALOUPE_CACHE_CLIENT_ENABLED: "true"
+    volumes:
+      # file cantaloupe.properties gestito da host, montato read-only
+      - ${IIIF_CONFIG_FILE:?Set IIIF_CONFIG_FILE}:/etc/cantaloupe/cantaloupe.properties:ro
+
+      # immagini IIIF: Cantaloupe deve solo leggerle
+      - ${IIIF_IMAGES_DIR:?Set IIIF_IMAGES_DIR}:/imageroot:ro
+
+      # cache Cantaloupe: deve essere scrivibile
+      - ${IIIF_CACHE_DIR:?Set IIIF_CACHE_DIR}:/var/cache/cantaloupe:rw
+
+networks:
+  iartnet_net:
+    external: true
+    name: iartnet_net
+

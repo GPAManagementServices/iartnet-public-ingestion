@@ -1,0 +1,446 @@
+{
+  "id": "",
+  "name": "",
+  "description": "",
+  "created_at": "2026-06-15T13:29:16.198Z",
+  "updated_at": "2026-06-16T08:03:15.245Z",
+  "publish_state": "draft",
+  "ext_json": {
+    "Header": {
+      "Layout": "ImageBackground Text Left",
+      "Title": "Painting, Music and Melodrama",
+      "SubTitle": null,
+      "SEO": {
+        "slug": "painting-music-and-melodrama"
+      },
+      "FontColor": "rgba(255, 255, 255, 1)",
+      "Chip": "Accademia di belle arti di brera",
+      "Image": {
+        "URL": "https://iiif.gpams.it/iiif/2/7374bafe-152c-463a-b5b5-2f518b1c5e8a.tif/0,675,3588,2300/,1000/0/default.jpg"
+      },
+      "IndexImage": {
+        "URL": "https://iiif.gpams.it/iiif/2/7374bafe-152c-463a-b5b5-2f518b1c5e8a.tif/0,675,3588,1000/,1000/0/default.jpg",
+        "Caption": null,
+        "bgColor": null
+      },
+      "HeaderLayoutTheme": "Dark"
+    },
+    "sections": [
+      {
+        "Kind": "TextIntro",
+        "Text": "<p>Operatic invention and pictorial narrative have always been closely intertwined. Many great history paintings and portraits bear witness to the deep affinity between these two art forms, both central to the Romantic revolution that ushered Italy into modernity between 1815 and 1848. The Accademia di Belle Arti di Brera was a privileged witness to this relationship, both through its specialist commission responsible for verifying the historical accuracy of stage costumes, and through its schools, which trained generations of set designers. Its library still holds many of the volumes that served as indispensable reference works.<br /><br /><br />This exhibition explores the phenomenon from the nineteenth century to the present day. Emblematic of this continuity, the stage costume worn by Giovanni David in Gli Arabi nelle Gallie was recreated in 2009 by students of the Scenography course, based on Francesco Hayez’s 1830 portrait held in the Accademia’s collection. Above all, it was Verdi’s I Lombardi alla prima crociata — both for its political significance and for the expressive power of its music that most inspired artists, in history painting and landscape alike.<br /><br /><br />Carlo Ferrario (1833–1907), Verdi’s preferred set designer, embodied the historic bond between the Accademia di Brera and La Scala. The Mongeri bequest, a collection of photographs of his scenic sketches, documents his prolific career and creative process. This legacy offers a unique insight into one of the most influential figures in nineteenth-century Italian opera.</p>",
+        "bgImage": {
+          "URL": "https://iiif.gpams.it/iiif/2/7374bafe-152c-463a-b5b5-2f518b1c5e8a.tif/700,530,1550,1230/,1000/0/default.jpg",
+          "Caption": null
+        },
+        "foreColor": "rgba(255,255,255,1)",
+        "published": true,
+        "animazione": {
+          "Effetto": ""
+        }
+      },
+      {
+        "Kind": "ScrollReveal",
+        "published": true,
+        "animazione": {
+          "Effetto": ""
+        },
+        "Paragraphs": [
+          {
+            "Text": "<p><strong>Artists on Stage</strong><br /><br />Throughout the nineteenth century, the careers and fates of the leading figures of melodrama and those of painters, sculptors and set designers were constantly intertwined – on stage and in life – across Europe’s major musical centres. In Milan, a city of great musical importance, painters such as Francesco Hayez and Giuseppe Molteni and composers such as Giuseppe Verdi, Vincenzo Bellini and Gaetano Donizetti moved in the same circles, frequenting salons that were in many cases the meeting places of the Risorgimento’s key protagonists: those of Casa Branca, Countess Maffei and the Belgiojoso family.<br /><br />The Accademia di Brera occupied a privileged position in this context: from 1846, an Artistic Commission was established with responsibility for overseeing and advising on productions at the Teatro alla Scala and the Teatro della Canobbiana.</p>",
+            "Image": {
+              "URL": "https://iiif.gpams.it/iiif/2/7374bafe-152c-463a-b5b5-2f518b1c5e8a.tif/full/,800/0/default.jpg",
+              "Caption": "Francesco Hayez, Ritratto di Giovanni David sulla scena del melodramma Gli arabi nelle Gallie, 1830. Accademia di Belle Arti di Brera"
+            },
+            "LinkScheda": {
+              "URL": "/OA_4t020-00031",
+              "Layout": "TopLeft"
+            }
+          },
+          {
+            "Text": "<p>The lives of these often unconventional and restless personalities emerge with striking vividness through contemporary portraiture, which allows us to trace their trajectories and relationships, and in some cases their human and artistic passions.<br /><br />was perhaps the most authoritative Rossinian performer of the first half of the nineteenth century, admired by both Hegel and Stendhal, who in his Life of Rossini described him as “the first true tenor, capable of infusing his singing with his full genius”. On the evening of 8 March 1827, David achieved a resounding success at the Teatro alla Scala performing in the melodrama Gli Arabi nelle Gallie, set to music by Giovanni Pacini.</p>",
+            "Image": {
+              "URL": "https://iiif.gpams.it/iiif/2/GiovanniDavidinterpretediDonNarcisonelTurcoinItalia.tif/full/,800/0/default.jpg",
+              "Caption": "Giovanni David interprete di Don Narciso nel Turco in Italia (1814) Museo Teatrale alla Scala, Milano"
+            },
+            "LinkScheda": {
+              "URL": "",
+              "Layout": "TopLeft"
+            }
+          },
+          {
+            "Text": "<p>Three years later, at the behest of the Russian Countess Julia Samoyloff Pahlen – at the time Pacini’s lover and a prominent figure in Milanese society – Francesco Hayez immortalised the tenor in his stage costume as Agobar. The character, whose real name was Clodomiro, was the last scion of the Merovingian royal dynasty, forced while still a boy, following his father’s murder, to abandon his homeland and his betrothed, Ezilda.<br />The role of Ezilda was performed by the singer Stefania Favelli. In Hayez’s painting she is shown from behind, praying before the tomb of the King of the Franks. Giovanni David stands at the centre of the composition, upon a gravestone, as if to suggest the inextricable bond between love and death.<br /><br />“Favelli’s part favours her in such a way as to highlight the truly dramatic expression of this actress,&nbsp; as much in the recitatives as in the cantabili, and principally in the stretta of the duet with David, which the audience applauds with true transport.”<br />La Gazzetta di Milano, 13 March 1827, pp. 286–287</p>",
+            "Image": {
+              "URL": "https://iiif.gpams.it/iiif/2/33f8f0be-e626-4084-9298-7029992915b7.tif/full/,800/0/default.jpg",
+              "Caption": "Luigi Mantovani, Ritratto di Stefania Favelli, 1827. Acquaforte. Casa della musica (Parma) - Legato Mario Ferrarini, n. 2020."
+            },
+            "LinkScheda": {
+              "URL": "",
+              "Layout": "TopLeft"
+            }
+          }
+        ],
+        "foreColor": "rgba(255,255,255,1)",
+        "bgImage": {
+          "URL": "https://iiif.gpams.it/iiif/2/7374bafe-152c-463a-b5b5-2f518b1c5e8a.tif/0,675,3588,2300/,1000/0/default.jpg",
+          "Caption": null,
+          "bgColor": "rgb(255,0,0,0.1)"
+        }
+      },
+      {
+        "Kind": "SplitImage",
+        "Text": "<p><strong>Artists on Stage</strong><br /><br />Throughout the nineteenth century, the careers and fates of the leading figures of melodrama and those of painters, sculptors and set designers were constantly intertwined – on stage and in life – across Europe’s major musical centres. In Milan, a city of great musical importance, painters such as Francesco Hayez and Giuseppe Molteni and composers such as Giuseppe Verdi, Vincenzo Bellini and Gaetano Donizetti moved in the same circles, frequenting salons that were in many cases the meeting places of the Risorgimento’s key protagonists: those of Casa Branca, Countess Maffei and the Belgiojoso family.<br /><br />The Accademia di Brera occupied a privileged position in this context: from 1846, an Artistic Commission was established with responsibility for overseeing and advising on productions at the Teatro alla Scala and the Teatro della Canobbiana.<br /></p>",
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/7374bafe-152c-463a-b5b5-2f518b1c5e8a.tif/full/,800/0/default.jpg",
+          "Caption": "Francesco Hayez, Ritratto di Giovanni David sulla scena del melodramma Gli arabi nelle Gallie, 1830. Accademia di Belle Arti di Brera"
+        },
+        "Layout": "Right",
+        "MediaType": "Image",
+        "published": false,
+        "LinkScheda": {
+          "URL": "/OA_4t020-00031",
+          "Layout": "TopLeft"
+        },
+        "animazione": {
+          "Effetto": ""
+        }
+      },
+      {
+        "Kind": "SplitImage",
+        "Text": "<p>The lives of these often unconventional and restless personalities emerge with striking vividness through contemporary portraiture, which allows us to trace their trajectories and relationships, and in some cases their human and artistic passions.<br /><br />was perhaps the most authoritative Rossinian performer of the first half of the nineteenth century, admired by both Hegel and Stendhal, who in his Life of Rossini described him as “the first true tenor, capable of infusing his singing with his full genius”. On the evening of 8 March 1827, David achieved a resounding success at the Teatro alla Scala performing in the melodrama Gli Arabi nelle Gallie, set to music by Giovanni Pacini.</p>",
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/GiovanniDavidinterpretediDonNarcisonelTurcoinItalia.tif/full/,800/0/default.jpg",
+          "Caption": "Giovanni David interprete di Don Narciso nel Turco in Italia (1814) Museo Teatrale alla Scala, Milano"
+        },
+        "Layout": "Right",
+        "MediaType": "Image",
+        "published": false,
+        "LinkScheda": {
+          "URL": "",
+          "Layout": "TopLeft"
+        },
+        "animazione": {
+          "Effetto": ""
+        }
+      },
+      {
+        "Kind": "SplitImage",
+        "Text": "<p>Three years later, at the behest of the Russian Countess Julia Samoyloff Pahlen – at the time Pacini’s lover and a prominent figure in Milanese society – Francesco Hayez immortalised the tenor in his stage costume as Agobar. The character, whose real name was Clodomiro, was the last scion of the Merovingian royal dynasty, forced while still a boy, following his father’s murder, to abandon his homeland and his betrothed, Ezilda.<br />The role of Ezilda was performed by the singer Stefania Favelli. In Hayez’s painting she is shown from behind, praying before the tomb of the King of the Franks. Giovanni David stands at the centre of the composition, upon a gravestone, as if to suggest the inextricable bond between love and death.<br /><br />“Favelli’s part favours her in such a way as to highlight the truly dramatic expression of this actress,&nbsp; as much in the recitatives as in the cantabili, and principally in the stretta of the duet with David, which the audience applauds with true transport.”<br />La Gazzetta di Milano, 13 March 1827, pp. 286–287</p>",
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/33f8f0be-e626-4084-9298-7029992915b7.tif/full/,800/0/default.jpg",
+          "Caption": "Luigi Mantovani, Ritratto di Stefania Favelli, 1827. Acquaforte. Casa della musica (Parma) - Legato Mario Ferrarini, n. 2020."
+        },
+        "Layout": "Right",
+        "MediaType": "Image",
+        "published": false,
+        "LinkScheda": {
+          "URL": "",
+          "Layout": "TopLeft"
+        },
+        "animazione": {
+          "Effetto": ""
+        }
+      },
+      {
+        "Kind": "IIFAnnotationsGroup",
+        "Image": {
+          "BaseURI": "https://iiif.gpams.it/iiif/2/7374bafe-152c-463a-b5b5-2f518b1c5e8a.tif",
+          "Width": 3588,
+          "Height": 4961,
+          "bgColor": "rgba(50, 50, 50, 1)"
+        },
+        "Caption": "<b>Behind the Scenes</b><br /><br />The recovery of the past marked a turning point in theatrical staging. A deeply felt demand for verisimilitude called for the faithful rendering of costumes and set designs. Behind the scenes, new stage equipment was developed, alongside the establishment of commissions tasked with verifying the historical accuracy of productions.",
+        "published": true,
+        "animazione": {
+          "Effetto": ""
+        },
+        "Annotations": [
+          {
+            "Rect": {
+              "x": 520,
+              "y": 560,
+              "width": 1690,
+              "height": 1220
+            },
+            "Text": "Hayez does not conceal the stage makeup; instead, he emphasises the greasepaint on the actor’s face."
+          },
+          {
+            "Rect": {
+              "x": 1740,
+              "y": 1560,
+              "width": 1490,
+              "height": 850
+            },
+            "Text": "Every gesture in lyric drama was meticulously codified within a system of signs. Body posture, gesture and movement each corresponded to a precise and well-defined message."
+          },
+          {
+            "Rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0
+            },
+            "Text": "<p>The stage costume is carefully rendered in every detail: from the long scarf knotted across the chest and the embroidered tunic and turban, to the gilded hilt of the sword glimpsed at the side.</p>"
+          }
+        ]
+      },
+      {
+        "Kind": "SplitImage",
+        "Text": "<p><strong>The Singing</strong></p><p><br />from Act I of Gli Arabi nelle Gallie</p>",
+        "Image": {
+          "URL": "https://www.youtube.com/watch?v=bPQ1UC6Ejlw",
+          "bgColor": null
+        },
+        "Layout": "RightInline",
+        "MediaType": "Video",
+        "published": true,
+        "LinkScheda": {
+          "URL": "",
+          "Layout": "TopLeft"
+        },
+        "animazione": {
+          "Effetto": ""
+        },
+        "bgImage": null,
+        "bgColor": "rgba(50, 50, 50, 1)",
+        "foreColor": "rgba(255, 255, 255, 1)"
+      },
+      {
+        "Kind": "SplitImage",
+        "Text": "<p><strong>Salon Primo 2010: Scenography as Educational Avant Garde</strong><br /><br />The 2010 edition of Salon Primo, the exhibition promoted by the Accademia di Brera, signalled a significant shift, dedicating the entire show to scenography. In his catalogue introduction, Director Gastone Mariani described the event as a “curious avant-garde exhibition”, a selection of works reflecting the complexity of an inherently interdisciplinary field.</p>",
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/0944aa08-e73d-470d-bfe0-521bf98a14e9.jpg/full/,800/0/default.jpg",
+          "Caption": "Salon Primo 2010. Giovani artisti dell’Accademia di Brera espongono per la prima volta. Artshow Edizioni: Milano 2009.",
+          "bgColor": "rgba(239, 236, 223, 1)"
+        },
+        "Layout": "RightInlineVertical",
+        "MediaType": "Image",
+        "published": true,
+        "LinkScheda": {
+          "URL": "",
+          "Layout": "TopLeft"
+        },
+        "animazione": {
+          "Effetto": ""
+        }
+      },
+      {
+        "Kind": "SplitImage",
+        "Text": "<p><strong>The Identity of the Contemporary Set Designer</strong><br /><br />The works on display bear witness to the challenge faced by young artists in managing the “simultaneous presence” of multiple languages: from word and gesture to sound, colour and the volumetric handling of light.<br /><br />At the heart of this process lies artistic research understood as a synthesis between conceptual design and practical execution. This balance represents, in Mariani’s words, the “primary educational contribution” of Fine Arts Academies within the university system: a space where intellectual conception is inseparable from its translation into physical form.</p>",
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/742e3c04-d147-4013-a385-ad184cc334fd.jpg/full/,800/0/default.jpg",
+          "Caption": "Salon Primo 2010. Giovani artisti dell’Accademia di Brera espongono per la prima volta. Artshow Edizioni: Milano 2009.",
+          "bgColor": "rgba(239, 236, 223, 1)"
+        },
+        "Layout": "RightInlineVertical",
+        "MediaType": "Image",
+        "published": true,
+        "LinkScheda": {
+          "URL": "",
+          "Layout": "TopLeft"
+        },
+        "animazione": {
+          "Effetto": ""
+        }
+      },
+      {
+        "Kind": "SplitImage",
+        "Text": "<p><strong><em>Hayez regista d’Opera</em>: Heritage as Research</strong><br /><br />It is within this context that the exhibition Hayez regista d’Opera. Un maestro dell’Accademia (held in the Sala Napoleonica between 2009 and 2010) finds its place. Through a dialogue with Francesco Hayez’s Ritratto di Giovanni David, students from the Department of Applied Arts showed how historical heritage can function as an open resource, capable of opening up new trajectories in contemporary artistic research.</p>",
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/75d2fb6c-9c88-4f87-b707-8ff9129133b5.jpg/full/,800/0/default.jpg",
+          "Caption": "Salon Primo 2010. Giovani artisti dell’Accademia di Brera espongono per la prima volta. Artshow Edizioni: Milano 2009.",
+          "bgColor": "rgba(239, 236, 223, 1)"
+        },
+        "Layout": "RightInlineVertical",
+        "MediaType": "Image",
+        "published": true,
+        "LinkScheda": {
+          "URL": "",
+          "Layout": "TopLeft"
+        },
+        "animazione": {
+          "Effetto": ""
+        }
+      },
+      {
+        "Kind": "ScrollReveal",
+        "published": true,
+        "animazione": {
+          "Effetto": ""
+        },
+        "Paragraphs": [
+          {
+            "Text": "<p><strong><em>I Lombardi alla prima crociata</em></strong><br />GIUSEPPE VERDI</p><p><br />February 1843 with a new opera, I Lombardi alla prima crociata, for which he had received a blank cheque from the impresario Bartolomeo Merelli.<br /><br />“The opera will triumph, were I to die for it.”<br />These were the defiant words of Emilia Frezzolini-Poggi, the first to take the lead role in I Lombardi alla prima crociata, at the performance held at La Scala on 11 February 1843.<br /><br />From Tommaso Grossi’s famous epic poem in ottava rima – in which, as its author had confessed to his friend Alessandro Manzoni, influences from Walter Scott, Tasso’s Gerusalemme liberata and Michaud’s Histoire des croisades all converged – Temistocle Solera freely adapted an intricate narrative. Spanning from Milan to Antioch and on to Jerusalem, it wove together crime and love, war and prayer, against a backdrop of noble heroism and the blind violence of the First Crusade.&nbsp;<br />The theme coincided with one of the most controversial yet compelling chapters in the history of Christianity, one that had fired the Italian artistic scene since the 1820s – in the narrative landscapes of Massimo d’Azeglio and Giuseppe Bisi as much as in the olitically engaged painting of Francesco Hayez – before taking on a burning political urgency in the 1840s, with the publication of Vincenzo Gioberti’s Il primato morale e civile degli italiani (On the Moral and Civil Primacy of the Italians, 1843), the manifesto of Neo-Guelphism.</p>",
+            "Image": {
+              "URL": "https://iiif.gpams.it/iiif/2/60a0636c-d4d6-4c79-b58a-6dca166bb19e.jpeg/full/,800/0/default.jpg"
+            },
+            "LinkScheda": {
+              "URL": "",
+              "Layout": "TopLeft"
+            }
+          },
+          {
+            "Text": "<p>Atto III<br />“Gerusalem!... Gerusalem!... / la grande, la promessa città!”<br /><br /><br />Act III<br />“Jerusalem!... Jerusalem!... / the great, the promised city!”<br /><br /><br />The painting is inspired by verses from Cantos XI and XII of Tommaso Grossi’s poem I Lombardi alla prima crociata, the same source later adopted by Temistocle Solera (1815–1878) for the libretto of the opera of the same name, set to music by Giuseppe Verdi, which premiered at La Scala in 1843. In the opening scene of Act III – set in the Valley of Jehoshaphat, amid hills dominated by the Mount of Olives with Jerusalem in the distance – the pilgrims raise their invocation to God: “Jerusalem! … Jerusalem!… the great, the promised city!”<br /><br /><br />Act IV<br /><br /><br />“O Lord, from our native homes / You called us with a holy promise; / we have hastened to a pious man’s call, / rejoicing along the rugged path.”</p>",
+            "Image": {
+              "URL": "https://iiif.gpams.it/iiif/2/87b49adc-9d29-4ed5-948c-e68b0621e7a4.tif/full/800,/0/default.jpg",
+              "Caption": "Giuseppe Bisi, L’arrivo dei primi Crociati a Gerusalemme, 1839. Milano Accademia di Brera"
+            },
+            "LinkScheda": {
+              "URL": "/OA_4t030-00133",
+              "Layout": "TopLeft"
+            }
+          }
+        ]
+      },
+      {
+        "Kind": "SplitImage",
+        "Text": "<p><strong><em>I Lombardi alla prima crociata</em></strong><br />GIUSEPPE VERDI</p><p><br />February 1843 with a new opera, I Lombardi alla prima crociata, for which he had received a blank cheque from the impresario Bartolomeo Merelli.<br /><br />“The opera will triumph, were I to die for it.”<br />These were the defiant words of Emilia Frezzolini-Poggi, the first to take the lead role in I Lombardi alla prima crociata, at the performance held at La Scala on 11 February 1843.<br /><br />From Tommaso Grossi’s famous epic poem in ottava rima – in which, as its author had confessed to his friend Alessandro Manzoni, influences from Walter Scott, Tasso’s Gerusalemme liberata and Michaud’s Histoire des croisades all converged – Temistocle Solera freely adapted an intricate narrative. Spanning from Milan to Antioch and on to Jerusalem, it wove together crime and love, war and prayer, against a backdrop of noble heroism and the blind violence of the First Crusade.&nbsp;<br />The theme coincided with one of the most controversial yet compelling chapters in the history of Christianity, one that had fired the Italian artistic scene since the 1820s – in the narrative landscapes of Massimo d’Azeglio and Giuseppe Bisi as much as in the olitically engaged painting of Francesco Hayez – before taking on a burning political urgency in the 1840s, with the publication of Vincenzo Gioberti’s Il primato morale e civile degli italiani (On the Moral and Civil Primacy of the Italians, 1843), the manifesto of Neo-Guelphism.</p>",
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/60a0636c-d4d6-4c79-b58a-6dca166bb19e.jpeg/full/,800/0/default.jpg"
+        },
+        "Layout": "RightInlineVertical",
+        "MediaType": "Image",
+        "published": false,
+        "LinkScheda": {
+          "URL": "",
+          "Layout": "TopLeft"
+        },
+        "animazione": {
+          "Effetto": ""
+        }
+      },
+      {
+        "Kind": "SplitImage",
+        "Text": "<p>Atto III<br />“Gerusalem!... Gerusalem!... / la grande, la promessa città!”<br /><br /><br />Act III<br />“Jerusalem!... Jerusalem!... / the great, the promised city!”<br /><br /><br />The painting is inspired by verses from Cantos XI and XII of Tommaso Grossi’s poem I Lombardi alla prima crociata, the same source later adopted by Temistocle Solera (1815–1878) for the libretto of the opera of the same name, set to music by Giuseppe Verdi, which premiered at La Scala in 1843. In the opening scene of Act III – set in the Valley of Jehoshaphat, amid hills dominated by the Mount of Olives with Jerusalem in the distance – the pilgrims raise their invocation to God: “Jerusalem! … Jerusalem!… the great, the promised city!”<br /><br /><br />Act IV<br /><br /><br />“O Lord, from our native homes / You called us with a holy promise; / we have hastened to a pious man’s call, / rejoicing along the rugged path.”</p>",
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/87b49adc-9d29-4ed5-948c-e68b0621e7a4.tif/full/800,/0/default.jpg",
+          "Caption": "Giuseppe Bisi, L’arrivo dei primi Crociati a Gerusalemme, 1839. Milano Accademia di Brera"
+        },
+        "Layout": "RightInline",
+        "MediaType": "Image",
+        "published": false,
+        "LinkScheda": {
+          "URL": "/OA_4t030-00133",
+          "Layout": "TopLeft"
+        },
+        "animazione": {
+          "Effetto": ""
+        }
+      },
+      {
+        "Kind": "IIFAnnotationsGroup",
+        "Image": {
+          "BaseURI": "https://iiif.gpams.it/iiif/2/10c463f3-9919-47ce-b466-2a1e9b7b4a1d.jpg",
+          "Width": 1500,
+          "Height": 919,
+          "bgColor": null
+        },
+        "Caption": "La Sete dei Crociati<br /><br />Francesco Hayez spent over twenty years working on La Sete dei Crociati, his most ambitious historical painting, inspired by the poem I Lombardi alla prima crociata by his friend Tommaso Grossi. The work’s long and troubled gestation was closely intertwined with the staging of Verdi’s opera in Milan and Paris.<br />The final result is a monumental canvas, which in 1850 was sent to Turin and placed in the Palazzo Reale. The Brera Academy preserves dozens of preparatory studies and a large dessin d’après, which was exhibited at the annual Brera exhibition.",
+        "published": true,
+        "animazione": {
+          "Effetto": ""
+        },
+        "Annotations": [
+          {
+            "Rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0
+            },
+            "Text": "Francesco Hayez, La sete patita dai primi Crociati sotto Gerusalemme, 1850. Accademia di Belle Arti di Brera"
+          },
+          {
+            "Rect": {
+              "x": 590,
+              "y": 390,
+              "width": 910,
+              "height": 510
+            },
+            "Text": ""
+          },
+          {
+            "Rect": {
+              "x": 320,
+              "y": 680,
+              "width": 340,
+              "height": 239
+            },
+            "Text": "Francesco Hayez, Studio per La sete patita dai primi Crociati sotto Gerusalemme, 1838 circa. Accademia di Belle Arti di Brera, DS 4332 verso."
+          },
+          {
+            "Rect": {
+              "x": 930,
+              "y": 240,
+              "width": 330,
+              "height": 220
+            },
+            "Text": "The painting portrays Carlo de Notaris, a young pupil of the artist, who, as was the master's practice for many of his works – including his masterpiece Pietro Rossi (1818–1820, Milano, Pinacoteca di Brera) – served as the physiognomic model for one of the characters in La sete patita dai primi Crociati sotto Gerusalemme.  Francesco Hayez, Ritratto del pittore Carlo De Notaris, 1842 ca. Accademia di Belle Arti di Brera"
+          },
+          {
+            "Rect": {
+              "x": 860,
+              "y": 390,
+              "width": 400,
+              "height": 240
+            },
+            "Text": "Francesco Hayez, Studio per La sete patita dai primi Crociati sotto Gerusalemme, 1843-1844 circa. Accademia di Belle Arti di Brera, DS 4346"
+          },
+          {
+            "Rect": {
+              "x": 0,
+              "y": 550,
+              "width": 440,
+              "height": 369
+            },
+            "Text": "<p>Francesco Hayez, Studio per La&nbsp;sete patita dai primi Crociati sotto&nbsp;Gerusalemme, 1842 circa. Accademia di Belle Arti di Brera, DS 3947</p>"
+          }
+        ]
+      }
+    ],
+    "bibliography": [
+      {
+        "Title": "La tempesta del mio cor. Il gesto del melodramma dalle arti figurative al cinema,",
+        "Description": "exhibition catalogue (Parma, Palazzo della Pilotta, 5 May–29 July 2001), edited by Giovanni Godi and Carlo Sisi. Milano: Mazzotta 2001."
+      },
+      {
+        "Title": "Dalla scena al dipinto. La magia del teatro nella pittura dell’Ottocento. Da David a Delacroix, da Füssli a Degas",
+        "Description": "exhibition catalogue (Marsiglia, Musée Cantini, 6 October 2009 - 3 January 2010; Rovereto, Mart – Museo di arte moderna e contemporanea di Trento e Rovereto, 6 February - 23 May 2010; Toronto, Art Gallery of Ontario, 19 June - 26 September 2010), edited by Cogeval, Guy and Avanzi, Beatrice. Milano: Skira, 2010."
+      },
+      {
+        "Title": "Campi, Tiziana. ",
+        "Description": "In Hayez regista d'Opera. Un Maestro dell'Accademia, edited by Mulazzani,Enrico, Campi, Tiziana, Giorgi, Paola and Nicolamarino,  Domenico. Milano: Accademia di Belle Arti di Brera, 2010."
+      },
+      {
+        "Title": "Agosti, Giacomo and Ciapparelli, Pier Luigi",
+        "Description": "Hayez “regista d’opera”. La Commissione Artistica dell’Accademia di Brera e gli allestimenti verdiani alla Scala alla metà dell’Ottocento. In Hayez dal mito al bacio, exhibition catalogue (Padova, Palazzo Zabarella, 20th September 1998 – 10th January 1999). Venezia: Marsilio 1998, pp. 47-55."
+      },
+      {
+        "Title": "Girardi, Enrico",
+        "Description": "Hayez e i rapporti con il mondo musicale. In Hayez dal mito al bacio, exhibition catalogue (Padova, Palazzo Zabarella, 20th September 1998 – 10th January 1999). Venezia: Marsilio 1998, pp. 57-65."
+      },
+      {
+        "Title": "Bellani, Alessandra",
+        "Description": "Intervento di conservazione e restauro sulla raccolta fotografica “Bozzetti scenografici” di Carlo Ferrario, Master's Degree Thesis in Conservation of Cultural Heritage at the Brera Academy of Fine Arts, 2021/2022. Advisor: Alice Laudisa; Co-Advisors: Maria Chiara Palandri, Elisa Albano."
+      },
+      {
+        "Title": "",
+        "Description": "Tutta in voi la luce mia, exhibition catalogue (Bergamo, Accademia Carrara, 29 September 2023 - 14 January 2024), edited by Fernando Mazzocca, Cristina Rodeschini, and Elena Lissoni. Milano: Skira, 2023. "
+      }
+    ],
+    "credits": [
+      {
+        "Title": "Editor-in-Chief",
+        "Description": "Chiara Nenci, Nicoletta Leonardi, Ilaria Mariotti"
+      },
+      {
+        "Title": "Contributing writers",
+        "Description": "Gaia Costanzo, Debora Finocchiaro, Germana Formenti, Elena Lissoni, Serafina Pignotti, Alice Compton"
+      },
+      {
+        "Title": "Photo credits",
+        "Description": "Cosmo Laera, Roberto Rosso, su concessione del Mic – Musei Reali di Torino; Museo Teatrale alla Scala, Milano; Casa della musica (Parma) - Legato Mario Ferrarini"
+      }
+    ]
+  }
+}

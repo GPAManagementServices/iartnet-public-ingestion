@@ -1,0 +1,56 @@
+publiccodeYmlVersion: "0.2"
+name: iartnet-ingestion
+url: "https://github.com/GPAManagementServices/iartnet_ingestion"
+softwareVersion: "1.0.0"
+releaseDate: "2026-06-28"
+platforms:
+  - web
+categories:
+  - data-collection
+  - content-management
+developmentStatus: active
+softwareType: standalone
+description:
+  it:
+    localisedName: IARTNET Ingestion API
+    shortDescription: API Laravel per master DB, ricerca pubblica, IIIF P3, ETL.
+    longDescription: >
+      Backend ingestion PostgreSQL/Redis con Filament operatori, manifest IIIF
+      Presentation 3, orchestrazione immagini Cantaloupe, moduli ETL.
+    features:
+      - PNRR/Beneficiari/Istituti di ricerca e AFAM
+  en:
+    localisedName: IARTNET Ingestion API
+    shortDescription: Laravel API for master DB, public search, IIIF P3, ETL.
+legal:
+  license: AGPL-3.0-or-later
+maintenance:
+  type: internal
+  contacts:
+    - name: Accademia di Brera
+      affiliation: Accademia di Brera
+    - name: GPA Management Services
+      email: info@gpams.it
+      affiliation: GPA Management Services
+localisation:
+  availableLanguages:
+    - it
+    - en
+dependsOn:
+  open:
+    - name: Laravel
+      version: "12"
+      url: "https://laravel.com"
+    - name: PostgreSQL
+      version: "16"
+      url: "https://www.postgresql.org"
+    - name: Cantaloupe
+      description: IIIF Image Server
+      url: "https://cantaloupe-project.github.io/"
+it:
+  conforme:
+    - modello-interoperabilita
+    - gdpr
+  countryExtensionVersion: "0.2"
+  piattaforme:
+    - web

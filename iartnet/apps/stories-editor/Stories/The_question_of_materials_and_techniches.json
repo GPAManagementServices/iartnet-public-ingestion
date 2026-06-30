@@ -1,0 +1,189 @@
+{
+  "id": "",
+  "name": "The question of materials and techniches",
+  "description": "Prima story",
+  "created_at": "2026-05-15T18:16:00.656Z",
+  "updated_at": "2026-06-16T07:55:26.068Z",
+  "publish_state": "draft",
+  "ext_json": {
+    "Header": {
+      "Layout": "ImageRight",
+      "Title": "The question of materials and techniches",
+      "SubTitle": "Un percorso nella formazione tecnico-artistica del dietro le quinte di un allestimento",
+      "SEO": {
+        "slug": "the-question-of-materials-and-techniches"
+      },
+      "FontColor": "rgba(0, 0, 0, 1)",
+      "Chip": "interview",
+      "Image": {
+        "URL": "https://iiif.gpams.it/iiif/2/2c6c78f7-7f7b-4640-9f03-9e64bb5ea944.jpeg/full/1400,/0/default.jpg"
+      },
+      "IndexImage": {
+        "URL": "https://iiif.gpams.it/iiif/2/2c6c78f7-7f7b-4640-9f03-9e64bb5ea944.jpeg/0,200,1600,867/,620/0/default.jpg"
+      },
+      "HeaderLayoutTheme": "Light"
+    },
+    "sections": [
+      {
+        "Kind": "TextIntro",
+        "Text": "Contemporary artistic research is characterized by the inclusion of any language and device, along the line of a continuous inquiry that calls into question not only the concept of art and technique but, at times, also that of modernity and progress. The experimental use of materials and techniques is among the defining prerogatives of contemporary artists. The interviews have provided a method to address a number of issues concerning the choice of materials and techniques, as well as the conservation and archiving of works.",
+        "published": true,
+        "animazione": {
+          "Effetto": ""
+        }
+      },
+      {
+        "Fit": "Cover",
+        "Kind": "ImageFullScreen",
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/6958cc3c-3f0c-42ca-8f7a-174c7bda6049.jpg/full/1400,/0/default.jpg",
+          "Caption": "Gino Lucente, Light box, resin and marble powder, 28 × 25 × 5 cm. Courtesy Galleria Lorenzo Vatalaro"
+        },
+        "Position": "BottomLeft",
+        "LinkScheda": {
+          "URL": "",
+          "Layout": "TopLeft"
+        },
+        "published": true,
+        "animazione": {
+          "Effetto": ""
+        }
+      },
+      {
+        "Kind": "SplitContent",
+        "LeftText": "What is your relationship with the material component of your works?",
+        "RightText": "<b>REBECCA AGNES</b>: One of the techniques I have used since my time at the Academy is embroidery. For me, it is an important technique because, historically, it has been considered a feminine practice and therefore classified as craft rather than art (…). In recent years, I have begun to reflect on the environmental impact of materials and on the need to minimize artistic production. I believe it is important to think about a more sustainable form of art. For this reason, I have stopped buying new fabrics: now I use materials I already have at home and that I would not previously have considered for art, such as bedsheets, tablecloths, and curtains. I try to work with what already exists.<br /><b>CHIARA CAMONI</b>: Technique—or rather techniques, which I love very much—constitute a kind of framework, so they do not materialize in a heroic gesture that only the artist can perform, but rather involve a series of predefined steps [...]. In this sense, techniques are generous for me; they are welcoming, because they constitute a supportive framework, and within that framework, one feels so comfortable that a more theoretical, conceptual dimension can also enter. Depending on how comfortable the framework is, many people can fit within it, and we can also understand to what extent we can let things go.<br /><b>Gino lucentE</b>: As for artistic languages, I use almost all of them, or at least a good number of them. Even a sentence, a title, can become poetry. This is one of my characteristics: the use of multiple techniques is part of me; it’s my natural form of expression.",
+        "published": true,
+        "animazione": {
+          "Effetto": ""
+        }
+      },
+      {
+        "Fit": "Contain",
+        "Kind": "ImageFullScreen",
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/67b28a9e-7abb-4791-ba01-7f68d0f46164.jpg/full/1400,/0/default.jpg",
+          "Caption": "Carlo Benvenuto, Untitled, C-print, 190 × 160 cm, 2002. Courtesy of the artist.",
+          "bgColor": "rgba(220, 224, 232, 1)"
+        },
+        "Position": "BottomLeft",
+        "LinkScheda": {
+          "URL": "",
+          "Layout": "TopLeft"
+        },
+        "published": true,
+        "animazione": {
+          "Effetto": ""
+        }
+      },
+      {
+        "Fit": "Contain",
+        "Kind": "ImageFullScreen",
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/2c6c78f7-7f7b-4640-9f03-9e64bb5ea944.jpeg/full/1400,/0/default.jpg",
+          "Caption": "Chiara Camoni, Odalisca, 2025, glazed stoneware with vegetal ash, earth, sand, and various minerals, 190 × 73 × 54 cm. Courtesy of the artist, photo by Juan Carlos Quindós de la Fuente.",
+          "bgColor": "rgba(224, 179, 138, 1)"
+        },
+        "Position": "BottomLeft",
+        "LinkScheda": {
+          "URL": "",
+          "Layout": "TopLeft"
+        },
+        "published": true,
+        "animazione": {
+          "Effetto": ""
+        }
+      },
+      {
+        "Kind": "SplitContent",
+        "LeftText": "Have you ever asked yourself questions regarding the conservation and archiving of your works?",
+        "RightText": "<p><strong>STEFANIA GALEGATI</strong>: Everything disappears—it is only a matter of time. Bronze statues have always unsettled me, because bronze is a material that lasts a long time.<br /><strong>CARLO BENVENUTO</strong>: Generally, my instructions are to handle them with extreme care, because not many people use my technique. I know they are very delicate. But I do not provide a manual of instructions, nor precise guidelines. I simply say that they are very delicate. I explain how to pack them, how to store them. Being photographs, they are sensitive to direct light, although much less so now than some years ago. I have never been obsessively concerned with this kind of issue.<br /><strong>BERNHARD RUDIGER</strong>: This attention to archiving and conservation therefore stems from the awareness that our works are not tied to a historical context: Beuys’s works are indissolubly linked to the context of postwar Germany; Arte Povera works to ’68 and to the search for an autonomy of Italian culture from American Pop Art. For us, this does not exist. The archive has allowed us to insert a historiography where history itself had been denied.</p>",
+        "published": true,
+        "animazione": {
+          "Effetto": ""
+        }
+      },
+      {
+        "Fit": "Cover",
+        "Kind": "ImageFullScreen",
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/e7b42682-c392-4fa5-994b-6152142f30a8.jpg/full/1400,/0/default.jpg",
+          "Caption": "Bernhard Rüdiger, Tromba N.7 (Petrolio), 2002, organ pipes, yellow pine wood, aluminum, air motor, microphone, 260 × 210 × 395 cm, Cologne, private collection. Photo André Morin, ©Bernhard Rüdiger, ADAGP, Paris 2026."
+        },
+        "Position": "BottomLeft",
+        "LinkScheda": {
+          "URL": "",
+          "Layout": "TopLeft"
+        },
+        "published": true,
+        "animazione": {
+          "Effetto": ""
+        }
+      }
+    ],
+    "credits": [
+      {
+        "Title": "Chief editor",
+        "Description": "Rosanna Ruscio"
+      }
+    ],
+    "catalogoOpereCitate": [
+      {
+        "Tags": [
+          "SCULPTURE"
+        ],
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/2c6c78f7-7f7b-4640-9f03-9e64bb5ea944.jpeg/full/max/0/default.jpg"
+        },
+        "Title": "Odalisca",
+        "Author": "Chiara Camoni",
+        "LinkScheda": {
+          "URL": "",
+          "Layout": "TopLeft"
+        }
+      },
+      {
+        "Tags": [
+          "PHOTOGRAPHY"
+        ],
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/6958cc3c-3f0c-42ca-8f7a-174c7bda6049.jpg/full/max/0/default.jpg"
+        },
+        "Title": "Loro 3",
+        "Author": "Gino Lucente",
+        "LinkScheda": {
+          "URL": "",
+          "Layout": "TopLeft"
+        }
+      },
+      {
+        "Tags": [
+          "PHOTOGRAPHY"
+        ],
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/67b28a9e-7abb-4791-ba01-7f68d0f46164.jpg/full/max/0/default.jpg"
+        },
+        "Title": "Senza titolo",
+        "Author": "Carlo Benvenuto",
+        "LinkScheda": {
+          "URL": "",
+          "Layout": "TopLeft"
+        }
+      },
+      {
+        "Tags": [
+          "SCULPTURE"
+        ],
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/e7b42682-c392-4fa5-994b-6152142f30a8.jpg/full/max/0/default.jpg"
+        },
+        "Title": "Tromba N.7 (Petrolio)",
+        "Author": "Bernhard Rüdiger",
+        "LinkScheda": {
+          "URL": "",
+          "Layout": "TopLeft"
+        }
+      }
+    ]
+  }
+}

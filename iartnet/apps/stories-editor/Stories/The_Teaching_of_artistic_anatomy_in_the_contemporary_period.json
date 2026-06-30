@@ -1,0 +1,342 @@
+{
+  "id": "",
+  "name": "",
+  "description": "",
+  "created_at": "2026-06-08T16:25:20.232Z",
+  "updated_at": "2026-06-16T07:57:13.115Z",
+  "publish_state": "draft",
+  "ext_json": {
+    "Header": {
+      "Layout": "ImageRight",
+      "Title": "The Teaching of artistic anatomy in the contemporary period",
+      "SubTitle": null,
+      "SEO": {
+        "slug": "the-teaching-of-artistic-anatomy-in-the-contemporary-period"
+      },
+      "FontColor": "rgba(0, 0, 0, 1)",
+      "Chip": "Accademia di belle arti di brera",
+      "Image": {
+        "URL": "https://iiif.gpams.it/iiif/2/b83103f7-0c4b-471e-872d-04b614d0ed28.tif/full/1400,/0/default.jpg"
+      },
+      "IndexImage": {
+        "URL": "https://iiif.gpams.it/iiif/2/b83103f7-0c4b-471e-872d-04b614d0ed28.tif/0,3900,5265,2100/,620/0/default.jpg"
+      },
+      "HeaderLayoutTheme": "Light"
+    },
+    "sections": [
+      {
+        "Kind": "InlineText",
+        "Text": "<b>Anatomies</b><br /><br /><b>From classical teaching to new methods</b><br /><br />Since its birth in the Renaissance, artistic anatomy has aimed at the faithful representation of the human body. Artists such as Leonardo da Vinci, Michelangelo Buonarroti, and Raffaello Sanzio, up to the masters of the nineteenth century, combined the study of the living model with that of the cadaver and anatomical preparations. They investigated the internal structure in order to render the external form of the body with greater awareness.<br /><br /><br /><br />In the 1960s, however, something changed. From a descriptive discipline often taught by physicians, artistic anatomy is now predominantly entrusted to artists and has become a field in which different teaching approaches and aims coexist.  Broadly speaking, we can identify three principal modes of instruction: a “classical” approach, oriented toward knowledge of bones, muscles, morphology, and movement with a view to achieving an ideally lifelike rendering; a geometric anatomy, which interprets the figure as a structural, almost architectural construction; and finally, a line of research that moves beyond the boundaries of traditional representation, opening up to practices in which the body becomes experience, action, absence, or even a vegetal organism.",
+        "published": true,
+        "animazione": {
+          "Effetto": ""
+        }
+      },
+      {
+        "Kind": "IIFAnnotationsGroup",
+        "Image": {
+          "BaseURI": "https://iiif.gpams.it/iiif/2/8c5b2439-803d-4426-9c84-94c878e6b63b.tif",
+          "Width": 5153,
+          "Height": 7064,
+          "bgColor": "rgba(0, 0, 0, 1)"
+        },
+        "Caption": "The drawing board is an essential tool for learning anatomical drawing; a protected space for research and for the sedimentation of one’s own observations.<br /><br />Like a geographical map, its coordinates identify points, sections, and planes used to reconstruct the human figure within the space of the sheet. In the board on the left, Galli constructed the figure starting from the axis of symmetry and faithfully rendered its volume and organic lines.<br /><br />At a later stage, in addition to defining the edge of the board with swirling brushstrokes of diluted bitumen, she highlighted certain masses using white clay.",
+        "published": true,
+        "animazione": {
+          "Effetto": ""
+        },
+        "Annotations": [
+          {
+            "Rect": {
+              "x": 90,
+              "y": 960,
+              "width": 4960,
+              "height": 5400
+            },
+            "Text": "Next to the figure, she reconstructed the structure of several elements, analyzing them in detail."
+          },
+          {
+            "Rect": {
+              "x": 1740,
+              "y": 100,
+              "width": 3320,
+              "height": 1470
+            },
+            "Text": "Study of the upper limb in abduction: a geometric structure of the bones onto which more organic lines are laid, particularly at the elbow joint."
+          },
+          {
+            "Rect": {
+              "x": 1590,
+              "y": 1000,
+              "width": 3450,
+              "height": 1244
+            },
+            "Text": "Organic study of the hands, with emphasis on the tendons."
+          },
+          {
+            "Rect": {
+              "x": 1850,
+              "y": 1400,
+              "width": 2000,
+              "height": 1400
+            },
+            "Text": "Organic study of the latissimus dorsi muscle: latissimus dorsi (dorsal side), rotation of fibers and tendinous aponeurosis."
+          },
+          {
+            "Rect": {
+              "x": 90,
+              "y": 960,
+              "width": 4960,
+              "height": 5400
+            },
+            "Text": "Structural and organic study of the lower limb"
+          },
+          {
+            "Rect": {
+              "x": 90,
+              "y": 960,
+              "width": 4960,
+              "height": 5400
+            },
+            "Text": "Section and highlighting of the triceps surae muscle to emphasize its transverse section and reveal, in transparency, the underlying structures:<br />posterior femoral biceps<br />semitendinosus + semimembranosus<br />gastrocnemius<br />soleus<br />Achilles tendon<br />peroneus brevis tendon"
+          },
+          {
+            "Rect": {
+              "x": 2000,
+              "y": 3500,
+              "width": 2500,
+              "height": 1500
+            },
+            "Text": "Structural section of the knee:<br />tibia<br />patella<br />fibula"
+          },
+          {
+            "Rect": {
+              "x": 3000,
+              "y": 5000,
+              "width": 1500,
+              "height": 750
+            },
+            "Text": "Structural section of the foot: volumetric study and section of the metatarsus."
+          }
+        ]
+      },
+      {
+        "Kind": "InlineText",
+        "Text": "<b>A rigorous method</b><br /><b>From classical teaching to new methods</b><br />During the twentieth century, an original method for teaching the drawing of the human figure took shape. Gottfried Bammes, professor of artistic anatomy at the Academy of Fine Arts in Dresden, profoundly renewed the discipline by developing an innovative system for understanding proportions, skeletal structure, musculature, and the dynamics of the body. The figure is conceived as a construction: analysed in its parts and reassembled from geometric modules correlated with one another.  With training in the field of visual arts, Bammes understood drawing in terms of relief, volume, and plasticity, following an almost sculptural principle. His method is based on reducing bodily masses to elementary forms, easier to organise into a coherent and harmonious whole.",
+        "published": true,
+        "animazione": {
+          "Effetto": ""
+        }
+      },
+      {
+        "Kind": "InlineImage",
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/08e3bb9c-f915-4fdc-999e-1f31cb0c637f.tif/full/max/0/default.jpg",
+          "Caption": "Proportions of the male and female human body. In Die Gestalt des Menschen, Christophorus Verlagt GmbH & Co. KG, Freiburg, 1964. Ⓒ Christophorus Verlag in der Christian Verlag GmbH, Munich, Germany, 2026",
+          "bgColor": null
+        },
+        "published": true,
+        "LinkScheda": {
+          "URL": "",
+          "Layout": "TopLeft"
+        },
+        "animazione": {
+          "Effetto": ""
+        }
+      },
+      {
+        "Kind": "SplitImage",
+        "Text": "His research achieved wide circulation thanks to the numerous manuals he published and their many reprints; among these, a central role belongs to Die Gestalt des Menschen (1964)",
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/98bf608d-5319-43f9-83fd-c4cd237373c5.tif/full/,1000/0/default.jpg",
+          "Caption": "Cover of the manual by Gottfried Bammes, Die Gestalt des Menschen, Christophorus Verlagt GmbH & Co. KG, Freiburg, 1964. Ⓒ Christophorus Verlag in der Christian Verlag GmbH, Munich, Germany, 2026",
+          "bgColor": "rgba(255, 255, 255, 1)"
+        },
+        "Layout": "RightInlineVertical",
+        "MediaType": "Image",
+        "published": true,
+        "LinkScheda": {
+          "URL": "",
+          "Layout": "TopLeft"
+        },
+        "animazione": {
+          "Effetto": ""
+        }
+      },
+      {
+        "Kind": "SplitImage",
+        "Text": "Nedo Fiorentin, a pupil of the German master, reworked these principles in the 1950s and 1960s at the Academy of Fine Arts in Venice. Later, Alberto Lolli, together with Mauro Zocchetta and Renzo Peretti—first as assistants and then as lecturers—helped further develop and refine this approach. In 1998, the first edition of Struttura Uomo. Manuale di anatomia artistica was published, now considered a reference text for the in-depth study of the human figure.",
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/a65fe5b3-0385-4754-b157-6218b01de53d.tif/full/,1000/0/default.jpg",
+          "Caption": "Cover of the pubblication Struttura Uomo. Manuale di anatomia artistica, Angelo Colla editore, Costabissara (VI), 2020. ",
+          "bgColor": "rgba(255, 255, 255, 1)"
+        },
+        "Layout": "RightInlineVertical",
+        "MediaType": "Image",
+        "published": true,
+        "LinkScheda": {
+          "URL": "",
+          "Layout": "TopLeft"
+        },
+        "animazione": {
+          "Effetto": ""
+        }
+      },
+      {
+        "Kind": "SplitImage",
+        "Text": "The three Venetian professors systematised the German-based framework. The entire body, as well as each individual bone and muscle, is analysed through the intersection of the sagittal plane, the frontal plane, and the transverse planes along the axis of symmetry. providing a three-dimensional model for each region.",
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/2c8ced93-f88a-478a-84b3-c7b3aa926276.tif/full/,1000/0/default.jpg",
+          "Caption": "A. Frontal plane; B. Axonometric representation of the frontal and sagittal planes and of the transverse planes; C. Sagittal plane; D-E. Axonometry of the sagittal and frontal planes. Image reproduced in Struttura Uomo. Manuale di anatomia artistica, Angelo Colla editore, Costabissara (VI), 2020. "
+        },
+        "Layout": "Left",
+        "MediaType": "Image",
+        "published": true,
+        "LinkScheda": {
+          "URL": "",
+          "Layout": "TopLeft"
+        },
+        "animazione": {
+          "Effetto": ""
+        }
+      },
+      {
+        "Kind": "SplitImage",
+        "Text": "The student is thus invited to explore the figure as a “transparent building”, moving beyond a tradition that limits itself to describing the surface through chiaroscuro.",
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/d7198d30-1e3f-420e-b8ac-9763445c4e24.tif/full/,1000/0/default.jpg",
+          "Caption": "Construction of the body’s architecture in contrapposto, in antero-lateral and postero-lateral view. Image reproduced in Struttura Uomo. Manuale di anatomia artistica, Angelo Colla editore, Costabissara (VI), 2020."
+        },
+        "Layout": "Right",
+        "MediaType": "Image",
+        "published": true,
+        "LinkScheda": {
+          "URL": "",
+          "Layout": "TopLeft"
+        },
+        "animazione": {
+          "Effetto": ""
+        }
+      },
+      {
+        "Fit": "Contain",
+        "Kind": "ImageFullScreen",
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/29b0bb45-4f27-4b23-b6c0-79d611d49b2f.tif/full/max/0/default.jpg",
+          "Caption": "Image reproduced in Struttura Uomo. Manuale di anatomia artistica. Il movimento: passo, corsa e salto, vol. 2, Neri Pozza Editore, Vicenza, 2001.",
+          "bgColor": "rgba(64, 63, 68, 1)"
+        },
+        "Position": "BottomLeft",
+        "published": true,
+        "LinkScheda": {
+          "URL": "",
+          "Layout": "TopLeft"
+        },
+        "animazione": {
+          "Effetto": ""
+        }
+      },
+      {
+        "Kind": "SplitImage",
+        "Text": "Such a precise study of the human body as that proposed by the Venetian professors cannot disregard the contribution offered by photography, a medium that has supported teaching in the Academies since the mid-nineteenth century. In the second volume of Struttura Uomo, subtitled Il movimento: passo, corsa, salto, several chronophotographic studies by the photographers Eadweard Muybridge and Etienne-Jules Marey are reproduced, aimed at capturing the sequences of walking, running, and jumping. The authors of the manual use them to highlight the angular shifts of the entire body during the phases of movement. From the displacement of various points in space, dynamic trails of motion develop in its different variants.",
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/b83103f7-0c4b-471e-872d-04b614d0ed28.tif/full/max/0/default.jpg",
+          "Caption": "Image reproduced in Struttura Uomo. Manuale di anatomia artistica. Il movimento: passo, corsa e salto, vol. 2, Neri Pozza Editore, Vicenza, 2001. "
+        },
+        "Layout": "Right",
+        "MediaType": "Image",
+        "published": true,
+        "LinkScheda": {
+          "URL": "",
+          "Layout": "TopLeft"
+        },
+        "animazione": {
+          "Effetto": ""
+        }
+      },
+      {
+        "Kind": "InlineText",
+        "Text": "<b>The teaching of Maria Cristina Galli at the Brera academy</b><br /><b>Anatomy as a process of knowledge</b><br /><br /><br />It was Maria Cristina Galli, a former student of Professor Mauro Zocchetta in Venice, who introduced this teaching method into the Chair of Artistic Anatomy at the Accademia di Belle Arti di Brera, where she has held the position since 1992.<br /><br />The professor’s approach does not confine itself to the technical-scientific dimension of drawing. While grounded in the construction and deconstruction of the “transparent” body, it broadens its scope: no longer self-referential knowledge, but a practice that becomes an integral part of artistic research. The figure, together with the tools and gestures specific to anatomical inquiry — sectioning, incising, spreading apart, as well as observing with care and precision — becomes a formative opportunity to refine the sensitivity and methodological awareness of each student.<br /><br />From this perspective, a central role is also played by the relational dimension of the classroom, understood as a laboratory for dialogue and shared experimentation. With the support of the professor and the group, each young artist is encouraged to shape their own style through painting techniques applied mainly on paper, moving beyond structural analysis alone to enter the broader territory of painting.",
+        "published": true,
+        "animazione": {
+          "Effetto": ""
+        }
+      },
+      {
+        "Kind": "InlineImage",
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/6775223f-8472-46ae-9e78-ca84b4113700.tif/full/max/0/default.jpg",
+          "Caption": "Ⓒ Maria Cristina Galli, drawing on the blackboard during an Artistic Anatomy class at the Accademia di Brera in 2020."
+        },
+        "published": true,
+        "LinkScheda": {
+          "URL": "",
+          "Layout": "TopLeft"
+        },
+        "animazione": {
+          "Effetto": ""
+        }
+      },
+      {
+        "Kind": "InlineText",
+        "Text": "<p><strong>A rigorous method</strong><br /><br /><br /><br />In keeping with her illustrious predecessors, Galli’s teaching relies on frontal blackboard lectures. In the image, each element is constructed through layering and transparency using chalk. Alongside the three contraposed figures are four analytical studies of the pelvis: the transverse section at the level of the iliac wings, the sagittal section, and two volumetric developments from a posterior viewpoint.<br /><br />The classroom also includes other traditional tools of academic anatomical teaching—the skeleton, individual bones (both cast and plastic models), and the reference manual—now accompanied by resources once unthinkable. Alongside traditional materials circulate 3D-printed bones and digital images sourced through search engines, social networks, and anatomy apps intended for medical students.</p>",
+        "published": true,
+        "animazione": {
+          "Effetto": ""
+        }
+      }
+    ],
+    "bibliography": [
+      {
+        "Title": "AA.VV.",
+        "Description": "La città di Brera. Due secoli di Anatomia artistica. Dalla macchina corporea al corpo vissuto. Milano: Scheiwiller Vanni, 2000."
+      },
+      {
+        "Title": "Bammes, Gottfried.",
+        "Description": "Die Gestalt des Menschen: Lehr- und Handbuch der Künstleranatomie. Freiburg: Christophorus Verlagt GmbH & Co. KG, 1964. "
+      },
+      {
+        "Title": "Ciampolini, Marco, Gerardo de Simone, Chiara Nenci and Piero Andrea Ricci.",
+        "Description": "Il corpo e le arti. Accademie, Disegno, Anatomia. Pisa: Edizioni ETS, 2016."
+      },
+      {
+        "Title": "Lolli, Alberto, Mauro Zocchetta and Renzo Peretti.",
+        "Description": "Struttura Uomo. Manuale di anatomia artistica. Il movimento: passo, corsa e salto. Vol. 2. Vicenza: Neri Pozza Editore, 2001."
+      },
+      {
+        "Title": "Lolli, Alberto, Mauro Zocchetta and Renzo Peretti.",
+        "Description": " Struttura Uomo. Manuale di anatomia artistica. Il movimento: passo, corsa e salto. Vol. 2. Vicenza: Neri Pozza Editore, 2001."
+      },
+      {
+        "Title": "Lolli, Alberto, Mauro Zocchetta and Renzo Peretti.",
+        "Description": "Struttura Uomo in movimento. Manuale di anatomia artistica. Vicenza: Angelo Colla Editore, 2019. First edition 2015. "
+      },
+      {
+        "Title": "Madesani, Angela. Maria Cristina Galli.",
+        "Description": "Sindoni quotidiane. Milan: Baldini Castoldi Dalai Editore, 2007.\n"
+      },
+      {
+        "Title": "Mariani, Anna",
+        "Description": "ed. Il palazzo di Brera e le sue istituzioni. Soveria Mannelli: Rubbettino, 2022."
+      },
+      {
+        "Title": "Plaitano, Greta.",
+        "Description": "Il “vero” ideale. Il corpo umano tra pedagogia artistica e scientifica. Milan–Udine: Mimesis, 2025."
+      }
+    ],
+    "credits": [
+      {
+        "Title": "Suggested citation",
+        "Description": "The Teaching of Artistic Anatomy in Contemporary Practice, published online in 2026 through IARTNET, Brera Academy of Fine Arts."
+      },
+      {
+        "Title": "Image credits",
+        "Description": "The illustrations reproduced from the Struttura Uomo volumes are credited as follows and should be acknowledged in the list of illustrations:\n\n© Alberto Lolli\n© Mauro Zocchetta\n© Renzo Peretti\n© Angelo Colla Editore\n© Neri Pozza Editore\n\nFor works and photographs by Maria Cristina Galli:\n\n© Maria Cristina Galli / Photo: Fabio Campari (licence to be specified)\n"
+      },
+      {
+        "Title": "Project Staff",
+        "Description": "Fabio Campari has direct experience of Maria Cristina Galli’s teaching, having been both her student and a voluntary teaching assistant.\n"
+      }
+    ]
+  }
+}

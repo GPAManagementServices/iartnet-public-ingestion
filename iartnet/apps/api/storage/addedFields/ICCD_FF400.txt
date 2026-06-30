@@ -1,0 +1,8 @@
+Column A = Istituzione,
+Column B = Gruppo di lavoro,
+Column C = NCT_RVEL,
+Column D = FUO,
+Column E = ADB,
+Column F = RELAZIONI,
+Column G = TAGS,
+Column H = Nome file immagine ad alta risoluzione

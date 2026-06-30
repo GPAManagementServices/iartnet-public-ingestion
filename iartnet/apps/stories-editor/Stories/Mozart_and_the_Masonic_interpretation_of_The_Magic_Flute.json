@@ -1,0 +1,617 @@
+{
+  "id": "",
+  "name": "Mozart and the Masonic interpretation of The Magic Flute",
+  "description": "",
+  "created_at": "2026-05-16T08:35:55.995Z",
+  "updated_at": "2026-06-16T07:57:57.564Z",
+  "publish_state": "draft",
+  "ext_json": {
+    "Header": {
+      "Layout": "ImageBackground Text Right",
+      "Title": "Mozart and the Masonic interpretation of The Magic Flute",
+      "SubTitle": null,
+      "SEO": null,
+      "FontColor": "rgba(255, 255, 255, 1)",
+      "Chip": "ACCADEMIA TEATRO ALLA SCALA",
+      "Image": {
+        "URL": "https://iiif.gpams.it/iiif/2/f71d88bc-4806-4f26-8dc6-f43b446f057f.jpg/full/max/0/default.jpg"
+      },
+      "IndexImage": {
+        "URL": "https://iiif.gpams.it/iiif/2/f71d88bc-4806-4f26-8dc6-f43b446f057f.jpg/full/max/0/default.jpg"
+      },
+      "HeaderLayoutTheme": "Light"
+    },
+    "sections": [
+      {
+        "Text": "The Magic Flute, completed in 1791, is considered one of the most important works in Mozart\\'s artistic output, to which, over time, symbolic meanings of a mystical nature have often been attributed, given its fairy-tale atmosphere. Indeed, although relatively recent studies have sought to refute this view, the opera has been regarded by many as an expression of the Masonic universe: this is likely also attributable to Mozart\\'s own membership of Freemasonry, a socio-cultural phenomenon of a controversial nature that developed particularly during the Modern Age. This secret society is also said to have drawn part of its symbolism from ancient civilisations, including, of course, Egyptian civilisation, whose setting is, in a sense, recreated in The Magic Flute: but this represents only one of the elements of Masonic symbolism that some have sought to identify within the opera, alongside the characters\\' personalities and the plot itself.",
+        "Kind": "TextIntro",
+        "published": true,
+        "animazione": {
+          "Effetto": ""
+        }
+      },
+      {
+        "Position": "BottomRight",
+        "Fit": "Cover",
+        "LinkScheda": {
+          "Layout": "TopLeft",
+          "URL": "/2016-2017-2220"
+        },
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/49064049-159a-49b8-ab29-ded9b5e19a48.jpg/full/max/0/default.jpg"
+        },
+        "Kind": "ImageFullScreen",
+        "published": true,
+        "animazione": {
+          "Effetto": ""
+        }
+      },
+      {
+        "Text": "<b>Freemasonry in Austria at the time the opera was composed</b><br /><br /><br />The opera\\'s libretto was written by Emanuel Schikaneder and Mozart, as well as, probably, by Karl Ludwig Giesecke: all three belonged to Freemasonry, although there is no evidence of Schikaneder\\'s membership of any Viennese lodge. In any case, in 18th-century Habsburg Austria, the fortunes of the secret society had been mixed, depending on the attitude adopted by the sovereigns towards it. Whilst Francis I had been an initiate, his wife Maria Theresa adopted a more ambiguous stance towards the Freemasons, going so far as to ban lodge meetings; and, following the more open period of Joseph II\\'s reign, Leopold II\\'s hostility was supported by that of the Catholic Church, which brought its influence to bear.",
+        "Kind": "InlineText",
+        "published": true,
+        "animazione": {
+          "Effetto": ""
+        }
+      },
+      {
+        "LinkScheda": {
+          "Layout": "TopLeft",
+          "URL": "/2015-2016-2545"
+        },
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/80b32a2d-9d07-4fa5-bded-aac7cd578dc8.jpg/full/max/0/default.jpg",
+          "Caption": "Eighteenth-century Masonic iconography — Brera collection",
+          "bgColor": "rgba(255, 255, 255, 1)"
+        },
+        "Kind": "InlineImage",
+        "published": true,
+        "animazione": {
+          "Effetto": ""
+        }
+      },
+      {
+        "Text": "According to the nineteenth-century philologist and theologian Zille (himself a Freemason), The Magic Flute was said to represent a cross-section of Austrian society: for example, Empress Maria Theresa could be identified with the Queen of the Night; the people with Pamina; the clergy with Monostatos; and Sarastro with Ignaz von Born, the Masonic High Priest. The opera was thus composed within this context, in the wake of a cultural trend that was by then moving away from rationality in favour of natural and mysterious themes, although some pamphlets published shortly afterwards attempted to attribute underlying revolutionary political meanings to it.",
+        "Kind": "TextIntro",
+        "published": true,
+        "animazione": {
+          "Effetto": ""
+        }
+      },
+      {
+        "Layout": "Left",
+        "Text": "<b>Mozart and Freemasonry</b><br /><br /><br />Mozart, encouraged by the writer Otto Gemmingen, had joined Freemasonry (like his father Leopold) in 1784 and, before his death, appears to have been planning the foundation of a new lodge. Undoubtedly, he was influenced by the cultural context in which he lived, steeped in Enlightenment values, and was particularly drawn to themes such as tolerance and forgiveness. This certainly did not prevent him from developing his own independent view on the issues of the time: he did not agree with the use of violence in the French Revolution and, in his works, an originality emerges resulting from the combination of diverse themes — including alchemical and mystical ones — meaning that he cannot be placed within a specific school of thought. Mozart\\'s conception of Freemasonry expressed solidarity with the\\'good people\\', the common folk, in contrast to the powerful, and was directed towards the idealisation of the state of nature. However, he sought to keep his Masonic activities as hidden as possible.",
+        "LinkScheda": {
+          "Layout": "TopLeft",
+          "URL": "/2015-2016-2473"
+        },
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/69101eac-e4b0-47f1-b94b-fa540acae1ef.jpg/1000,0,3300,8166/800,/0/default.jpg",
+          "Caption": null
+        },
+        "Kind": "SplitImage",
+        "published": true,
+        "animazione": {
+          "Effetto": ""
+        },
+        "MediaType": "Image"
+      },
+      {
+        "Position": "BottomRight",
+        "Fit": "Cover",
+        "LinkScheda": {
+          "Layout": "TopLeft",
+          "URL": "/2015-2016-2468"
+        },
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/36646c3f-d9ba-4542-9e95-f686ad9c11ef.jpg/full/max/0/default.jpg"
+        },
+        "Kind": "ImageFullScreen",
+        "published": true,
+        "animazione": {
+          "Effetto": ""
+        }
+      },
+      {
+        "Position": "BottomRight",
+        "Fit": "Cover",
+        "LinkScheda": {
+          "Layout": "TopLeft",
+          "URL": "/2016-2017-2167"
+        },
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/317827c1-46c5-40ae-a023-cdb323821021.jpg/full/max/0/default.jpg"
+        },
+        "Kind": "ImageFullScreen",
+        "published": true,
+        "animazione": {
+          "Effetto": ""
+        }
+      },
+      {
+        "Position": "BottomRight",
+        "Fit": "Cover",
+        "LinkScheda": {
+          "Layout": "TopLeft",
+          "URL": "/2015-2016-2493"
+        },
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/5d7181a7-af36-4f57-ad83-6ff9be303289.jpg/full/max/0/default.jpg"
+        },
+        "Kind": "ImageFullScreen",
+        "published": true,
+        "animazione": {
+          "Effetto": ""
+        }
+      },
+      {
+        "Position": "BottomRight",
+        "Fit": "Contain",
+        "LinkScheda": {
+          "Layout": "TopLeft",
+          "URL": "/2015-2016-2670"
+        },
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/649fa0ed-0109-42be-9b73-a219d815eabd.jpg/full/max/0/default.jpg",
+          "bgColor": "rgba(5, 1, 2, 1)"
+        },
+        "Kind": "ImageFullScreen",
+        "published": true,
+        "animazione": {
+          "Effetto": ""
+        }
+      },
+      {
+        "Text": "<b>Fantastic models and settings in The Magic Flute</b><br /><br /><br />The Magic Flute does not have a defined setting but, rather, with its temples and pyramids, aims to evoke exotic and esoteric atmospheres reminiscent of ancient Egypt. In 18th-century Europe, the growing craze for \\'Egyptomania\\' had led to Egypt being regarded as a source of wisdom, the origin of every cult and myth, and, at the same time, a mysterious and sacred place. It is no coincidence that the opera\\'s libretto drew inspiration from Ignaz von Born\\'s text, Über die Mysterien der Ägyptier (1784), and before that from Jean Terrasson\\'s French novel Sethos (1731), in which the protagonist, initiated into the Egyptian mysteries, must undergo trials similar to those of Mozart\\'s Tamino.",
+        "Kind": "TextIntro",
+        "published": true,
+        "animazione": {
+          "Effetto": ""
+        }
+      },
+      {
+        "LinkScheda": {
+          "Layout": "TopLeft",
+          "URL": "/2016-2017-2356"
+        },
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/5836775f-b396-458a-8d3b-55e87f3639ba.jpg/full/max/0/default.jpg",
+          "Caption": "Temples of Nature, Wisdom and Reason — set design (AMBIENTAZIONE)"
+        },
+        "Kind": "InlineImage",
+        "published": true,
+        "animazione": {
+          "Effetto": ""
+        }
+      },
+      {
+        "Text": "According to some hypotheses, certain rituals practised by the Egyptians may have aroused the interest of Freemasonry, particularly regarding the contrast between light and darkness, helping to spread the belief that Freemasonry originated in Egypt itself. For example, the appearance of temples in an ancient style — neither in their number nor in their sequence — as occurs at the end of the first act (the temples of Nature, Wisdom and Reason) does not seem coincidental. It must be emphasised, however, that these themes and the use of Egyptian symbolism were quite common in librettos of the time; there is no definitive evidence that Mozart and his collaborators intended to convey specific meanings in this way.",
+        "Kind": "TextIntro",
+        "published": true,
+        "animazione": {
+          "Effetto": ""
+        }
+      },
+      {
+        "Position": "BottomRight",
+        "Fit": "Contain",
+        "LinkScheda": {
+          "Layout": "TopLeft",
+          "URL": "/2016-2017-2290"
+        },
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/4264f567-cc22-4b2c-886f-35eb7ef8ff6d.jpg/full/max/0/default.jpg",
+          "bgColor": "rgba(5, 1, 2, 1)"
+        },
+        "Kind": "ImageFullScreen",
+        "published": true,
+        "animazione": {
+          "Effetto": ""
+        }
+      },
+      {
+        "Layout": "RightInline",
+        "Text": "<b>Plot and possible Masonic meanings</b><br /><br /><br />The plot sees various characters, in particular Prince Tamino, embark on a journey in which they must confront their own fears, by undergoing trials, to ultimately achieve happiness: it is, in any case, a representation of the struggle between Light and Darkness, of the victory of Good over Evil. The opera falls within the Zauberstück genre, featuring numerous symbols and elements typical of fairy tales or other popular fantastical narratives, to which one need not necessarily attribute an ultimate Masonic meaning. However, its Masonic interpretation sees it as a transposition of initiation, enabling the transition from ignorance to knowledge.",
+        "LinkScheda": {
+          "Layout": "TopLeft",
+          "URL": "/2015-2016-2722"
+        },
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/3e3a9512-0282-4ee9-9bbd-171429b22f51.jpg/full/max/0/default.jpg",
+          "Caption": "Lorem ipsum dolor sit amet consectetur. Nec id lacus mi aenean nisi pretium bibendum. Pellentesque egestas facilisis et mattis in ut vel. Id in amet tristique pretium tristique convallis."
+        },
+        "Kind": "SplitImage",
+        "published": true,
+        "animazione": {
+          "Effetto": ""
+        },
+        "MediaType": "Image"
+      },
+      {
+        "Layout": "LeftInlineVertical",
+        "Text": "Only through this journey — marked by stages that would lead him from apprentice to master — could man be free and happy, regardless of his social and cultural status. The Magic Flute can be divided into three parts (a number favoured by Freemasonry) in which the transitions leading to the triumph of Light are evident, whilst the trials of silence, water and fire seem to mirror those undergone by aspiring Freemasons. Tamino and Pamina, once united and having passed the trials, thus enter the Temple of the Sun, marking the transition from human mediocrity to virtue.",
+        "LinkScheda": {
+          "Layout": "TopLeft",
+          "URL": "/2015-2016-2482"
+        },
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/8f4a0acf-9cbd-44ab-a407-8c3a74e96520.jpg/full/max/0/default.jpg",
+          "Caption": "Lorem ipsum dolor sit amet consectetur. Nec id lacus mi aenean nisi pretium bibendum. Pellentesque egestas facilisis et mattis in ut vel. Id in amet tristique pretium tristique convallis."
+        },
+        "Kind": "SplitImage",
+        "published": true,
+        "animazione": {
+          "Effetto": ""
+        },
+        "MediaType": "Image"
+      },
+      {
+        "Position": "BottomLeft",
+        "Fit": "Cover",
+        "LinkScheda": {
+          "Layout": "TopLeft",
+          "URL": "/2016-2017-2259"
+        },
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/1e7fdba5-0e5e-49f0-a1ff-ac8f8236b704.jpg/full/max/0/default.jpg",
+          "Caption": "Lorem ipsum dolor sit amet consectetur. Nec id lacus mi aenean nisi pretium bibendum. Pellentesque egestas facilisis et mattis in ut vel. Id in amet tristique pretium tristique convallis."
+        },
+        "Kind": "ImageFullScreen",
+        "published": true,
+        "animazione": {
+          "Effetto": ""
+        }
+      },
+      {
+        "Kind": "ScrollReveal",
+        "published": true,
+        "animazione": {
+          "Effetto": ""
+        },
+        "Paragraphs": [
+          {
+            "Text": "Symbolic meanings of the characters<br />Allegorical meanings can be attributed to the characters of The Magic Flute and the events concerning them, some examples of which we shall review. <br />Papageno, the bird-catcher clad in feathers, can be associated, from a Masonic perspective, with the element of Air and the positive world represented by Sarastro. Above all, however, he must be regarded as an image of man in his natural state, who does not attain initiation but is primarily concerned with his earthly needs, such as food and female company. In a sense, given Mozart’s ‘popular’ conception of Freemasonry, it can be said that he identified in part with Papageno.",
+            "Image": {
+              "URL": "https://iiif.gpams.it/iiif/2/bda197fa-c1f3-49d7-a4e3-5e096a120e57.jpg/full/max/0/default.jpg",
+              "Caption": "Lorem ipsum dolor sit amet consectetur. Nec id lacus mi aenean nisi pretium bibendum. Pellentesque egestas facilisis et mattis in ut vel. Id in amet tristique pretium tristique convallis."
+            },
+            "LinkScheda": {
+              "Layout": "TopLeft",
+              "URL": "/2016-2017-2254"
+            }
+          }
+        ]
+      },
+      {
+        "Kind": "ScrollReveal",
+        "published": true,
+        "animazione": {
+          "Effetto": ""
+        },
+        "Paragraphs": [
+          {
+            "Text": "Sarastro is said to symbolise wisdom and goodness, representing the principal expression of the positive world, linked to the natural elements of the Sun, Fire, Air and Gold: it is no coincidence that he has also inherited the Necklace of the Sun, the symbol of supreme wisdom. Although this symbol was, however, considered the preserve of men alone (a detail that would confirm the misogynistic attitude attributed to Freemasons), Pamina nevertheless manages to obtain the necklace through the initiation trials, which thus allow her to pass into the solar world, abandoning the nocturnal world of her mother, the Queen of the Night.<br /><br />The Queen of the Night, in fact, is associated with elements opposed to those of Sarastro, such as the Moon, Water, Earth and Silver; furthermore, he regards her as fragile and fickle, like all women, so much so that the same characteristics are attributed to the three Ladies who come to Tamino’s aid against the serpent, albeit in a benevolent sense. However, Pamina ultimately subverts this Masonic vision, achieving gender equality following the victory of Good over Evil: thanks to her courage and purity, she can be seen as the embodiment of Mozart’s feminine ideal.<br />",
+            "Image": {
+              "URL": "https://iiif.gpams.it/iiif/2/eed316b5-63e0-44c3-b690-64e9ad96fc8a.jpg/full/max/0/default.jpg",
+              "Caption": "Lorem ipsum dolor sit amet consectetur. Nec id lacus mi aenean nisi pretium bibendum. Pellentesque egestas facilisis et mattis in ut vel. Id in amet tristique pretium tristique convallis."
+            },
+            "LinkScheda": {
+              "Layout": "TopLeft",
+              "URL": "/2015-2016-2538"
+            }
+          }
+        ]
+      },
+      {
+        "Kind": "ScrollReveal",
+        "published": true,
+        "animazione": {
+          "Effetto": ""
+        },
+        "Paragraphs": [
+          {
+            "Text": "<p>The Moor Monostatos belongs to the Queen’s nocturnal realm, being associated with the Earth: he is a traitor and a coward, who, after abandoning Sarastro, reveals his lecherous nature by harassing Pamina. Finally, Tamino, the prince in Japanese dress, is presented to Sarastro by three children bearing silver palm branches, a symbol of resurrection: this image likely evokes the rite of introducing a new initiate to a lodge. The same objects are present during the procession of the priests, where the scene is completed by pyramids and horns. In a sense, therefore, the great variety of characters, their exotic connotations (much like the setting), and the presence of magical objects and various natural elements ultimately make the opera a sort of grand Wunderkammer.</p>",
+            "Image": {
+              "URL": "https://iiif.gpams.it/iiif/2/b0705a60-c40a-4134-bd56-8739f8c84043.jpg/full/max/0/default.jpg",
+              "Caption": "Lorem ipsum dolor sit amet consectetur. Nec id lacus mi aenean nisi pretium bibendum. Pellentesque egestas facilisis et mattis in ut vel. Id in amet tristique pretium tristique convallis."
+            },
+            "LinkScheda": {
+              "Layout": "TopLeft",
+              "URL": "/2016-2017-2164"
+            }
+          }
+        ]
+      },
+      {
+        "Position": "TopRight",
+        "Fit": "Cover",
+        "LinkScheda": {
+          "Layout": "TopLeft",
+          "URL": "/2015-2016-2696"
+        },
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/580fb245-aefe-4746-a40e-0d3bcfe5305b.jpg/full/max/0/default.jpg"
+        },
+        "Kind": "ImageFullScreen",
+        "published": true,
+        "animazione": {
+          "Effetto": ""
+        }
+      }
+    ],
+    "bibliography": [
+      {
+        "Title": "Basso, Alberto. ",
+        "Description": "L'invenzione della gioia. Musica e massoneria nell'età dei Lumi. Garzanti, 1994."
+      },
+      {
+        "Title": "Bramani, Lidia.",
+        "Description": "Mozart massone e rivoluzionario. Bruno Mondadori, 2005."
+      },
+      {
+        "Title": "Buch, D.J.",
+        "Description": "\"Die Zauberflöte, Masonic Opera, and other Fairy Tales\". Acta Musicologica 76, no. 2 (2004): 193–219."
+      },
+      {
+        "Title": "Decadi, A.",
+        "Description": "\"La musica del silenzio: il Flauto Magico\". Hiram 2 (2021): 26–33."
+      },
+      {
+        "Title": "Istel, E.",
+        "Description": "\"Mozart's 'Magic Flute' and Freemasonry\". The Musical Quarterly 13, no. 4 (1927): 510–527."
+      },
+      {
+        "Title": "Mila, Massimo.",
+        "Description": "Lettura del Flauto Magico. Einaudi, 1989."
+      },
+      {
+        "Title": "Tanca, Marcello. ",
+        "Description": "\"L'Egitto a Vienna: la geografia del Flauto Magico di Mozart\". In Territorialità: concetti, narrazioni, pratiche. Saggi per Angelo Turco, a cura di Claudio Arbore e Marco Maggioli. Franco Angeli, 2023."
+      }
+    ],
+    "credits": [
+      {
+        "Title": "Curator",
+        "Description": "Michele E. Gatto"
+      },
+      {
+        "Title": "Photography",
+        "Description": "Students on the Accademia Teatro alla Scala\\'s photography course"
+      }
+    ],
+    "catalogoOpereCitate": [
+      {
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/49064049-159a-49b8-ab29-ded9b5e19a48.jpg/full/max/0/default.jpg"
+        },
+        "Title": "Lorem ipsum",
+        "Author": "Lorem ipsum",
+        "Tags": [
+          "Lorem"
+        ],
+        "LinkScheda": {
+          "Layout": "TopLeft",
+          "URL": "/2016-2017-2220"
+        }
+      },
+      {
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/80b32a2d-9d07-4fa5-bded-aac7cd578dc8.jpg/full/max/0/default.jpg",
+          "Caption": "Eighteenth-century Masonic iconography — Brera collection"
+        },
+        "Title": "Dolor sit amet",
+        "Author": "Dolor Amet",
+        "Tags": [
+          "Lorem"
+        ],
+        "LinkScheda": {
+          "Layout": "TopLeft",
+          "URL": "/2015-2016-2545"
+        }
+      },
+      {
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/69101eac-e4b0-47f1-b94b-fa540acae1ef.jpg/1000,0,3300,8166/800,/0/default.jpg"
+        },
+        "Title": "",
+        "Author": "",
+        "Tags": [
+          "Lorem"
+        ],
+        "LinkScheda": {
+          "Layout": "TopLeft",
+          "URL": "/2015-2016-2473"
+        }
+      },
+      {
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/36646c3f-d9ba-4542-9e95-f686ad9c11ef.jpg/full/max/0/default.jpg"
+        },
+        "Title": "Adipiscing Elit",
+        "Author": "Adipiscing Elit",
+        "Tags": [
+          "Lorem"
+        ],
+        "LinkScheda": {
+          "Layout": "TopLeft",
+          "URL": "/2015-2016-2468"
+        }
+      },
+      {
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/317827c1-46c5-40ae-a023-cdb323821021.jpg/full/max/0/default.jpg"
+        },
+        "Title": "Adipiscing Elit",
+        "Author": "Adipiscing Elit",
+        "Tags": [
+          "Lorem"
+        ],
+        "LinkScheda": {
+          "Layout": "TopLeft",
+          "URL": "/2016-2017-2167"
+        }
+      },
+      {
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/5d7181a7-af36-4f57-ad83-6ff9be303289.jpg/full/max/0/default.jpg"
+        },
+        "Title": "Adipiscing Elit",
+        "Author": "Adipiscing Elit",
+        "Tags": [
+          "Lorem"
+        ],
+        "LinkScheda": {
+          "Layout": "TopLeft",
+          "URL": "/2015-2016-2493"
+        }
+      },
+      {
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/649fa0ed-0109-42be-9b73-a219d815eabd.jpg/full/max/0/default.jpg"
+        },
+        "Title": "Adipiscing Elit",
+        "Author": "Adipiscing Elit",
+        "Tags": [
+          "Lorem"
+        ],
+        "LinkScheda": {
+          "Layout": "TopLeft",
+          "URL": "/2015-2016-2670"
+        }
+      },
+      {
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/5836775f-b396-458a-8d3b-55e87f3639ba.jpg/full/max/0/default.jpg",
+          "Caption": "Temples of Nature, Wisdom and Reason — set design (AMBIENTAZIONE)"
+        },
+        "Title": "Adipiscing Elit",
+        "Author": "Adipiscing Elit",
+        "Tags": [
+          "Lorem"
+        ],
+        "LinkScheda": {
+          "Layout": "TopLeft",
+          "URL": "/2016-2017-2356"
+        }
+      },
+      {
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/4264f567-cc22-4b2c-886f-35eb7ef8ff6d.jpg/full/max/0/default.jpg"
+        },
+        "Title": "Adipiscing Elit",
+        "Author": "Adipiscing Elit",
+        "Tags": [
+          "Lorem"
+        ],
+        "LinkScheda": {
+          "Layout": "TopLeft",
+          "URL": "/2016-2017-2290"
+        }
+      },
+      {
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/3e3a9512-0282-4ee9-9bbd-171429b22f51.jpg/full/max/0/default.jpg",
+          "Caption": "Lorem ipsum dolor sit amet consectetur. Nec id lacus mi aenean nisi pretium bibendum. Pellentesque egestas facilisis et mattis in ut vel. Id in amet tristique pretium tristique convallis."
+        },
+        "Title": "Adipiscing Elit",
+        "Author": "Adipiscing Elit",
+        "Tags": [
+          "Lorem"
+        ],
+        "LinkScheda": {
+          "Layout": "TopLeft",
+          "URL": "/2015-2016-2722"
+        }
+      },
+      {
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/8f4a0acf-9cbd-44ab-a407-8c3a74e96520.jpg/full/max/0/default.jpg",
+          "Caption": "Lorem ipsum dolor sit amet consectetur. Nec id lacus mi aenean nisi pretium bibendum. Pellentesque egestas facilisis et mattis in ut vel. Id in amet tristique pretium tristique convallis."
+        },
+        "Title": "Adipiscing Elit",
+        "Author": "Adipiscing Elit",
+        "Tags": [
+          "Lorem"
+        ],
+        "LinkScheda": {
+          "Layout": "TopLeft",
+          "URL": "/2015-2016-2482"
+        }
+      },
+      {
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/1e7fdba5-0e5e-49f0-a1ff-ac8f8236b704.jpg/full/max/0/default.jpg",
+          "Caption": "Lorem ipsum dolor sit amet consectetur. Nec id lacus mi aenean nisi pretium bibendum. Pellentesque egestas facilisis et mattis in ut vel. Id in amet tristique pretium tristique convallis."
+        },
+        "Title": "Adipiscing Elit",
+        "Author": "Adipiscing Elit",
+        "Tags": [
+          "Lorem"
+        ],
+        "LinkScheda": {
+          "Layout": "TopLeft",
+          "URL": "/2016-2017-2259"
+        }
+      },
+      {
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/bda197fa-c1f3-49d7-a4e3-5e096a120e57.jpg/full/max/0/default.jpg",
+          "Caption": "Lorem ipsum dolor sit amet consectetur. Nec id lacus mi aenean nisi pretium bibendum. Pellentesque egestas facilisis et mattis in ut vel. Id in amet tristique pretium tristique convallis."
+        },
+        "Title": "Adipiscing Elit",
+        "Author": "Adipiscing Elit",
+        "Tags": [
+          "Lorem"
+        ],
+        "LinkScheda": {
+          "Layout": "TopLeft",
+          "URL": "/2016-2017-2254"
+        }
+      },
+      {
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/eed316b5-63e0-44c3-b690-64e9ad96fc8a.jpg/full/max/0/default.jpg",
+          "Caption": "Lorem ipsum dolor sit amet consectetur. Nec id lacus mi aenean nisi pretium bibendum. Pellentesque egestas facilisis et mattis in ut vel. Id in amet tristique pretium tristique convallis."
+        },
+        "Title": "Adipiscing Elit",
+        "Author": "Adipiscing Elit",
+        "Tags": [
+          "Lorem"
+        ],
+        "LinkScheda": {
+          "Layout": "TopLeft",
+          "URL": "/2015-2016-2538"
+        }
+      },
+      {
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/b0705a60-c40a-4134-bd56-8739f8c84043.jpg/full/max/0/default.jpg",
+          "Caption": "Lorem ipsum dolor sit amet consectetur. Nec id lacus mi aenean nisi pretium bibendum. Pellentesque egestas facilisis et mattis in ut vel. Id in amet tristique pretium tristique convallis."
+        },
+        "Title": "Adipiscing Elit",
+        "Author": "Adipiscing Elit",
+        "Tags": [
+          "Lorem"
+        ],
+        "LinkScheda": {
+          "Layout": "TopLeft",
+          "URL": "/2016-2017-2164"
+        }
+      },
+      {
+        "Image": {
+          "URL": "https://iiif.gpams.it/iiif/2/580fb245-aefe-4746-a40e-0d3bcfe5305b.jpg/full/max/0/default.jpg"
+        },
+        "Title": "Adipiscing Elit",
+        "Author": "Adipiscing Elit",
+        "Tags": [
+          "Lorem"
+        ],
+        "LinkScheda": {
+          "Layout": "TopLeft",
+          "URL": "/2015-2016-2696"
+        }
+      }
+    ]
+  }
+}

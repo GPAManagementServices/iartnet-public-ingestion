@@ -1,0 +1,18 @@
+﻿FROM php:8.5-fpm-alpine AS base
+RUN apk add --no-cache icu-dev libpq-dev libzip-dev zip unzip postgresql-client nginx supervisor
+RUN docker-php-ext-install -j$(nproc) bcmath intl pdo_pgsql zip
+COPY --from=composer:2.7 /usr/bin/composer /usr/bin/composer
+RUN sed -i 's/listen = 127.0.0.1:9000/listen = \/var\/run\/php-fpm.sock/' /usr/local/etc/php-fpm.d/www.conf && \
+    sed -i 's/;listen.owner = www-data/listen.owner = www-data/' /usr/local/etc/php-fpm.d/www.conf && \
+    sed -i 's/;listen.group = www-data/listen.group = www-data/' /usr/local/etc/php-fpm.d/www.conf
+COPY nginx.conf /etc/nginx/nginx.conf
+RUN mkdir -p /etc/supervisor/conf.d /var/log/supervisor /var/run/nginx /var/log/nginx
+WORKDIR /var/www/html
+COPY --chown=www-data:www-data . /var/www/html
+RUN touch /var/log/supervisord.log && \
+    chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache /var/log /var/run && \
+    chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+HEALTHCHECK --interval=30s --timeout=3s --start-period=40s --retries=3 \
+    CMD php artisan --version || exit 1
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]

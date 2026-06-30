@@ -1,0 +1,304 @@
+mappings:
+
+  # ============================================
+  # IDENTIFICATORI
+  # ============================================
+
+  - source_field: "Identificatore della risorsa"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "js_resource_identifier" 
+    multiple: false
+    transform: "string"
+    description: "js_resource_identifier"  
+
+  # ============================================
+  # TITOLI
+  # ============================================
+
+  - source_field: "Titolo"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "title"
+    multiple: false
+    transform: "string"
+    lang: "it"
+    description: "Titolo dell'opera (dc:title)" 
+
+  # ============================================
+  # TIPOLOGIA
+  # ============================================
+
+  - source_field: "Tipo di risorsa"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "type"
+    multiple: false
+    transform: "string"
+    lang: "it"
+    description: "Tipologia dell'oggetto (dc:type)"
+
+  - source_field: "Soggetto e Parole Chiave"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "subject"
+    multiple: false
+    transform: "string"
+    lang: "it"
+    description: "Soggetto dell'opera (dc:subject)"        
+
+  # ============================================
+  # DESCRIZIONE
+  # ============================================
+
+  - source_field: "Descrizione"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "description"
+    multiple: false
+    transform: "string"
+    lang: "it"
+    description: "Descrizione dell'opera (dc:description)"
+
+  # ============================================
+  # RELAZIONI
+  # ============================================
+
+  - source_field: "Relazione"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "relation"
+    multiple: false
+    transform: "string"
+    lang: "it"
+    description: "Relazione"    
+
+  
+  # ============================================
+  # AUTORI / AGENTI
+  # ============================================
+
+  - source_field: "Autore o Creatore"
+    target_table: "agents"
+    target_field: "ext_json"
+    multiple: true
+    description: "Autore principale (dc:creator)"
+
+  - source_field: "Autore di contributo subordinato"
+    target_table: "agents"
+    target_field: "ext_json"
+    multiple: true
+    description: "Autore di contributo subordinato"
+    
+  # ============================================
+  # LUOGHI
+  # ============================================
+
+  - source_field: "Luogo"
+    target_table: "places"
+    target_field: "ext_json"
+    multiple: true
+    description: "Luogo"    
+
+  # ============================================
+  # DATAZIONE
+  # ============================================
+
+  - source_field: "Data"
+    target_table: "timespans"
+    target_field: "begin_date"
+    multiple: false
+    transform: "date_parse"
+    description: "Datazione inizio (edm:begin)"
+
+  - source_field: "Data"
+    target_table: "timespans"
+    target_field: "end_date"
+    multiple: false
+    transform: "date_parse"
+    description: "Datazione fine (edm:end)"
+
+  # ============================================
+  # RISORSE DIGITALI
+  # ============================================
+
+  - source_field: "Fonte"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "identifier"
+    multiple: true
+    transform: "string"
+    description: "Nome file immagine (dc:identifier)"
+
+  - source_field: "Risorse Digitali"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "digital_resources"
+    multiple: false
+    transform: "string"
+    description: "Risorse Digitali"     
+
+
+  # =========================================================
+  # TECHNICAL — MATERIALS (dc:medium)
+  # =========================================================
+
+  - source_field: "Formato"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "medium"
+    lang: "it"
+    transform: "string"
+    multiple: true
+    description: "Materiale dell'opera (dc:medium)"
+
+
+  # =========================================================
+  # INFO
+  # =========================================================
+
+  - source_field: "Editore"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "publisher"
+    multiple: false
+    transform: "string"
+    description: "Editore"      
+
+  - source_field: "Copertura"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "coverage"
+    multiple: false
+    transform: "string"
+    description: "Copertura"    
+
+  - source_field: "Gestione dei diritti"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "copyrights_management"
+    multiple: false
+    transform: "string"
+    description: "Copertura"      
+
+  - source_field: "Contesto"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "context"
+    multiple: false
+    transform: "string"
+    description: "Contesto"        
+
+  - source_field: "Opera"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "opera"
+    multiple: false
+    transform: "string"
+    description: "Opera"     
+
+  - source_field: "Compositore"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "composer"
+    multiple: false
+    transform: "string"
+    description: "Compositore"     
+
+  - source_field: "OrchestraGruppo"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "orchestra_group"
+    multiple: false
+    transform: "string"
+    description: "Orchestra/Gruppo"   
+
+  - source_field: "DirettoreOrchestra"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "director_orchestra"
+    multiple: false
+    transform: "string"
+    description: "Director Orchestra"     
+
+  - source_field: "RegistaCoreografo"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "director"
+    multiple: false
+    transform: "string"
+    description: "Director"    
+
+  - source_field: "Dipartimento"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "department"
+    multiple: false
+    transform: "string"
+    description: "Department"          
+ 
+  - source_field: "AnnoAccademico"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "academic_year"
+    multiple: false
+    transform: "string"
+    description: "Academic Year"   
+
+  - source_field: "Corso"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "course"
+    multiple: false
+    transform: "string"
+    description: "Course"     
+
+  - source_field: "Docente"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "teacher"
+    multiple: false
+    transform: "string"
+    description: "Teacher"
+
+  - source_field: "Regìa"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "Director"
+    multiple: false
+    transform: "string"
+    description: "Director"    
+
+  - source_field: "Ricerche e sceneggiatura"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "Research and Scenario"
+    multiple: false
+    transform: "string"
+    description: "Research and Scenario"     
+
+  - source_field: "Organizzazione generale"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "General Organization"
+    multiple: false
+    transform: "string"
+    description: "General Organization"     
+
+  - source_field: "Direttore della fotografia"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "Director of Photography"
+    multiple: false
+    transform: "string"
+    description: "Director of Photography"      
+
+config:
+  master_schema: "iartnet_master"
+  default_record:
+    edm_type: "TEXT"
+    publish_state: "draft"
+    primary_lang: "it"
+    is_translated: false
+  on_missing_field: "warn"
+  transaction_per_record: true

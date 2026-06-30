@@ -1,0 +1,12 @@
+Column A = Istituzione,
+Column B = Gruppo di lavoro,
+Column C = CDM,
+Column D = FUO,
+Column E = ADB,
+Column F = ATC,
+Column G = RSN,
+Column H = RSB,
+Column I = ALB,
+Column J = relazioni,
+Column K = tags,
+Column L = Nome file immagine ad alta risoluzione

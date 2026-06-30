@@ -1,0 +1,120 @@
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+*.cert
+secrets/
+credentials/
+
+# Laravel
+/vendor/
+node_modules/
+bootstrap/cache/*
+!bootstrap/cache/.gitignore
+storage/*.key
+storage/logs/*
+storage/framework/cache/*
+storage/framework/sessions/*
+storage/framework/views/*
+!storage/framework/cache/.gitignore
+!storage/framework/sessions/.gitignore
+!storage/framework/views/.gitignore
+
+# Node / Nuxt
+node_modules/
+.npm
+.nuxt/
+.nuxt
+dist/
+.output/
+.cache/
+.nitro/
+.vite/
+
+# PHP
+composer.phar
+# composer.lock MUST be committed for reproducible builds
+.phpunit.result.cache
+.phpunit.cache
+
+# Pest
+.pest/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# Cursor
+.cursor/cache/
+
+# Docker local data (if any)
+infra/docker/postgres_data/
+infra/docker/redis_data/
+infra/docker/minio_data/
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Testing
+coverage/
+.nyc_output/
+
+# Build artifacts
+build/
+*.tar.gz
+*.zip
+
+# Delivery packages (compilati)
+delivery/test/iartnet-api/
+delivery/prod/iartnet-api/
+delivery/test/.env
+delivery/prod/.env
+
+# Deploy (ref tracking, no secrets)
+.deploy_last_ref
+.deploy_previous_ref
+.deploy_api.lock
+
+# DB pre-restore dumps
+dbBackup/pre_restore/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.bak
+*.swp
+apps/api/database/migrations/deprecated/
+opt/Ingestion/iartnet/apps/api/database/migrations/deprecated/
+
+# Local utility scripts
+infra/docker/api/compose/*.sh
+dbBackup/*.sql
+../storage/
+infra/docker/api/php/entrypoint.prefusion.sh

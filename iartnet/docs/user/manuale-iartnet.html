@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <title>Manuale utente IARTNET — Ingestion e Master Data</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 20mm 18mm 22mm 18mm;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: "Segoe UI", Calibri, Arial, sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.45;
+      color: #1a1a1a;
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      font-size: 22pt;
+      color: #0f3d5c;
+      border-bottom: 2px solid #0f3d5c;
+      padding-bottom: 0.3em;
+      margin: 0 0 1em 0;
+      page-break-after: avoid;
+    }
+    h1.chapter-title {
+      page-break-before: always;
+      margin-top: 0;
+    }
+    h1:first-of-type {
+      page-break-before: avoid;
+    }
+    h2 {
+      font-size: 14pt;
+      color: #164a6e;
+      margin-top: 1.4em;
+      page-break-after: avoid;
+    }
+    h3 {
+      font-size: 12pt;
+      color: #1f5f87;
+      margin-top: 1.1em;
+      page-break-after: avoid;
+    }
+    h4 {
+      font-size: 11pt;
+      color: #2a6f98;
+      margin-top: 0.9em;
+      page-break-after: avoid;
+    }
+    p { margin: 0.5em 0 0.8em 0; }
+    blockquote {
+      margin: 0.8em 0;
+      padding: 0.6em 1em;
+      border-left: 4px solid #7eb8da;
+      background: #f3f8fb;
+      color: #333;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #ccd8e0;
+      margin: 1.5em 0;
+    }
+    code {
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 0.92em;
+      background: #f2f4f6;
+      padding: 0.1em 0.35em;
+      border-radius: 3px;
+    }
+    pre {
+      background: #f5f7f9;
+      border: 1px solid #dde4ea;
+      border-radius: 4px;
+      padding: 0.8em 1em;
+      overflow-x: auto;
+      font-size: 9pt;
+      line-height: 1.35;
+      page-break-inside: avoid;
+    }
+    pre code { background: none; padding: 0; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0.8em 0 1.2em 0;
+      font-size: 9pt;
+      page-break-inside: avoid;
+    }
+    th, td {
+      border: 1px solid #c5d0d8;
+      padding: 0.45em 0.55em;
+      vertical-align: top;
+      text-align: left;
+    }
+    th {
+      background: #e8f0f6;
+      font-weight: 600;
+    }
+    tr:nth-child(even) td { background: #fafbfc; }
+    ul {
+      margin: 0.4em 0 0.9em 0;
+      padding-left: 1.4em;
+    }
+    ul.checklist {
+      list-style: none;
+      padding-left: 0.2em;
+    }
+    .checklist-item {
+      margin: 0.25em 0;
+    }
+    .checklist-item input {
+      margin-right: 0.45em;
+      vertical-align: middle;
+    }
+    figure {
+      margin: 1em 0 1.2em 0;
+      page-break-inside: avoid;
+      text-align: center;
+    }
+    figure img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #d0d8de;
+      border-radius: 4px;
+    }
+    figcaption {
+      font-size: 9pt;
+      color: #555;
+      margin-top: 0.4em;
+      font-style: italic;
+    }
+    .md-link {
+      color: #1f5f87;
+      font-weight: 600;
+    }
+    .missing-image {
+      color: #a33;
+      font-style: italic;
+      border: 1px dashed #c88;
+      padding: 0.6em;
+      background: #fff8f8;
+    }
+  </style>
+</head>
+<body>
+<h1>Manuale utente IARTNET — Ingestion e Master Data</h1>
+<blockquote><p><strong>Versione:</strong> bozza v0.2<br><strong>Riferimenti:</strong> REQ-001 (Master DB), REQ-002 (File-based ingestion), REQ-004 (Multi-tenant)<br><strong>Pannello:</strong> <code>/admin</code> (Filament)</p></blockquote>
+<p>Manuale operativo per chi utilizza il pannello amministrativo IARTNET per importare dati nelle istanze Mirror, promuoverli sul database Master, gestire le schede pubblicate e le funzionalità Master avanzate (traduzione, interviste, salon, narrazioni).</p>
+<h2>Indice</h2>
+<table><thead><tr><th>Capitolo</th><th>Contenuto</th></tr></thead><tbody><tr><td><span class="md-link">01 — Setup Mirror</span></td><td>Istituzioni, Mirror Instances, data provider</td></tr><tr><td><span class="md-link">02 — Import su Mirror</span></td><td>Pacchetti ICCD/SBN/JSON, campi aggiuntivi (Excel)</td></tr><tr><td><span class="md-link">03 — Promozione su Master</span></td><td>Sincronizzazione dati, campi aggiunti, immagini</td></tr><tr><td><span class="md-link">04 — Gestione Master</span></td><td>Ricerca schede, dettaglio, pubblicazione</td></tr><tr><td><span class="md-link">05 — Translation</span></td><td>Worker traduzione IT → EN (Libre Translate)</td></tr><tr><td><span class="md-link">06 — Interviews</span></td><td>Elenco INTERVISTA, import DOCX (Step 1 / Step 2)</td></tr><tr><td><span class="md-link">07 — Salon</span></td><td>Import SALON da Excel + ZIP immagini</td></tr><tr><td><span class="md-link">08 — Narrations</span></td><td>CRUD narrazioni editoriali</td></tr></tbody></table>
+<h2>Prerequisiti</h2>
+<ul><li>Accesso al pannello Filament all&#x27;indirizzo <code>/admin</code> con credenziali valide.</li><li>Ruolo utente adeguato:</li><li class="nested" style="margin-left:24px"><strong>admin</strong> o <strong>operatore</strong>: accesso completo alle sezioni operative e, per gli admin, alla configurazione in <strong>Admin</strong>.</li><li class="nested" style="margin-left:24px"><strong>partner</strong> (con istituzione associata): accesso limitato alla propria istituzione nei wizard di ingestion.</li><li>Per la sincronizzazione immagini verso Master: variabili d&#x27;ambiente <code>IMAGES_ROOT</code> e <code>IIIF_PUBLIC_BASE</code> configurate correttamente sul server.</li><li>Per import Interview/Salon: variabile <code>INGEST_FS_ROOT</code> configurata e scrivibile.</li><li>Per Translation worker: <code>LIBRE_TRANSLATE_URL</code>, queue worker e scheduler attivi.</li></ul>
+<h2>Panoramica del flusso</h2>
+<pre><code class="language-text">Admin: Institution + Mirror Instance
+        ↓
+Ingestion → Importa Data (ZIP ICCD/SBN/JSON)
+        ↓
+Ingestion → Mirror Data (revisione record)
+        ↓
+Ingestion → Add Fields (opzionale, Excel/ZIP)
+        ↓
+Mirror Data → IMPORT DATA TO MASTER
+        ↓
+Master → Master Data (consultazione e pubblicazione)
+        ↓
+Master → Translation (opzionale, IT → EN)</code></pre>
+<p><strong>Percorsi Master diretti (senza Mirror):</strong></p>
+<pre><code class="language-text">Master → Interviews → Import Interview (DOCX + immagini)
+Master → Salon (Excel + ZIP immagini)
+Master → Narrations (CRUD manuale)</code></pre>
+<h2>Gruppi di menu nel pannello</h2>
+<table><thead><tr><th>Gruppo</th><th>Voci principali</th><th>Chi può accedere</th></tr></thead><tbody><tr><td><strong>Admin</strong></td><td>Institutions, Mirror Instances, Users, Roles</td><td>Solo <strong>admin</strong></td></tr><tr><td><strong>Ingestion</strong></td><td>Mirror Data, Importa Data, Add Fields, Stats</td><td>admin, operatore, partner (scoped)</td></tr><tr><td><strong>Master</strong></td><td>Master Data, Translation, Interviews, Salon, Narrations</td><td>admin, operatore, partner (scoped)</td></tr></tbody></table>
+<h2>Glossario rapido</h2>
+<table><thead><tr><th>Termine</th><th>Significato</th></tr></thead><tbody><tr><td><strong>Institution</strong></td><td>Ente/istituzione titolare dei dati (tenant).</td></tr><tr><td><strong>Mirror Instance</strong></td><td>Istanza logica con schema PostgreSQL dedicato per staging e validazione.</td></tr><tr><td><strong>Data Provider</strong></td><td>Standard sorgente: <code>SIRBEC</code>, <code>SIGEC</code>, <code>SBN</code>, <code>JSON</code>.</td></tr><tr><td><strong>Promoted</strong></td><td>Flag su record Mirror: <code>No</code> = non ancora sincronizzato su Master; <code>Sì</code> = già promosso.</td></tr><tr><td><strong>Stable ID</strong></td><td>Identificativo stabile della scheda nel Master.</td></tr><tr><td><strong>Publish State</strong></td><td>Stato pubblicazione scheda Master: <code>draft</code> o <code>published</code>.</td></tr><tr><td><strong>Translated</strong></td><td>Flag scheda Master: traduzione EN completata (<code>is_translated</code>).</td></tr><tr><td><strong>INTERVISTA</strong></td><td>Tipo scheda intervista; import da DOCX via <strong>Interviews → Import Interview</strong>.</td></tr><tr><td><strong>SALON</strong></td><td>Tipo scheda salon/esposizione; import via <strong>Master → Salon</strong>.</td></tr><tr><td><strong>Narration</strong></td><td>Contenuto editoriale autonomo in <code>narrations</code> (CRUD, non legato a import Mirror).</td></tr></tbody></table>
+<h2>Troubleshooting rapido</h2>
+<table><thead><tr><th>Sintomo</th><th>Azione</th></tr></thead><tbody><tr><td>Notifica <strong>Formato non accettato</strong></td><td>Verificare contenuto ZIP; formati supportati: ICCD, SBN, JSON.</td></tr><tr><td><strong>Schema Mirror o Institution non selezionati</strong></td><td>Completare lo Step 1 del wizard prima di procedere.</td></tr><tr><td>Import Master <strong>in background</strong> senza contatori</td><td>Attendere il worker; controllare i log applicativi.</td></tr><tr><td>Immagini saltate in sincronizzazione</td><td>Verificare che il record esista già su Master e che i file siano nella cartella di extraction.</td></tr><tr><td>Tabella Master Data vuota</td><td>Premere <strong>SEARCH</strong> dopo aver selezionato Institution e CardType.</td></tr><tr><td><strong>Translated</strong> resta <code>No</code></td><td>Avviare <strong>Translation → Start Translation</strong>; verificare queue worker e <code>LIBRE_TRANSLATE_URL</code>.</td></tr><tr><td>Import Interview Step 2 fallisce</td><td>Verificare marker <code>(Q)</code>/<code>(A)</code> nel DOCX, <code>INGEST_FS_ROOT</code>, IIIF se ci sono immagini.</td></tr><tr><td>Import Salon: immagine mancante</td><td>Allineare nomi file colonna C Foglio 2 con i file nello ZIP.</td></tr><tr><td><strong>Codice scheda già presente</strong> (Salon/Interview)</td><td>Usare uno <code>stable_id</code> univoco non ancora presente su Master.</td></tr></tbody></table>
+<p>Per il dettaglio operativo, consultare i capitoli collegati sopra.</p>
+<h2>Verifica post-operazione (checklist)</h2>
+<ul class='checklist'><li class="checklist-item"><input type="checkbox" disabled > Record visibili in <strong>Ingestion → Mirror Data</strong> con colonna <strong>Promoted</strong> = <code>No</code> dopo un nuovo import.</li><li class="checklist-item"><input type="checkbox" disabled > Dopo promozione metadati: <strong>Promoted</strong> = <code>Sì</code> e scheda presente in <strong>Master → Master Data</strong>.</li><li class="checklist-item"><input type="checkbox" disabled > Dopo <strong>Synchronize Images</strong>: anteprima immagini disponibile (URL IIIF) in Mirror Data e Master Data.</li><li class="checklist-item"><input type="checkbox" disabled > <strong>Publish State</strong> impostato come richiesto (<code>draft</code> / <code>published</code>).</li><li class="checklist-item"><input type="checkbox" disabled > (Se usato) <strong>Translation worker</strong> attivo e <strong>Translated</strong> = <strong>Yes</strong> sulle schede attese.</li><li class="checklist-item"><input type="checkbox" disabled > (Interview/Salon) Import Step 1 + Step 2 completati; scheda visibile in <strong>Master Data</strong>.</li></ul>
+<h2>Screenshot</h2>
+<p>Il manuale include <strong>placeholder SVG</strong> in <code>docs/user/images/</code> (20 figure). Sostituirli con capture reali seguendo le istruzioni in <span class="md-link">images/README.md</span>.</p>
+<h2>Note sulla documentazione</h2>
+<ul><li>Le etichette UI citate corrispondono al testo attuale del pannello (misto italiano/inglese).</li><li>Questa bozza è derivata dal codice Filament in <code>apps/api/app/Filament/</code>; aggiornare il manuale quando cambiano label o flussi.</li><li>Per dettagli tecnici su mapping e servizi: <code>apps/api/app/Services/Import/README.md</code>.</li></ul>
+<h1 class="chapter-title">Capitolo 1 — Preparazione istanza Mirror</h1>
+<h2>Obiettivo</h2>
+<p>Configurare l&#x27;ente (Institution) e l&#x27;istanza Mirror su cui verranno importati e revisionati i dati prima della promozione su Master.</p>
+<h2>Quando usarlo</h2>
+<ul><li>Prima importazione dati per un nuovo ente.</li><li>Creazione di un nuovo schema Mirror (es. ambiente di test separato).</li><li>Cambio del data provider per una nuova istanza.</li></ul>
+<h2>Prerequisiti</h2>
+<ul><li>Utente con ruolo <strong>admin</strong> (le risorse <strong>Admin</strong> non sono accessibili a operatore/partner).</li><li>Codice istituzione univoco e nome schema Mirror conforme alle regole di validazione.</li></ul>
+<hr>
+<h2>1.1 Creare o verificare un&#x27;Institution</h2>
+<p><strong>Menu:</strong> <code>Admin</code> → <strong>Institutions</strong></p>
+<figure><img src="file:///C:/Development/DevIartnet/iartnet/docs/user/images/01-institutions-list.png" alt="Elenco Institutions"><figcaption>Elenco Institutions</figcaption></figure>
+<p><em>Figura 1.1 — Admin → Institutions: elenco istituzioni.</em></p>
+<h3>Campi del form</h3>
+<table><thead><tr><th>Campo</th><th>Obbligatorio</th><th>Note</th></tr></thead><tbody><tr><td><strong>Name</strong></td><td>Sì</td><td>Nome leggibile dell&#x27;ente</td></tr><tr><td><strong>Code</strong></td><td>Sì</td><td>Codice identificativo univoco</td></tr><tr><td><strong>Description</strong></td><td>No</td><td>Descrizione libera</td></tr><tr><td><strong>Address</strong>, <strong>Email</strong>, <strong>Phone</strong>, <strong>Website</strong></td><td>No</td><td>Dati di contatto</td></tr><tr><td><strong>Data Provider</strong></td><td>No</td><td><code>SIRBEC</code>, <code>SIGEC</code>, <code>SBN</code>, <code>JSON</code></td></tr><tr><td><strong>Active</strong></td><td>No</td><td>Default: attivo</td></tr></tbody></table>
+<h3>Azioni tabella</h3>
+<ul><li><strong>Edit</strong> — modifica i dati dell&#x27;istituzione.</li><li><strong>Delete</strong> — elimina l&#x27;istituzione (con conferma).</li></ul>
+<h3>Risultato atteso</h3>
+<p>L&#x27;istituzione compare nell&#x27;elenco e sarà selezionabile in tutti i wizard di <strong>Ingestion</strong> (combo <strong>Institution</strong>).</p>
+<hr>
+<h2>1.2 Creare una Mirror Instance</h2>
+<p><strong>Menu:</strong> <code>Admin</code> → <strong>Mirror Instances</strong> → <strong>Create</strong></p>
+<figure><img src="file:///C:/Development/DevIartnet/iartnet/docs/user/images/02-mirror-instance-create.png" alt="Form creazione Mirror Instance"><figcaption>Form creazione Mirror Instance</figcaption></figure>
+<p><em>Figura 1.2 — Form di creazione Mirror Instance (Schema Name, Display Name, Data Provider).</em></p>
+<h3>Campi del form</h3>
+<table><thead><tr><th>Campo</th><th>Obbligatorio</th><th>Note</th></tr></thead><tbody><tr><td><strong>Schema Name</strong></td><td>Sì</td><td>Nome tecnico schema PostgreSQL. Solo minuscole, numeri e <code>_</code>; deve iniziare con lettera. <strong>Non modificabile</strong> dopo la creazione.</td></tr><tr><td><strong>Display Name</strong></td><td>Sì</td><td>Nome mostrato nell&#x27;interfaccia</td></tr><tr><td><strong>Description</strong></td><td>No</td><td>Descrizione libera</td></tr><tr><td><strong>Institution</strong></td><td>Sì</td><td>Istituzione titolare</td></tr><tr><td><strong>Data Provider</strong></td><td>No</td><td><code>SIRBEC</code>, <code>SIGEC</code>, <code>SBN</code>, <code>JSON</code> — determina il mapping usato in promozione su Master</td></tr><tr><td><strong>Protected</strong></td><td>No</td><td>Se attivo, l&#x27;istanza <strong>non può essere eliminata</strong></td></tr></tbody></table>
+<h4>Messaggio di validazione Schema Name</h4>
+<blockquote><p><em>Schema name must start with a letter and contain only lowercase letters, numbers, and underscores.</em></p></blockquote>
+<h4>Helper text</h4>
+<ul><li><strong>Schema Name:</strong> <em>Technical name of the PostgreSQL schema (lowercase, alphanumeric, underscores only)</em></li><li><strong>Display Name:</strong> <em>Human-readable name for the UI</em></li><li><strong>Data Provider:</strong> <em>Standard/source of the data stored in this mirror instance</em></li><li><strong>Protected:</strong> <em>Protected instances cannot be deleted</em></li></ul>
+<h3>Elenco Mirror Instances — colonne</h3>
+<table><thead><tr><th>Colonna</th><th>Descrizione</th></tr></thead><tbody><tr><td><strong>Display Name</strong></td><td>Nome visualizzato</td></tr><tr><td><strong>Schema Name</strong></td><td>Nome schema (copiabile)</td></tr><tr><td><strong>Institution</strong></td><td>Istituzione collegata</td></tr><tr><td><strong>Data Provider</strong></td><td>Standard dati</td></tr><tr><td><strong>Protected</strong></td><td>Indicatore protezione</td></tr></tbody></table>
+<h3>Filtri disponibili</h3>
+<ul><li><strong>Institution</strong></li><li><strong>Protected</strong> — All / Protected only / Not protected</li></ul>
+<h3>Eliminazione</h3>
+<p><strong>Delete</strong> apre la modale:</p>
+<ul><li><strong>Heading:</strong> <code>Delete Mirror Instance</code></li><li><strong>Descrizione:</strong> conferma eliminazione di display name e schema PostgreSQL associato. Azione irreversibile.</li><li><strong>Pulsante conferma:</strong> <code>Delete</code></li><li>Disabilitato se <strong>Protected</strong> = true.</li></ul>
+<p><strong>Bulk delete:</strong> modale <code>Delete Mirror Instances</code> — elimina anche gli schema PostgreSQL associati.</p>
+<h3>Risultato atteso</h3>
+<p>La Mirror Instance è disponibile nei wizard con etichetta <code>Display Name (schema_name)</code> nella combo <strong>Mirror Schema</strong>.</p>
+<hr>
+<h2>1.3 Permessi utente e scope istituzione</h2>
+<table><thead><tr><th>Ruolo</th><th>Institutions / Mirror Instances</th><th>Wizard Ingestion</th></tr></thead><tbody><tr><td><strong>admin</strong></td><td>CRUD completo</td><td>Tutte le istituzioni</td></tr><tr><td><strong>operatore</strong></td><td>Solo lettura (no accesso Admin)</td><td>Tutte le istituzioni</td></tr><tr><td><strong>partner</strong></td><td>Solo lettura (no accesso Admin)</td><td>Solo la propria istituzione (pre-selezionata)</td></tr></tbody></table>
+<p>Se un partner tenta di accedere a un&#x27;istituzione diversa dalla propria, il sistema può restituire:</p>
+<blockquote><p><em>Accesso negato a questa istituzione</em></p></blockquote>
+<hr>
+<h2>1.4 Scelta del Data Provider</h2>
+<p>Il <strong>Data Provider</strong> sulla Mirror Instance guida la promozione su Master:</p>
+<table><thead><tr><th>Data Provider</th><th>Import pacchetto (Importa Data)</th><th>Mapping promozione Master</th></tr></thead><tbody><tr><td><strong>SIRBEC</strong> / <strong>SIGEC</strong></td><td>Pacchetto ICCD (ZIP)</td><td><code>iccd-to-master.yaml</code></td></tr><tr><td><strong>SBN</strong></td><td>Pacchetto SBN (ZIP)</td><td><code>sbn-to-master.yaml</code> (normativa <code>MARC21</code>)</td></tr><tr><td><strong>JSON</strong></td><td>Pacchetto JSON (ZIP)</td><td><code>json-to-master.yaml</code> (normativa <code>JSON</code>)</td></tr></tbody></table>
+<p>Impostare il data provider coerente con il tipo di pacchetto che verrà caricato.</p>
+<hr>
+<h2>Checklist</h2>
+<ul class='checklist'><li class="checklist-item"><input type="checkbox" disabled > Institution creata con <strong>Code</strong> univoco e <strong>Active</strong> = true</li><li class="checklist-item"><input type="checkbox" disabled > Mirror Instance creata con <strong>Schema Name</strong> valido e <strong>Data Provider</strong> corretto</li><li class="checklist-item"><input type="checkbox" disabled > Istanza visibile in <strong>Mirror Schema</strong> nei wizard <strong>Importa Data</strong> e <strong>Mirror Data</strong></li><li class="checklist-item"><input type="checkbox" disabled > Utenti operatori/partner hanno accesso all&#x27;istituzione corretta</li></ul>
+<h2>Prossimo passo</h2>
+<p>→ <span class="md-link">Capitolo 2 — Import su Mirror</span></p>
+<h1 class="chapter-title">Capitolo 2 — Importazione dati su Mirror</h1>
+<h2>Obiettivo</h2>
+<p>Caricare pacchetti dati (ZIP) o file Excel nello schema Mirror selezionato, per revisione prima della promozione su Master.</p>
+<h2>Percorsi disponibili</h2>
+<table><thead><tr><th>Menu</th><th>Titolo pagina</th><th>Uso</th></tr></thead><tbody><tr><td><strong>Ingestion → Importa Data</strong></td><td>ICCD/SBN/Json Package Import</td><td>Pacchetti ZIP (ICCD, SBN, JSON)</td></tr><tr><td><strong>Ingestion → Add Fields</strong></td><td>Import Added Fields</td><td>Campi aggiuntivi da Excel o ZIP con Excel/immagini</td></tr></tbody></table>
+<hr>
+<h2>2.1 Import pacchetto ZIP (ICCD / SBN / JSON)</h2>
+<p><strong>Menu:</strong> <code>Ingestion</code> → <strong>Importa Data</strong></p>
+<h3>Step 1 — Select Target</h3>
+<table><thead><tr><th>Campo</th><th>Obbligatorio</th><th>Descrizione</th></tr></thead><tbody><tr><td><strong>Institution</strong></td><td>Sì</td><td>Istituzione titolare (pre-compilata per utenti partner)</td></tr><tr><td><strong>Mirror Schema</strong></td><td>Sì</td><td>Istanza Mirror: <code>Display Name (schema_name)</code></td></tr></tbody></table>
+<p>Se si cambia <strong>Institution</strong>, la combo <strong>Mirror Schema</strong> viene azzerata.</p>
+<figure><img src="file:///C:/Development/DevIartnet/iartnet/docs/user/images/03-importa-data-step1-target.png" alt="Importa Data — Select Target"><figcaption>Importa Data — Select Target</figcaption></figure>
+<p><em>Figura 2.1 — Wizard Importa Data, Step 1: selezione Institution e Mirror Schema.</em></p>
+<h3>Step 2 — Upload Package</h3>
+<table><thead><tr><th>Elemento</th><th>Valore</th></tr></thead><tbody><tr><td>Etichetta upload</td><td><strong>ICCD Package (ZIP)</strong></td></tr><tr><td>Tipi accettati</td><td><code>application/zip</code>, <code>application/x-zip-compressed</code></td></tr><tr><td>Dimensione massima</td><td><strong>1 GB</strong> (1 048 576 KB)</td></tr></tbody></table>
+<p>Dopo il caricamento, il sistema analizza il pacchetto e mostra il riquadro <strong>Package Analysis</strong> / <strong>Controllo Dati Caricati</strong>:</p>
+<table><thead><tr><th>Informazione</th><th>Descrizione</th></tr></thead><tbody><tr><td><strong>Formato Rilevato</strong></td><td><code>ICCD</code>, <code>SBN</code>, <code>JSON</code> oppure <code>Formato non accettato</code></td></tr><tr><td><strong>Total Files</strong></td><td>File totali nel pacchetto</td></tr><tr><td><strong>XML Files</strong></td><td>File XML (ICCD/SBN)</td></tr><tr><td><strong>JSON Files</strong></td><td>File JSON</td></tr><tr><td><strong>Media Files</strong></td><td>File multimediali</td></tr></tbody></table>
+<figure><img src="file:///C:/Development/DevIartnet/iartnet/docs/user/images/04-importa-data-step2-upload.png" alt="Importa Data — Upload Package"><figcaption>Importa Data — Upload Package</figcaption></figure>
+<p><em>Figura 2.2 — Step 2: upload ZIP e riquadro analisi pacchetto.</em></p>
+<h4>Notifiche Step 2</h4>
+<table><thead><tr><th>Titolo</th><th>Tipo</th><th>Quando</th></tr></thead><tbody><tr><td><strong>Package extracted successfully</strong></td><td>Success</td><td>Estrazione OK — <em>Package analyzed and ready. Click Next to proceed to validation.</em></td></tr><tr><td><strong>Upload failed</strong></td><td>Danger</td><td>File ZIP non trovato</td></tr><tr><td><strong>Mirror schema required</strong></td><td>Danger</td><td><em>Please select a mirror schema first</em></td></tr><tr><td><strong>Upload processing failed</strong></td><td>Danger</td><td>Errore generico con messaggio dettaglio</td></tr></tbody></table>
+<blockquote><p><strong>Nota:</strong> se non si procede entro circa 1 minuto dopo l&#x27;upload, le cartelle temporanee di extraction possono essere eliminate automaticamente.</p></blockquote>
+<h3>Step 3 — Validate &amp; Import</h3>
+<p>Comportamento in base al formato rilevato:</p>
+<h4>Formato ICCD</h4>
+<ul><li>La validazione XSD <strong>non è esposta</strong> nell&#x27;interfaccia (import diretto).</li><li>Box <strong>Informazioni Formato</strong> con badge <code>ICCD</code>.</li></ul>
+<h4>Formato SBN o JSON</h4>
+<ul><li>Box <strong>Informazioni Formato</strong> con messaggio:</li></ul>
+<blockquote><p><em>Per questo formato è disponibile solo l&#x27;importazione dati. La validazione XSD non è disponibile.</em></p></blockquote>
+<h4>Formato non accettato</h4>
+<ul><li>Notifica persistente:</li><li class="nested" style="margin-left:24px"><strong>Titolo:</strong> <code>Formato non accettato</code></li><li class="nested" style="margin-left:24px"><strong>Body:</strong> <em>Il formato del pacchetto caricato non è supportato. Non è possibile procedere allo Step 3.</em></li><li>Messaggio nel riquadro: <em>⚠️ Non sarà possibile procedere allo Step 3 con questo formato.</em></li></ul>
+<h4>Pulsante import</h4>
+<table><thead><tr><th>Pulsante</th><th>Azione</th></tr></thead><tbody><tr><td><strong>Importa i Dati</strong></td><td>Avvia l&#x27;importazione nel Mirror</td></tr></tbody></table>
+<figure><img src="file:///C:/Development/DevIartnet/iartnet/docs/user/images/05-importa-data-step3-import.svg" alt="Importa Data — Validate &amp; Import"><figcaption>Importa Data — Validate &amp; Import</figcaption></figure>
+<p><em>Figura 2.3 — Step 3: pulsante Importa i Dati e box Risultato importazione.</em></p>
+<h4>Box risultato importazione (Step 3)</h4>
+<p>Dopo l&#x27;import, compare il riquadro <strong>Risultato importazione</strong>:</p>
+<ul><li><strong>Record inseriti</strong></li><li><strong>Record saltati</strong></li><li><strong>Errori</strong></li></ul>
+<h4>Notifiche import</h4>
+<table><thead><tr><th>Titolo</th><th>Body (esempio)</th></tr></thead><tbody><tr><td><strong>Import completed</strong></td><td><code>Imported: N, Updated: M, Errors: E</code></td></tr><tr><td><strong>Import failed</strong></td><td>Messaggio errore</td></tr><tr><td><strong>Unsupported format</strong></td><td><code>Format &#x27;…&#x27; is not supported for import.</code></td></tr><tr><td><strong>No package loaded</strong></td><td>—</td></tr></tbody></table>
+<p>Al termine dell&#x27;import, i record nel Mirror hanno <strong>Promoted</strong> = <code>No</code> (pronti per revisione e promozione).</p>
+<h3>Step 4 — Data Preview</h3>
+<ul><li>Etichetta step: <strong>Data Preview</strong></li><li>Anteprima dati importati per il run corrente (record selezionabili).</li></ul>
+<h3>Re-import</h3>
+<p>Un nuovo import sullo stesso record imposta di nuovo <strong>promoted = false</strong> sul Mirror, consentendo la re-sincronizzazione verso Master.</p>
+<hr>
+<h2>2.2 Import campi aggiuntivi (Excel / ZIP)</h2>
+<p><strong>Menu:</strong> <code>Ingestion</code> → <strong>Add Fields</strong></p>
+<h3>Step 1 — Select Target</h3>
+<p>Stessi campi di <strong>Importa Data</strong>:</p>
+<ul><li><strong>Institution</strong> (obbligatorio)</li><li><strong>Mirror Schema</strong> (obbligatorio)</li></ul>
+<h3>Step 2 — Upload Excel</h3>
+<table><thead><tr><th>Elemento</th><th>Valore</th></tr></thead><tbody><tr><td>Etichetta upload</td><td><strong>File Excel o ZIP</strong></td></tr><tr><td>Tipi accettati</td><td><code>.xlsx</code>, <code>.xls</code>, <code>.zip</code></td></tr><tr><td>Dimensione massima</td><td><strong>100 MB</strong></td></tr></tbody></table>
+<figure><img src="file:///C:/Development/DevIartnet/iartnet/docs/user/images/06-add-fields-upload.png" alt="Add Fields — Upload Excel"><figcaption>Add Fields — Upload Excel</figcaption></figure>
+<p><em>Figura 2.4 — Wizard Add Fields: upload file e stato validazione.</em></p>
+<h4>Stati validazione (riquadro Validation Status)</h4>
+<table><thead><tr><th>Stato</th><th>Messaggio UI</th></tr></thead><tbody><tr><td>In attesa</td><td><em>Carica un file Excel per iniziare la validazione.</em></td></tr><tr><td>In corso</td><td><em>Validazione in corso...</em></td></tr><tr><td>Valido</td><td>✓ messaggio + <strong>Template:</strong> nome template</td></tr><tr><td>Non valido</td><td>✗ messaggio errore</td></tr></tbody></table>
+<h4>Notifiche ZIP</h4>
+<table><thead><tr><th>Titolo</th><th>Tipo</th></tr></thead><tbody><tr><td><strong>File ZIP valido</strong></td><td>Success</td></tr><tr><td><strong>ZIP elaborato</strong></td><td>Warning (con avvisi)</td></tr><tr><td><strong>ZIP non valido</strong></td><td>Warning / Danger</td></tr></tbody></table>
+<h3>Step 3 — Import Fields</h3>
+<p>Prima dell&#x27;import, il riquadro mostra:</p>
+<ul><li><strong>Pronto per l&#x27;importazione</strong></li><li><strong>Template:</strong> nome template riconosciuto</li><li><strong>Schema:</strong> nome schema Mirror</li></ul>
+<table><thead><tr><th>Pulsante</th><th>Azione</th></tr></thead><tbody><tr><td><strong>Importa Dati</strong></td><td>Esegue l&#x27;import dei campi aggiuntivi</td></tr></tbody></table>
+<h4>Notifiche import</h4>
+<table><thead><tr><th>Titolo</th><th>Body</th></tr></thead><tbody><tr><td><strong>Importazione completata</strong></td><td><code>Importati: N, Saltati: M</code></td></tr><tr><td><strong>Errore</strong></td><td><em>Dati mancanti per l&#x27;importazione: …</em></td></tr><tr><td><strong>Errore</strong></td><td><em>Il file Excel non è valido</em></td></tr><tr><td><strong>Errore</strong></td><td><em>Template non identificato</em></td></tr><tr><td><strong>File non validato</strong></td><td><em>Carica e valida un file Excel nello Step 2.</em></td></tr><tr><td><strong>File non valido</strong></td><td><em>Il file Excel deve essere valido per procedere all&#x27;importazione.</em></td></tr></tbody></table>
+<h4>Box Import Results (Step 3)</h4>
+<p>Mostra conteggi <strong>imported</strong>, <strong>skipped</strong> ed eventuali <strong>errors</strong>.</p>
+<h3>Step 4 — Results</h3>
+<ul><li>Etichetta: <strong>Imported Records</strong></li><li>Tabella record importati, oppure <em>Nessun record importato.</em></li><li>Se l&#x27;import non è completato: notifica <strong>Importazione non completata</strong> — <em>Completa l&#x27;importazione nello Step 3.</em></li></ul>
+<p>I campi aggiuntivi restano con <strong>promoted = false</strong> fino alla sincronizzazione su Master (capitolo 3).</p>
+<hr>
+<h2>2.3 Revisione dati su Mirror Data</h2>
+<p><strong>Menu:</strong> <code>Ingestion</code> → <strong>Mirror Data</strong></p>
+<h3>Step 1 — Select Schema Mirror</h3>
+<ul><li><strong>Institution</strong></li><li><strong>Mirror Schema</strong></li></ul>
+<h3>Step 2 — Mirror Data</h3>
+<p>Tabella principale con colonne:</p>
+<table><thead><tr><th>Colonna</th><th>Descrizione</th></tr></thead><tbody><tr><td><strong>Codice</strong></td><td><code>record_id</code></td></tr><tr><td><strong>Normativa</strong></td><td>Codice e versione normativa</td></tr><tr><td><strong>Titolo</strong></td><td>Titolo record</td></tr><tr><td><strong>Promoted</strong></td><td><code>Sì</code> / <code>No</code> — stato promozione su Master</td></tr><tr><td><strong>Errori</strong></td><td>Conteggio errori</td></tr></tbody></table>
+<h4>Azioni riga</h4>
+<table><thead><tr><th>Azione</th><th>Descrizione</th></tr></thead><tbody><tr><td><strong>View</strong></td><td>Apre il dettaglio record</td></tr><tr><td><strong>Delete</strong></td><td>Elimina il record dal Mirror</td></tr></tbody></table>
+<p>Notifiche eliminazione:</p>
+<ul><li><strong>Record eliminato</strong> (success)</li><li><strong>Errore nell&#x27;eliminazione</strong> (danger)</li></ul>
+<h4>Pulsante promozione</h4>
+<p>In alto a destra nella tabella principale:</p>
+<table><thead><tr><th>Pulsante</th><th>Azione</th></tr></thead><tbody><tr><td><strong>IMPORT TO MASTER</strong></td><td>Apre la sezione promozione (capitolo 3)</td></tr></tbody></table>
+<figure><img src="file:///C:/Development/DevIartnet/iartnet/docs/user/images/07-mirror-data-table.png" alt="Mirror Data — tabella principale"><figcaption>Mirror Data — tabella principale</figcaption></figure>
+<p><em>Figura 2.5 — Tabella record Mirror con colonna Promoted e pulsante IMPORT TO MASTER.</em></p>
+<h3>Dettaglio record (View)</h3>
+<p><strong>Header:</strong> <code>Record Details</code> — Record ID: <code>{record_id}</code></p>
+<table><thead><tr><th>Pulsante</th><th>Azione</th></tr></thead><tbody><tr><td><strong>Add Media</strong></td><td>Carica immagine (jpg, png, tiff, gif, webp, bmp)</td></tr><tr><td><strong>← Return to Main Table</strong></td><td>Torna alla tabella principale</td></tr></tbody></table>
+<p><strong>Tab:</strong></p>
+<table><thead><tr><th>Tab</th><th>Contenuto</th></tr></thead><tbody><tr><td><strong>Record Details Table</strong></td><td>Coppie XPath / Valore (colonne: <strong>XPath</strong>, <strong>Occurrence Index</strong>, <strong>Valore</strong>)</td></tr><tr><td><strong>Images Preview</strong></td><td>Anteprima asset immagine</td></tr><tr><td><strong>Added Fields</strong></td><td>Campi aggiuntivi importati via Excel</td></tr></tbody></table>
+<figure><img src="file:///C:/Development/DevIartnet/iartnet/docs/user/images/08-mirror-data-record-details.png" alt="Mirror Data — Record Details"><figcaption>Mirror Data — Record Details</figcaption></figure>
+<p><em>Figura 2.6 — Dettaglio record con tab Details, Images Preview e Added Fields.</em></p>
+<h4>Modale Add Media</h4>
+<ul><li><strong>Titolo:</strong> <code>Add Media</code></li><li><strong>Testo:</strong> <em>Seleziona un file immagine (jpg, png, tiff, gif, webp, bmp).</em></li><li><strong>Cancel</strong> / <strong>Confirm</strong></li><li>Durante upload: <em>Caricamento file...</em> / <em>Attendere upload...</em></li></ul>
+<hr>
+<h2>Checklist post-import Mirror</h2>
+<ul class='checklist'><li class="checklist-item"><input type="checkbox" disabled > Notifica <strong>Import completed</strong> o <strong>Importazione completata</strong> ricevuta</li><li class="checklist-item"><input type="checkbox" disabled > Record visibili in <strong>Mirror Data</strong> con <strong>Promoted</strong> = <code>No</code></li><li class="checklist-item"><input type="checkbox" disabled > Eventuali <strong>Errori</strong> &gt; 0 analizzati nel dettaglio record</li><li class="checklist-item"><input type="checkbox" disabled > Per campi aggiuntivi: tab <strong>Added Fields</strong> popolata nel dettaglio record</li></ul>
+<h2>Prossimo passo</h2>
+<p>→ <span class="md-link">Capitolo 3 — Promozione su Master</span></p>
+<h1 class="chapter-title">Capitolo 3 — Promozione dati su Master</h1>
+<h2>Obiettivo</h2>
+<p>Sincronizzare i record dallo schema Mirror allo schema Master (<code>iartnet_master</code>): metadati, campi aggiuntivi e immagini. Ogni operazione è distinta e aggiorna il flag <strong>Promoted</strong> sul Mirror.</p>
+<h2>Quando usarlo</h2>
+<ul><li>Dopo aver importato e revisionato i dati su Mirror (capitolo 2).</li><li>Quando si aggiungono campi via <strong>Add Fields</strong> e si vogliono portare su Master.</li><li>Quando si devono pubblicare le immagini su infrastruttura IIIF.</li></ul>
+<h2>Prerequisiti</h2>
+<ul><li>Record presenti su Mirror con <strong>Promoted</strong> = <code>No</code> (per le operazioni di sync).</li><li><strong>Data Provider</strong> della Mirror Instance allineato al tipo di dati (SIRBEC/SIGEC → ICCD, SBN, JSON).</li><li>Per <strong>Synchronize Images</strong>: <code>IMAGES_ROOT</code> configurato e scrivibile; record già presenti su Master.</li></ul>
+<hr>
+<h2>3.1 Accedere alla sezione promozione</h2>
+<p><strong>Menu:</strong> <code>Ingestion</code> → <strong>Mirror Data</strong></p>
+<p>1. Step 1: selezionare <strong>Institution</strong> e <strong>Mirror Schema</strong>. 2. Step 2: nella tabella principale, cliccare <strong>IMPORT TO MASTER</strong>.</p>
+<p>Si apre la sezione <strong>IMPORT DATA TO MASTER</strong> con intestazione:</p>
+<ul><li><strong>Titolo:</strong> <code>IMPORT DATA TO MASTER</code></li><li><strong>Sottotitolo:</strong> <code>Schema: {nome_schema}</code></li><li><strong>Pulsante ritorno:</strong> <code>← Back to Main table</code></li></ul>
+<figure><img src="file:///C:/Development/DevIartnet/iartnet/docs/user/images/09-import-to-master.png" alt="IMPORT DATA TO MASTER"><figcaption>IMPORT DATA TO MASTER</figcaption></figure>
+<p><em>Figura 3.1 — Sezione promozione con i quattro pulsanti di sincronizzazione.</em></p>
+<hr>
+<h2>3.2 Le tre operazioni di sincronizzazione</h2>
+<p>Ogni operazione richiede conferma tramite modale.</p>
+<h3>Modale conferma (comune)</h3>
+<table><thead><tr><th>Elemento</th><th>Testo</th></tr></thead><tbody><tr><td><strong>Titolo</strong></td><td><code>Confirm synchronization</code></td></tr><tr><td><strong>Messaggio</strong></td><td><em>Confirm to proceed with the data synchronization?</em></td></tr><tr><td><strong>Cancel</strong></td><td>Annulla</td></tr><tr><td><strong>Confirm</strong></td><td>Procede</td></tr></tbody></table>
+<figure><img src="file:///C:/Development/DevIartnet/iartnet/docs/user/images/10-sync-confirm-modal.png" alt="Modale Confirm synchronization"><figcaption>Modale Confirm synchronization</figcaption></figure>
+<p><em>Figura 3.2 — Modale di conferma prima di ogni operazione di sync.</em></p>
+<h3>Operazione 1 — Metadati scheda</h3>
+<table><thead><tr><th>Pulsante</th><th><code>PROCEDE TO IMPORT DATA</code></th></tr></thead><tbody><tr><td>Cosa sincronizza</td><td>Record Mirror con <strong>promoted = false</strong> → tabelle Master (Dublin Core + EDM)</td></tr><tr><td>Mapping</td><td>Dipende dal <strong>Data Provider</strong> della Mirror Instance</td></tr></tbody></table>
+<table><thead><tr><th>Data Provider</th><th>Job / mapping</th><th>Filtro normativa</th></tr></thead><tbody><tr><td>SIRBEC / SIGEC</td><td>Background job, <code>iccd-to-master.yaml</code></td><td>Tutti i non promossi</td></tr><tr><td>SBN</td><td>Background job, <code>sbn-to-master.yaml</code></td><td>Solo <code>normativa_code = MARC21</code></td></tr><tr><td>JSON</td><td>Background job, <code>json-to-master.yaml</code></td><td>Solo <code>normativa_code = JSON</code></td></tr></tbody></table>
+<h4>Notifiche — avvio in background (ICCD / SBN / JSON)</h4>
+<table><thead><tr><th>Titolo</th><th>Body</th></tr></thead><tbody><tr><td><strong>Importazione avviata</strong></td><td><em>L&#x27;importazione ICCD → Master è stata accodata…</em> (o SBN/JSON)</td></tr><tr><td></td><td><em>…verrà eseguita dal worker. Controlla i log per l&#x27;esito.</em></td></tr></tbody></table>
+<h4>Box Information — job in background</h4>
+<blockquote><p><em>Cards import to Master procedure started, will be executed in background</em></p></blockquote>
+<p>In questo caso i contatori nel box restano a zero finché il worker non completa l&#x27;elaborazione.</p>
+<h4>Errori comuni</h4>
+<table><thead><tr><th>Titolo</th><th>Body</th></tr></thead><tbody><tr><td><strong>Errore</strong></td><td><em>Schema Mirror o Institution non selezionati</em></td></tr><tr><td><strong>Errore durante l&#x27;avvio dell&#x27;importazione</strong></td><td>Messaggio eccezione</td></tr></tbody></table>
+<p>Dopo successo: i record Mirror interessati passano a <strong>Promoted</strong> = <code>Sì</code>.</p>
+<hr>
+<h3>Operazione 2 — Campi aggiuntivi</h3>
+<table><thead><tr><th>Pulsante</th><th><code>Synchronize Added Fields</code></th></tr></thead><tbody><tr><td>Cosa sincronizza</td><td>Righe <code>added_kv</code> con <strong>promoted = false</strong> verso Master</td></tr><tr><td>Mapping</td><td><code>added-fields-to-master.yaml</code></td></tr><tr><td>Esecuzione</td><td><strong>Sincrona</strong> (risultato immediato nel box Information)</td></tr></tbody></table>
+<h4>Notifiche</h4>
+<table><thead><tr><th>Titolo</th><th>Body</th></tr></thead><tbody><tr><td><strong>Importazione campi aggiuntivi completata</strong></td><td>`Processati: N \</td><td>Successi: N \</td><td>Errori: N \</td><td>Warning: N`</td></tr><tr><td><strong>Errore durante l&#x27;importazione campi aggiuntivi</strong></td><td>Messaggio errore</td></tr></tbody></table>
+<h4>Box Information — successo</h4>
+<ul><li><strong>✓ Importazione completata con successo</strong></li><li><strong>Numero record processati</strong></li><li><strong>Numero record inseriti correttamente</strong></li><li><strong>Numero record falliti in inserimento</strong></li><li><strong>Warning</strong> (se presenti)</li></ul>
+<figure><img src="file:///C:/Development/DevIartnet/iartnet/docs/user/images/11-import-results-box.png" alt="Box Information — esito sync"><figcaption>Box Information — esito sync</figcaption></figure>
+<p><em>Figura 3.3 — Riquadro Information con riepilogo numerico (o messaggio job in background).</em></p>
+<hr>
+<h3>Operazione 3 — Immagini</h3>
+<table><thead><tr><th>Pulsante</th><th><code>Synchronize Images</code></th></tr></thead><tbody><tr><td>Cosa sincronizza</td><td>Asset Mirror con <strong>promoted = false</strong> e <strong>exists_flag = true</strong></td></tr><tr><td>Destinazione</td><td>Copia in <code>IMAGES_ROOT</code>, registrazione URL IIIF in <code>web_resources</code></td></tr><tr><td>Prerequisito</td><td>Record Master esistente con <code>stable_id</code> = <code>record_id</code> Mirror</td></tr></tbody></table>
+<h4>Notifiche</h4>
+<table><thead><tr><th>Titolo</th><th>Body</th></tr></thead><tbody><tr><td><strong>Sincronizzazione immagini completata</strong></td><td>Riepilogo processati / successi / errori / saltati</td></tr><tr><td><strong>Errore durante la sincronizzazione immagini</strong></td><td>Messaggio errore (es. <code>IMAGES_ROOT non configurato o directory non scrivibile</code>)</td></tr></tbody></table>
+<h4>Box Information — dettaglio errori immagini</h4>
+<p>Se presenti errori, compare la sezione <strong>Dettagli Errori (N)</strong> con per ogni voce:</p>
+<ul><li><strong>Filename</strong></li><li><strong>record_id</strong></li><li>Messaggio errore (es. <em>Record Master non trovato</em>, <em>Immagine non trovata</em>, <em>import_run_id non trovato</em>)</li></ul>
+<p>Dopo successo: asset Mirror aggiornati con <strong>promoted = true</strong> e <strong>filename</strong> = URL IIIF.</p>
+<hr>
+<h2>3.3 Un-Synchronize Images (operazione inversa)</h2>
+<table><thead><tr><th>Pulsante</th><th><code>Un-Synchronize Images</code></th></tr></thead><tbody><tr><td>Effetto</td><td>Rimuove file da <code>IMAGES_ROOT</code> e righe <code>web_resources</code> in base agli URL IIIF negli asset Mirror</td></tr></tbody></table>
+<h3>Modale ambito</h3>
+<table><thead><tr><th>Elemento</th><th>Testo</th></tr></thead><tbody><tr><td><strong>Titolo</strong></td><td><code>Un-Synchronize Images</code></td></tr><tr><td><strong>Descrizione</strong></td><td><em>Scegli l&#x27;ambito dell&#x27;operazione sulle righe della tabella asset (filename URL IIIF).</em></td></tr></tbody></table>
+<h4>Opzioni ambito</h4>
+<table><thead><tr><th>Opzione</th><th>Descrizione</th></tr></thead><tbody><tr><td><strong>Applica a tutti i record</strong></td><td>Tutti gli asset con URL IIIF</td></tr><tr><td><strong>Applica alla lista seguente</strong></td><td>Solo <code>record_id</code> indicati (separati da virgola)</td></tr></tbody></table>
+<figure><img src="file:///C:/Development/DevIartnet/iartnet/docs/user/images/12-unsynchronize-images-modal.png" alt="Modale Un-Synchronize Images"><figcaption>Modale Un-Synchronize Images</figcaption></figure>
+<p><em>Figura 3.4 — Modale per scegliere l&#x27;ambito dell&#x27;un-synchronize immagini.</em></p>
+<p>Campo lista (se ambito lista): placeholder <code>es. REC001, REC002, REC003</code></p>
+<table><thead><tr><th>Pulsante</th><th>Azione</th></tr></thead><tbody><tr><td><strong>Annulla</strong></td><td>Chiude modale</td></tr><tr><td><strong>Conferma</strong></td><td>Esegue un-synchronize</td></tr></tbody></table>
+<h4>Validazione lista</h4>
+<p>Se la lista è vuota:</p>
+<ul><li><strong>Titolo:</strong> <code>Errore</code></li><li><strong>Body:</strong> <em>Specificare almeno un record_id nella lista (valori separati da virgola).</em></li></ul>
+<h4>Notifiche esito</h4>
+<table><thead><tr><th>Titolo</th><th>Body</th></tr></thead><tbody><tr><td><strong>Un-synchronize immagini completato</strong></td><td>`Processate: N \</td><td>Completate: N \</td><td>Errori: N \</td><td>Saltate (non IIIF): N`</td></tr><tr><td><strong>Errore durante un-synchronize immagini</strong></td><td>Messaggio errore</td></tr></tbody></table>
+<hr>
+<h2>3.4 Ordine consigliato delle operazioni</h2>
+<pre><code class="language-text">1. PROCEDE TO IMPORT DATA     → crea/aggiorna schede Master (metadati)
+2. Synchronize Added Fields   → integra campi aggiuntivi (se presenti)
+3. Synchronize Images         → pubblica immagini su IIIF</code></pre>
+<blockquote><p><strong>Importante:</strong> la sincronizzazione immagini richiede che il record esista già su Master (passo 1 completato per quel <code>record_id</code>).</p></blockquote>
+<hr>
+<h2>3.5 Verifica post-promozione</h2>
+<h3>Su Mirror Data</h3>
+<ul><li>Colonna <strong>Promoted</strong> = <code>Sì</code> per i record sincronizzati.</li><li>Tab <strong>Images Preview</strong>: immagini con URL IIIF dopo sync immagini.</li></ul>
+<h3>Su Master Data</h3>
+<ul><li>Scheda visibile dopo <strong>SEARCH</strong> (capitolo 4) con <strong>Stable ID</strong> corrispondente.</li><li>Tab <strong>Images Preview</strong> nel dettaglio scheda popolata.</li></ul>
+<h3>Log applicativi</h3>
+<p>Per import metadati in background (ICCD/SBN/JSON), verificare i log del worker Laravel/queue per l&#x27;esito completo.</p>
+<hr>
+<h2>Checklist</h2>
+<ul class='checklist'><li class="checklist-item"><input type="checkbox" disabled > <strong>PROCEDE TO IMPORT DATA</strong> eseguito (o job in background avviato)</li><li class="checklist-item"><input type="checkbox" disabled > <strong>Synchronize Added Fields</strong> eseguito se si usano Excel Add Fields</li><li class="checklist-item"><input type="checkbox" disabled > <strong>Synchronize Images</strong> eseguito se il pacchetto contiene media</li><li class="checklist-item"><input type="checkbox" disabled > <strong>Promoted</strong> = <code>Sì</code> sui record Mirror interessati</li><li class="checklist-item"><input type="checkbox" disabled > Schede presenti in <strong>Master → Master Data</strong></li></ul>
+<h2>Prossimo passo</h2>
+<p>→ <span class="md-link">Capitolo 4 — Gestione dati su Master</span></p>
+<h1 class="chapter-title">Capitolo 4 — Gestione dati su istanza Master</h1>
+<h2>Obiettivo</h2>
+<p>Consultare, filtrare, modificare e pubblicare le schede presenti nel database Master dopo la promozione da Mirror.</p>
+<h2>Quando usarlo</h2>
+<ul><li>Verifica che la promozione sia andata a buon fine.</li><li>Consultazione e modifica campi su scheda Master.</li><li>Gestione stato di pubblicazione (<code>draft</code> / <code>published</code>).</li><li>Riordino e pubblicazione immagini IIIF associate alla scheda.</li></ul>
+<h2>Prerequisiti</h2>
+<ul><li>Record promossi su Master (capitolo 3).</li><li>Accesso al menu <strong>Master → Master Data</strong> (admin, operatore o partner con istituzione associata).</li></ul>
+<hr>
+<h2>4.1 Elenco schede Master Data</h2>
+<p><strong>Menu:</strong> <code>Master</code> → <strong>Master Data</strong></p>
+<p>Le schede provengono dalla vista <code>iartnet_master.v_dc_rec_table</code>. <strong>Non è possibile</strong> creare, modificare o eliminare schede dall&#x27;elenco (solo consultazione e azioni specifiche).</p>
+<h3>Filtri header</h3>
+<p>Prima di visualizzare dati, configurare i filtri e premere <strong>SEARCH</strong>. Fino a quel momento la tabella resta <strong>vuota</strong>.</p>
+<table><thead><tr><th>Controllo</th><th>Descrizione</th></tr></thead><tbody><tr><td><strong>Institutions</strong></td><td>Istituzione da consultare (pre-selezionata per utenti partner)</td></tr><tr><td><strong>CardType</strong></td><td>Tipo scheda</td></tr></tbody></table>
+<h4>Valori CardType</h4>
+<table><thead><tr><th>Valore</th><th>Etichetta</th></tr></thead><tbody><tr><td>TUTTE</td><td>ALL</td></tr><tr><td>OA</td><td>OA</td></tr><tr><td>D</td><td>D</td></tr><tr><td>F</td><td>F</td></tr><tr><td>S</td><td>S</td></tr><tr><td>MI</td><td>MI</td></tr><tr><td>MIDF</td><td>MIDF</td></tr><tr><td>MINV</td><td>MINV</td></tr><tr><td>SBN</td><td>SBN</td></tr><tr><td>JSON</td><td>JSON</td></tr><tr><td>INTERVISTA</td><td>INTERVIEW</td></tr><tr><td>SALON</td><td>SALON_N</td></tr></tbody></table>
+<table><thead><tr><th>Pulsante</th><th>Azione</th></tr></thead><tbody><tr><td><strong>SEARCH</strong></td><td>Carica la tabella in base a Institution + CardType</td></tr></tbody></table>
+<figure><img src="file:///C:/Development/DevIartnet/iartnet/docs/user/images/13-master-data-search.png" alt="Master Data — filtri e SEARCH"><figcaption>Master Data — filtri e SEARCH</figcaption></figure>
+<p><em>Figura 4.1 — Barra filtri Institutions, CardType e pulsante SEARCH.</em></p>
+<h3>Colonne tabella</h3>
+<table><thead><tr><th>Colonna</th><th>Descrizione</th></tr></thead><tbody><tr><td><strong>Stable ID</strong></td><td>Identificativo stabile (ricercabile)</td></tr><tr><td><strong>Type</strong></td><td>Tipo scheda</td></tr><tr><td><strong>Institution</strong></td><td>Istituzione</td></tr><tr><td><strong>Title</strong></td><td>Titolo (ricerca anche su subject/subjectb)</td></tr><tr><td><strong>Publish State</strong></td><td><code>draft</code> (badge giallo) o <code>published</code> (badge verde)</td></tr><tr><td><strong>Translated</strong></td><td>Yes / No</td></tr></tbody></table>
+<h3>Azioni riga</h3>
+<table><thead><tr><th>Azione</th><th>Descrizione</th></tr></thead><tbody><tr><td><strong>View</strong></td><td>Apre il dettaglio scheda nella stessa pagina</td></tr><tr><td><strong>Publish</strong> / <strong>Set draft</strong></td><td>Alterna lo stato di pubblicazione della singola scheda</td></tr></tbody></table>
+<h4>Notifica cambio stato singola scheda</h4>
+<table><thead><tr><th>Titolo</th><th>Body</th></tr></thead><tbody><tr><td><strong>State updated</strong></td><td><code>Publish state set to &quot;draft&quot;.</code> oppure <code>&quot;published&quot;.</code></td></tr></tbody></table>
+<h3>Azione bulk — Publish all draft</h3>
+<table><thead><tr><th>Pulsante</th><th><code>Publish all draft</code></th></tr></thead><tbody><tr><td>Modale heading</td><td><code>Publish all draft cards</code></td></tr><tr><td>Modale descrizione</td><td><em>Publish all the cards type {CardType} of the Institution {nome}?</em></td></tr></tbody></table>
+<p>Pubblica in blocco tutte le schede in stato <code>draft</code> per i filtri correnti (Institution + CardType).</p>
+<figure><img src="file:///C:/Development/DevIartnet/iartnet/docs/user/images/14-master-data-table.png" alt="Master Data — tabella schede"><figcaption>Master Data — tabella schede</figcaption></figure>
+<p><em>Figura 4.2 — Elenco schede con Stable ID, Publish State e azioni View / Publish.</em></p>
+<hr>
+<h2>4.2 Dettaglio scheda (Card details)</h2>
+<p>Aprire con <strong>View</strong> su una riga, oppure cliccando sulla riga (stessa azione).</p>
+<h3>Header</h3>
+<table><thead><tr><th>Elemento</th><th>Testo</th></tr></thead><tbody><tr><td><strong>Titolo</strong></td><td><code>Card details</code></td></tr><tr><td><strong>Sottotitolo</strong></td><td><code>Record ID: {stable_id}</code></td></tr><tr><td><strong>Pulsante</strong></td><td><code>← Return To Main Table</code></td></tr></tbody></table>
+<h3>Tab dati</h3>
+<table><thead><tr><th>Tab</th><th>Contenuto</th></tr></thead><tbody><tr><td><strong>Original Fields</strong></td><td>Campi originali dalla normativa sorgente</td></tr><tr><td><strong>Metadata</strong></td><td>Metadati di sistema / descrittivi</td></tr><tr><td><strong>Added Fields</strong></td><td>Campi aggiuntivi importati via Excel</td></tr><tr><td><strong>Images Preview</strong></td><td>Anteprima e gestione immagini IIIF</td></tr></tbody></table>
+<figure><img src="file:///C:/Development/DevIartnet/iartnet/docs/user/images/15-card-details.png" alt="Master Data — Card details"><figcaption>Master Data — Card details</figcaption></figure>
+<p><em>Figura 4.3 — Dettaglio scheda con tab campi e anteprima immagini.</em></p>
+<h3>Ricerca nei campi</h3>
+<p>Campo di ricerca: placeholder <strong>Search in Key and Value...</strong></p>
+<p>Contatore: <code>Total: N fields (of M in this tab)</code> — con indicatore <code>(filtered)</code> se attivo un filtro.</p>
+<p>Se nessun dato: <em>No record data found</em></p>
+<h3>Modifica inline valori</h3>
+<p>Alcune righe sono editabili (in base al tab e alla chiave campo):</p>
+<table><thead><tr><th>Tab</th><th>Campi editabili</th></tr></thead><tbody><tr><td><strong>Original Fields</strong></td><td>Righe con chiave <code>record_fields.*</code></td></tr><tr><td><strong>Metadata</strong></td><td>Righe con chiave <code>record_fields.*</code></td></tr><tr><td><strong>Added Fields</strong></td><td>Tutte le righe del tab</td></tr></tbody></table>
+<p>Flusso modifica (per righe editabili):</p>
+<p>1. Attivare modifica sulla riga. 2. Modificare il valore. 3. Salvare o annullare.</p>
+<p>Le modifiche vengono persistite in <code>i18n_texts</code> sul Master.</p>
+<hr>
+<h2>4.3 Tab Images Preview</h2>
+<p>Gestione immagini associate alla scheda (da <code>web_resources</code> / IIIF).</p>
+<p>Funzionalità tipiche (controlli nel pannello immagini):</p>
+<ul><li>Selezione immagine dall&#x27;elenco</li><li><strong>Toggle publish state</strong> dell&#x27;immagine selezionata</li><li><strong>Spostamento ordine</strong> immagini (su/giù) quando applicabile</li></ul>
+<p>Notifiche correlate allo stato immagine seguono lo stesso pattern di <strong>State updated</strong> per le schede.</p>
+<hr>
+<h2>4.4 Pagina View dedicata</h2>
+<p>Esiste anche una route di dettaglio standalone:</p>
+<p><strong>Master Data</strong> → View su scheda → URL <code>/admin/master-data-cards/view/{stable_id}</code></p>
+<p>Comportamento e tab analoghi a <strong>Card details</strong> incorporato nella lista (<code>ViewMasterDataCard</code>).</p>
+<hr>
+<h2>4.5 Stati di pubblicazione — riepilogo</h2>
+<table><thead><tr><th>Stato</th><th>Significato operativo</th></tr></thead><tbody><tr><td><strong>draft</strong></td><td>Scheda presente su Master, non ancora pubblicata</td></tr><tr><td><strong>published</strong></td><td>Scheda pubblicata</td></tr></tbody></table>
+<p>Transizioni:</p>
+<ul><li>Singola scheda: azione <strong>Publish</strong> / <strong>Set draft</strong> nella tabella.</li><li>Multipla: <strong>Publish all draft</strong> con conferma modale.</li></ul>
+<hr>
+<h2>4.6 Relazione Mirror ↔ Master</h2>
+<table><thead><tr><th>Concetto Mirror</th><th>Concetto Master</th></tr></thead><tbody><tr><td><code>record_id</code></td><td><code>stable_id</code></td></tr><tr><td><strong>Promoted</strong> = <code>Sì</code></td><td>Scheda presente e sincronizzata</td></tr><tr><td>Asset con URL IIIF</td><td><code>web_resources</code> + anteprima in Images Preview</td></tr></tbody></table>
+<p>Per aggiornare dati già promossi:</p>
+<p>1. Re-importare su Mirror (imposta <strong>promoted = false</strong>). 2. Ripetere le operazioni di sincronizzazione (capitolo 3).</p>
+<hr>
+<h2>Checklist gestione Master</h2>
+<ul class='checklist'><li class="checklist-item"><input type="checkbox" disabled > <strong>SEARCH</strong> eseguito con Institution e CardType corretti</li><li class="checklist-item"><input type="checkbox" disabled > Schede promosse visibili con <strong>Stable ID</strong> atteso</li><li class="checklist-item"><input type="checkbox" disabled > <strong>Publish State</strong> coerente con il processo editoriale (<code>draft</code> / <code>published</code>)</li><li class="checklist-item"><input type="checkbox" disabled > Campi e immagini verificati nei tab di dettaglio</li><li class="checklist-item"><input type="checkbox" disabled > Eventuali correzioni inline salvate</li></ul>
+<h2>Prossimo passo</h2>
+<p>→ <span class="md-link">Capitolo 5 — Translation worker</span></p>
+<h2>Riferimenti</h2>
+<ul><li><span class="md-link">Capitolo 1 — Setup Mirror</span></li><li><span class="md-link">Capitolo 2 — Import su Mirror</span></li><li><span class="md-link">Capitolo 3 — Promozione su Master</span></li><li><span class="md-link">Indice manuale</span></li></ul>
+<h1 class="chapter-title">Capitolo 5 — Translation worker</h1>
+<h2>Obiettivo</h2>
+<p>Avviare o fermare il worker che traduce automaticamente le schede Master dall&#x27;italiano all&#x27;inglese, popolando <code>i18n_texts</code> con <code>lang = en</code> e aggiornando il flag <strong>Translated</strong> sulla scheda.</p>
+<h2>Quando usarlo</h2>
+<ul><li>Dopo la promozione su Master o la creazione diretta di schede (Interview, Salon, ecc.) con testi solo in italiano.</li><li>Quando in <strong>Master Data</strong> la colonna <strong>Translated</strong> resta su <code>No</code> per una o più schede.</li><li>Per processare in batch le schede con <code>is_translated = false</code> senza intervento manuale campo per campo.</li></ul>
+<h2>Prerequisiti</h2>
+<ul><li>Accesso al menu <strong>Master → Translation</strong> (admin, operatore o partner con sezioni operative).</li><li>Servizio <strong>Libre Translate</strong> raggiungibile e variabile <code>LIBRE_TRANSLATE_URL</code> configurata sul server.</li><li><strong>Queue worker</strong> Laravel in esecuzione (<code>php artisan queue:work</code>), perché i job di traduzione vengono accodati.</li><li>Scheduler Laravel attivo (<code>php artisan schedule:work</code> o cron), che invia i job ogni minuto quando il worker è abilitato.</li></ul>
+<hr>
+<h2>5.1 Pagina Translation worker</h2>
+<p><strong>Menu:</strong> <code>Master</code> → <strong>Translation</strong></p>
+<p><strong>Titolo pagina:</strong> <code>Translation worker</code></p>
+<figure><img src="file:///C:/Development/DevIartnet/iartnet/docs/user/images/16-translation-worker.png" alt="Translation worker"><figcaption>Translation worker</figcaption></figure>
+<p><em>Figura 5.1 — Pagina Translation worker con stato e pulsanti Start/Stop.</em></p>
+<h3>Descrizione operativa (testo in pagina)</h3>
+<p>Il worker processa <strong>una scheda alla volta</strong>:</p>
+<p>1. Legge i testi in italiano da <code>i18n_texts</code> (<code>lang = it</code>) per la scheda e per le entità collegate (place, agent). 2. Invia i testi al servizio Libre Translate. 3. Inserisce o aggiorna le righe tradotte con <code>lang = en</code>. 4. Imposta <code>records.is_translated = true</code> sulla scheda elaborata.</p>
+<p>Le schede candidate sono quelle con <strong>`is_translated = false`</strong> nella tabella <code>records</code>.</p>
+<h3>Indicatore stato</h3>
+<table><thead><tr><th>Stato UI</th><th>Significato</th></tr></thead><tbody><tr><td><strong>Worker attivo</strong></td><td>Il flag di sistema è abilitato; lo scheduler può inviare nuovi job</td></tr><tr><td><strong>Worker fermo</strong></td><td>Nessun nuovo job verrà accodato dallo scheduler</td></tr></tbody></table>
+<hr>
+<h2>5.2 Avviare e fermare il worker</h2>
+<table><thead><tr><th>Pulsante</th><th>Azione</th></tr></thead><tbody><tr><td><strong>Start Translation</strong></td><td>Abilita il worker (flag in cache)</td></tr><tr><td><strong>Stop Translation</strong></td><td>Disabilita il worker</td></tr></tbody></table>
+<h3>Notifiche</h3>
+<table><thead><tr><th>Titolo</th><th>Tipo</th><th>Body</th></tr></thead><tbody><tr><td><strong>Translation worker avviato</strong></td><td>Success</td><td><em>Il worker è attivo. Lo scheduler invierà un job ogni minuto per tradurre le schede con is_translated = false.</em></td></tr><tr><td><strong>Translation worker fermato</strong></td><td>Warning</td><td><em>Il worker è stato disattivato. I job già in coda verranno ancora eseguiti.</em></td></tr></tbody></table>
+<blockquote><p><strong>Nota:</strong> fermare il worker non annulla i job già accodati; attendere che la coda si svuoti o intervenire sul worker di coda se necessario.</p></blockquote>
+<hr>
+<h2>5.3 Comportamento della traduzione</h2>
+<h3>Frequenza e throughput</h3>
+<p>Quando il worker è <strong>attivo</strong>, lo scheduler Laravel:</p>
+<ul><li>viene eseguito <strong>ogni minuto</strong>;</li><li>accoda fino a <strong>50 job</strong> <code>TranslateRecordJob</code> per ogni run;</li><li>ogni job seleziona <strong>al massimo una scheda</strong> (<code>FOR UPDATE SKIP LOCKED</code>), evitando elaborazioni duplicate.</li></ul>
+<h3>Campi tradotti</h3>
+<p>Per ogni scheda selezionata vengono considerati i testi IT con <code>entity_type</code> in:</p>
+<table><thead><tr><th>entity_type</th><th>Ambito</th></tr></thead><tbody><tr><td><strong>record</strong></td><td>Campi della scheda</td></tr><tr><td><strong>place</strong></td><td>Luoghi collegati via <code>record_places</code></td></tr><tr><td><strong>agent</strong></td><td>Agenti collegati via <code>record_agents</code></td></tr></tbody></table>
+<h3>Casi in cui il testo IT viene copiato in EN (senza chiamata a Libre Translate)</h3>
+<table><thead><tr><th>Condizione</th><th>Esempio</th></tr></thead><tbody><tr><td>Testo <strong>tutto maiuscolo</strong></td><td><code>MUSEO NAZIONALE</code></td></tr><tr><td><code>field_name = title</code></td><td>Titolo scheda</td></tr><tr><td>Valore <strong>puramente numerico</strong> (dopo trim)</td><td><code>42</code>, <code>3.14</code></td></tr></tbody></table>
+<h3>Esito sulla scheda</h3>
+<ul><li>Al termine con successo: <code>records.is_translated = true</code>.</li><li>In <strong>Master Data</strong>, colonna <strong>Translated</strong> passa a <strong>Yes</strong>.</li><li>Se la scheda non ha testi IT: viene comunque marcata come tradotta.</li></ul>
+<h3>Scheda già tradotta o modificata</h3>
+<p>Se una scheda viene aggiornata e richiede una nuova traduzione, il flag <code>is_translated</code> deve tornare a <code>false</code> (operazione di backend o re-import, a seconda del flusso). Il worker elabora solo schede con flag <code>false</code>.</p>
+<blockquote><p><strong>Eccezione Salon:</strong> le schede SALON create via import hanno <code>is_translated = true</code> già in fase di creazione (testi EN duplicati dai valori IT al momento dell&#x27;import).</p></blockquote>
+<hr>
+<h2>5.4 Verifica e troubleshooting</h2>
+<h3>Checklist operativa</h3>
+<ul class='checklist'><li class="checklist-item"><input type="checkbox" disabled > <strong>Start Translation</strong> premuto e stato <strong>Worker attivo</strong> visibile</li><li class="checklist-item"><input type="checkbox" disabled > Queue worker in esecuzione sul server</li><li class="checklist-item"><input type="checkbox" disabled > Scheduler attivo (cron o <code>schedule:work</code>)</li><li class="checklist-item"><input type="checkbox" disabled > Colonna <strong>Translated</strong> = <strong>Yes</strong> sulle schede attese in <strong>Master Data</strong></li></ul>
+<h3>Sintomi comuni</h3>
+<table><thead><tr><th>Sintomo</th><th>Azione</th></tr></thead><tbody><tr><td><strong>Translated</strong> resta <code>No</code></td><td>Verificare che il worker sia attivo, la coda in esecuzione e <code>LIBRE_TRANSLATE_URL</code> configurata</td></tr><tr><td>Nessuna scheda elaborata</td><td>Controllare che esistano record con <code>is_translated = false</code></td></tr><tr><td>Errori in log</td><td>Cercare <code>TranslateRecordJob</code> nei log applicativi (timeout Libre Translate, risposta API non valida)</td></tr><tr><td>Job in coda ma worker fermo</td><td>Attendere completamento job già accodati prima dello stop, oppure svuotare la coda</td></tr></tbody></table>
+<h3>Log</h3>
+<p>Messaggi utili nei log:</p>
+<ul><li><code>TranslateRecordJob: Record translated</code> — scheda elaborata con successo</li><li><code>TranslateRecordJob: Worker disabled, skipping</code> — flag disattivato</li><li><code>TranslateRecordJob: LIBRE_TRANSLATE_URL not set</code> — configurazione mancante</li></ul>
+<hr>
+<h2>Prossimo passo</h2>
+<p>→ <span class="md-link">Capitolo 6 — Interviews (import)</span></p>
+<h1 class="chapter-title">Capitolo 6 — Interviews (INTERVISTA)</h1>
+<h2>Obiettivo</h2>
+<p>Importare interviste da documenti Word (.docx) e immagini JPEG, creando una scheda Master di tipo <strong>INTERVISTA</strong> e la relativa riga nella tabella <code>interviews</code>. Consultare, modificare ed eliminare le interviste già importate.</p>
+<h2>Quando usarlo</h2>
+<ul><li>Ingestione di un&#x27;intervista strutturata (domande/risposte, bio, didascalie immagini) senza passare da Mirror.</li><li>Revisione o correzione metadati e JSON di posizionamento immagini su un&#x27;intervista esistente.</li><li>Rimozione completa di un&#x27;intervista e della scheda Master collegata.</li></ul>
+<h2>Prerequisiti</h2>
+<ul><li>Accesso a <strong>Master → Interviews</strong> (admin, operatore o partner con sezioni operative).</li><li>Variabile <strong>`INGEST_FS_ROOT`</strong> configurata su directory esistente e scrivibile.</li><li>Per import con immagini: <strong>`IMAGES_ROOT`</strong> scrivibile e <strong>`IIIF_PUBLIC_BASE`</strong> configurato.</li><li><strong>Codice scheda (`stable_id`)</strong> univoco, non già presente su Master.</li><li>Documenti <code>.docx</code> conformi al formato descritto in § 6.3.</li></ul>
+<blockquote><p><strong>Nota:</strong> le interviste <strong>non</strong> si creano con il pulsante Create standard: l&#x27;unico percorso di creazione è <strong>Import Interview</strong>.</p></blockquote>
+<hr>
+<h2>6.1 Elenco Interviews</h2>
+<p><strong>Menu:</strong> <code>Master</code> → <strong>Interviews</strong></p>
+<p>Etichetta risorsa in UI: <strong>INTERVISTA</strong> (singolare/plurale).</p>
+<figure><img src="file:///C:/Development/DevIartnet/iartnet/docs/user/images/17-interviews-list.png" alt="Elenco Interviews"><figcaption>Elenco Interviews</figcaption></figure>
+<p><em>Figura 6.1 — Tabella interviste con azioni View, Edit, Delete.</em></p>
+<h3>Colonne tabella</h3>
+<table><thead><tr><th>Colonna</th><th>Descrizione</th></tr></thead><tbody><tr><td><strong>Name</strong></td><td>Nome intervista (derivato dall&#x27;header del documento o dallo <code>stable_id</code>)</td></tr><tr><td><strong>Description</strong></td><td>Descrizione (opzionale, spesso vuota dopo import)</td></tr><tr><td><strong>Created at</strong> / <strong>Updated at</strong></td><td>Timestamp (colonne nascoste di default)</td></tr></tbody></table>
+<h3>Azioni</h3>
+<table><thead><tr><th>Azione</th><th>Descrizione</th></tr></thead><tbody><tr><td><strong>Import Interview</strong></td><td>Apre il wizard di import (header, pulsante in alto a destra)</td></tr><tr><td><strong>View</strong></td><td>Dettaglio sola lettura</td></tr><tr><td><strong>Edit</strong></td><td>Modifica Name, Description, Ext JSON</td></tr><tr><td><strong>Delete</strong></td><td>Elimina intervista <strong>e</strong> scheda Master collegata (record, KV, i18n, immagini IIIF)</td></tr></tbody></table>
+<p><strong>Bulk delete:</strong> elimina in blocco le interviste selezionate con la stessa logica della delete singola.</p>
+<hr>
+<h2>6.2 Procedura di import — panoramica</h2>
+<p>L&#x27;import è un processo <strong>in due step</strong> sulla pagina <strong>Data Import Interviews</strong>:</p>
+<pre><code class="language-text">Step 1 — Upload (Step 1)
+  Caricamento file + salvataggio sotto INGEST_FS_ROOT/interviews/{runId}
+        ↓
+Step 2 — Crea scheda Master (Step 2)
+  Parsing DOCX, creazione record Master + Interview, copia immagini IIIF
+        ↓
+Redirect al dettaglio Interview (View)</code></pre>
+<p><strong>Percorso menu:</strong> <code>Master</code> → <strong>Interviews</strong> → <strong>Import Interview</strong></p>
+<figure><img src="file:///C:/Development/DevIartnet/iartnet/docs/user/images/18-interview-import.png" alt="Import Interview"><figcaption>Import Interview</figcaption></figure>
+<p><em>Figura 6.2 — Form import con campi scheda, documenti DOCX, immagini e pulsanti Step 1 / Step 2.</em></p>
+<hr>
+<h2>6.3 Preparazione dei file sorgente</h2>
+<h3>Documento principale (<code>main.docx</code>)</h3>
+<p>Il parser estrae <strong>un paragrafo per riga</strong>. Struttura attesa:</p>
+<table><thead><tr><th>Sezione</th><th>Formato nel DOCX</th></tr></thead><tbody><tr><td><strong>Header</strong></td><td>Primo paragrafo del documento (titolo/intestazione)</td></tr><tr><td><strong>Intervistatore</strong></td><td>Paragrafo che inizia con <code>Intervistatore</code> (eventuale testo sulla stessa riga o paragrafi successivi fino al prossimo marker)</td></tr><tr><td><strong>Intervistato</strong></td><td>Paragrafo che inizia con <code>Intervistato</code></td></tr><tr><td><strong>Bio</strong></td><td>Paragrafi liberi, oppure blocco che inizia con <code>Bio:</code></td></tr><tr><td><strong>Domanda</strong></td><td>Paragrafo contenente il marker <strong>`(Q)`</strong> (varianti ammesse: <code>( Q )</code>, spazi opzionali)</td></tr><tr><td><strong>Risposta</strong></td><td>Testo sulla stessa riga dopo <code>(A)</code> oppure paragrafi successivi fino alla prossima domanda o immagine</td></tr><tr><td><strong>Immagine</strong></td><td>Paragrafo dedicato: <code>Immagine: nomefile.jpg</code> (nome file <strong>senza path</strong>)</td></tr></tbody></table>
+<blockquote><p><strong>Obbligatorio:</strong> almeno <strong>un blocco domanda/risposta</strong> con marker <code>(Q)</code> / <code>(A)</code>. In assenza, Step 2 fallisce con errore esplicito.</p></blockquote>
+<h4>Esempio struttura (semplificata)</h4>
+<pre><code class="language-text">Titolo dell&#x27;intervista
+
+Intervistatore
+Mario Rossi
+
+Intervistato
+Luigi Bianchi
+
+Bio: Breve biografia dell&#x27;intervistato...
+
+(Q) Prima domanda?
+(A) Prima risposta.
+
+Immagine: foto_01.jpg
+
+(Q) Seconda domanda?
+(A) Seconda risposta.</code></pre>
+<h3>Documento didascalie (<code>didascalie.docx</code>)</h3>
+<ul><li>Un paragrafo per didascalia, <strong>nell&#x27;ordine</strong> in cui le immagini compaiono nel documento principale.</li><li>La prima didascalia corrisponde al primo placeholder <code>Immagine: …</code>, la seconda al secondo, e così via.</li><li>Paragrafi vuoti vengono ignorati.</li></ul>
+<h3>Immagini</h3>
+<table><thead><tr><th>Requisito</th><th>Valore</th></tr></thead><tbody><tr><td>Formati accettati</td><td><code>.jpg</code>, <code>.jpeg</code></td></tr><tr><td>Upload</td><td>Multiplo, <strong>ordinabile</strong> (l&#x27;ordine di upload determina <code>img_001.jpg</code>, <code>img_002.jpg</code>, …)</td></tr><tr><td>Obbligatorietà</td><td>Opzionale (se assenti, l&#x27;intervista viene creata senza <code>web_resources</code>)</td></tr></tbody></table>
+<blockquote><p>I nomi nei tag <code>Immagine: nomefile.jpg</code> servono al JSON di posizionamento (<code>interviews.ext_json</code>); i file effettivi caricati sono rinominati in sequenza durante Step 1.</p></blockquote>
+<hr>
+<h2>6.4 Step 1 — Upload</h2>
+<h3>Campi form</h3>
+<table><thead><tr><th>Campo</th><th>Obbligatorio</th><th>Descrizione</th></tr></thead><tbody><tr><td><strong>Codice scheda (stable_id)</strong></td><td>Sì</td><td>Codice univoco della scheda Master</td></tr><tr><td><strong>Institution</strong></td><td>Sì</td><td>Istituzione titolare (combo searchable)</td></tr><tr><td><strong>Documento principale intervista (.docx)</strong></td><td>Sì</td><td>File Word principale</td></tr><tr><td><strong>Didascalie (.docx)</strong></td><td>Sì</td><td>File Word delle didascalie</td></tr><tr><td><strong>Immagini (.jpg / .jpeg)</strong></td><td>No</td><td>Una o più immagini JPEG</td></tr></tbody></table>
+<h3>Pulsante</h3>
+<table><thead><tr><th>Pulsante</th><th>Azione</th></tr></thead><tbody><tr><td><strong>Upload (Step 1)</strong></td><td>Valida i campi, copia i file su disco</td></tr></tbody></table>
+<h3>Cosa succede sul server</h3>
+<p>I file vengono salvati sotto:</p>
+<pre><code class="language-text">INGEST_FS_ROOT/interviews/{runId}/
+  main.docx
+  didascalie.docx
+  images/
+    img_001.jpg
+    img_002.jpg
+    …</code></pre>
+<p><code>{runId}</code> è un UUID generato al momento dell&#x27;upload.</p>
+<h3>Indicatore Step 1</h3>
+<table><thead><tr><th>Stato</th><th>Messaggio</th></tr></thead><tbody><tr><td>Prima dell&#x27;upload</td><td><em>Caricare i file e premere «Upload (Step 1)» per salvare sotto INGEST_FS_ROOT.</em></td></tr><tr><td>Dopo upload OK</td><td><em>Upload completato. Cartella: interviews/{runId}</em></td></tr></tbody></table>
+<h3>Notifiche Step 1</h3>
+<table><thead><tr><th>Titolo</th><th>Tipo</th><th>Quando</th></tr></thead><tbody><tr><td><strong>INGEST_FS_ROOT non valido</strong></td><td>Danger</td><td>Directory ingestion assente o non scrivibile</td></tr><tr><td><strong>Step 1 completato</strong></td><td>Success</td><td><em>File salvati in INGEST_FS_ROOT/interviews/{runId}. Procedere con Step 2.</em></td></tr><tr><td><strong>Errore upload</strong></td><td>Danger</td><td>Copia file fallita o upload non leggibile</td></tr></tbody></table>
+<hr>
+<h2>6.5 Step 2 — Creazione scheda Master</h2>
+<p>Il pulsante <strong>Crea scheda Master (Step 2)</strong> compare solo dopo Step 1 completato con successo.</p>
+<table><thead><tr><th>Pulsante</th><th>Azione</th></tr></thead><tbody><tr><td><strong>Crea scheda Master (Step 2)</strong></td><td>Parsing DOCX, insert su Master, redirect a View Interview</td></tr></tbody></table>
+<h3>Operazioni eseguite</h3>
+<p>1. Verifica che <code>stable_id</code> <strong>non esista</strong> già su Master. 2. Estrae paragrafi da <code>main.docx</code> e <code>didascalie.docx</code>. 3. Crea record in <code>records</code> con:</p>
+<ul><li class="nested" style="margin-left:36px"><code>publish_state = draft</code></li><li class="nested" style="margin-left:36px"><code>primary_lang = it</code></li><li class="nested" style="margin-left:36px"><code>edm_type = TEXT</code></li></ul>
+<p>4. Popola <code>record_kv</code> e <code>i18n_texts</code> (IT + copia EN iniziale) con campi:</p>
+<ul><li class="nested" style="margin-left:36px"><code>card_type = INTERVISTA</code></li><li class="nested" style="margin-left:36px"><code>header</code>, <code>intervistatore</code>, <code>intervistato</code>, <code>bio</code></li><li class="nested" style="margin-left:36px"><code>domanda_N</code>, <code>risposta_N</code> per ogni coppia Q/A</li><li class="nested" style="margin-left:36px"><code>didascalia_N</code> per ogni didascalia</li><li class="nested" style="margin-left:36px"><code>QuestionsNumber</code> (conteggio domande)</li></ul>
+<p>5. Copia immagini in <code>IMAGES_ROOT</code> e registra URL IIIF in <code>web_resources</code> (se presenti). 6. Crea riga in <code>interviews</code> con <code>ext_json</code> di posizionamento immagini.</p>
+<h3>Notifiche Step 2</h3>
+<table><thead><tr><th>Titolo</th><th>Tipo</th><th>Quando</th></tr></thead><tbody><tr><td><strong>Step 1 mancante</strong></td><td>Danger</td><td>Step 2 invocato senza upload precedente</td></tr><tr><td><strong>Scheda creata</strong></td><td>Success</td><td><em>Record Master e Interview creati.</em> → redirect a <strong>View</strong></td></tr><tr><td><strong>Errore creazione scheda</strong></td><td>Danger</td><td>stable_id duplicato, DOCX non valido, IIIF/IMAGES_ROOT mancanti, ecc.</td></tr></tbody></table>
+<h3>Errori frequenti Step 2</h3>
+<table><thead><tr><th>Messaggio (esempio)</th><th>Causa</th></tr></thead><tbody><tr><td><em>Esiste già una scheda con codice (stable_id) &#x27;…&#x27;</em></td><td>Codice già usato</td></tr><tr><td><em>Il documento principale non contiene testo utilizzabile</em></td><td>DOCX principale vuoto</td></tr><tr><td><em>Nessun blocco domanda/risposta rilevato…</em></td><td>Mancano marker <code>(Q)</code> / <code>(A)</code></td></tr><tr><td><em>File principale o didascalie mancanti…</em></td><td>Cartella run incompleta</td></tr><tr><td><em>IIIF_PUBLIC_BASE non configurato</em></td><td>Import con immagini senza IIIF</td></tr><tr><td><em>IMAGES_ROOT non configurato o non scrivibile</em></td><td>Import con immagini senza storage</td></tr></tbody></table>
+<hr>
+<h2>6.6 Dettaglio e modifica (View / Edit)</h2>
+<p>Dopo l&#x27;import, o dalla lista <strong>Interviews</strong> → <strong>View</strong> o <strong>Edit</strong>.</p>
+<h3>Campi editabili</h3>
+<table><thead><tr><th>Campo</th><th>Note</th></tr></thead><tbody><tr><td><strong>Name</strong></td><td>Obbligatorio, max 255 caratteri</td></tr><tr><td><strong>Description</strong></td><td>Testo libero</td></tr><tr><td><strong>Ext JSON</strong></td><td>JSON formattato; helper: <em>JSON libero. Visualizzazione formattata: modifica direttamente il testo (sintassi JSON valida).</em></td></tr></tbody></table>
+<h3>Consultazione scheda Master collegata</h3>
+<p>Dalla scheda Master (capitolo 4), filtrare <strong>CardType = INTERVISTA</strong> e cercare lo <strong>Stable ID</strong> usato in import.</p>
+<hr>
+<h2>6.7 Eliminazione</h2>
+<p><strong>Delete</strong> (singola o bulk) esegue una cancellazione <strong>completa</strong>:</p>
+<ul><li>Riga <code>interviews</code></li><li>Record Master (<code>records</code>)</li><li><code>record_kv</code>, <code>i18n_texts</code></li><li><code>web_resources</code> e file immagine in <code>IMAGES_ROOT</code> (se configurato)</li></ul>
+<blockquote><p>Operazione <strong>irreversibile</strong>. Verificare lo Stable ID prima di confermare.</p></blockquote>
+<hr>
+<h2>Checklist import Interview</h2>
+<ul class='checklist'><li class="checklist-item"><input type="checkbox" disabled > <code>stable_id</code> univoco scelto</li><li class="checklist-item"><input type="checkbox" disabled > <code>main.docx</code> con header, almeno una coppia <code>(Q)</code>/<code>(A)</code>, marker immagine se necessario</li><li class="checklist-item"><input type="checkbox" disabled > <code>didascalie.docx</code> con didascalie in ordine</li><li class="checklist-item"><input type="checkbox" disabled > Immagini JPEG caricate (se previste) e <code>IMAGES_ROOT</code> / <code>IIIF_PUBLIC_BASE</code> OK</li><li class="checklist-item"><input type="checkbox" disabled > <strong>Upload (Step 1)</strong> completato</li><li class="checklist-item"><input type="checkbox" disabled > <strong>Crea scheda Master (Step 2)</strong> completato con redirect a View</li><li class="checklist-item"><input type="checkbox" disabled > Scheda visibile in <strong>Master Data</strong> con CardType <strong>INTERVISTA</strong></li><li class="checklist-item"><input type="checkbox" disabled > (Opzionale) <strong>Translation worker</strong> avviato se servono traduzioni EN automatiche</li></ul>
+<h2>Prossimo passo</h2>
+<p>→ <span class="md-link">Capitolo 7 — Salon (import)</span></p>
+<h1 class="chapter-title">Capitolo 7 — Salon (import SALON)</h1>
+<h2>Obiettivo</h2>
+<p>Importare una scheda <strong>SALON</strong> da file Excel (.xlsx) e archivio immagini (.zip), creando direttamente record Master con metadati, dati studenti per pagina e risorse IIIF.</p>
+<h2>Quando usarlo</h2>
+<ul><li>Pubblicazione di un catalogo/salon con pagine espositiva e schede studenti per pagina.</li><li>Ingestione batch di immagini pagina + metadati strutturati senza passare da Mirror.</li></ul>
+<h2>Prerequisiti</h2>
+<ul><li>Accesso a <strong>Master → Salon</strong> (admin, operatore o partner con sezioni operative).</li><li><strong>`INGEST_FS_ROOT`</strong> configurato e scrivibile.</li><li><strong>`IMAGES_ROOT`</strong> scrivibile e <strong>`IIIF_PUBLIC_BASE`</strong> configurato (obbligatori per l&#x27;import Salon).</li><li><strong>Codice scheda SALON (`stable_id`)</strong> univoco — verificato già in Step 1.</li><li>File Excel conforme al template (Foglio 1 + Foglio 2) descritto in § 7.3.</li><li>ZIP immagini contenente almeno un file <code>.jpg</code>, <code>.jpeg</code> o <code>.png</code>.</li></ul>
+<hr>
+<h2>7.1 Accesso alla pagina import</h2>
+<p><strong>Menu:</strong> <code>Master</code> → <strong>Salon</strong></p>
+<p><strong>Titolo pagina:</strong> <code>Import Salon</code></p>
+<figure><img src="file:///C:/Development/DevIartnet/iartnet/docs/user/images/19-salon-import.png" alt="Import Salon"><figcaption>Import Salon</figcaption></figure>
+<p><em>Figura 7.1 — Pagina Import Salon con Step 1 (upload) e Step 2 (creazione scheda).</em></p>
+<p>La pagina è organizzata in due sezioni esplicite:</p>
+<table><thead><tr><th>Sezione</th><th>Descrizione UI</th></tr></thead><tbody><tr><td><strong>Step 1 — Upload dati</strong></td><td>Caricamento Excel, ZIP immagini, codice scheda e istituzione</td></tr><tr><td><strong>Step 2 — Creazione scheda</strong></td><td>Lettura Excel e immagini, creazione record Master SALON</td></tr></tbody></table>
+<hr>
+<h2>7.2 Procedura di import — panoramica</h2>
+<pre><code class="language-text">Step 1 — Upload (Step 1)
+  Excel + ZIP → INGEST_FS_ROOT/salons/{runId}/
+  (estrazione immagini da ZIP in …/images/)
+        ↓
+Step 2 — Crea scheda Master SALON (Step 2)
+  Parsing Excel, validazione immagini, insert Master + IIIF
+        ↓
+Redirect al dettaglio scheda in Master Data (View)</code></pre>
+<hr>
+<h2>7.3 Preparazione file sorgente</h2>
+<h3>File Excel (<code>data.xlsx</code>)</h3>
+<p>Formato <strong>.xlsx</strong> con due fogli:</p>
+<h4>Foglio 1 — Metadati generali</h4>
+<table><thead><tr><th>Elemento</th><th>Posizione</th></tr></thead><tbody><tr><td>Nome foglio</td><td><code>Foglio 1</code> (o primo foglio se il nome non coincide)</td></tr><tr><td>Riga metadati</td><td><strong>Riga Excel 3</strong> (indice 0-based: 2)</td></tr><tr><td>Colonne (B→F)</td><td><strong>Titolo</strong>, <strong>Anno</strong>, <strong>Ente</strong>, <strong>SedeEspositiva</strong>, <strong>Descrizione</strong></td></tr></tbody></table>
+<h4>Foglio 2 — Pagine e studenti</h4>
+<table><thead><tr><th>Elemento</th><th>Posizione</th></tr></thead><tbody><tr><td>Nome foglio</td><td><code>Foglio 2</code> (o secondo foglio)</td></tr><tr><td>Righe 1–3</td><td>Note template, intestazioni IT/EN (ignorate come dati)</td></tr><tr><td>Prima riga dati</td><td><strong>Riga Excel 4</strong> (indice 0-based: 3)</td></tr><tr><td>Colonna <strong>C</strong></td><td>Nome file immagine pagina</td></tr><tr><td>Colonna <strong>D</strong></td><td>Numero pagina</td></tr><tr><td>Colonne <strong>E–O</strong></td><td>Dati studente (11 campi per riga)</td></tr></tbody></table>
+<p><strong>Campi studente</strong> (prefisso chiave generata: <code>{Campo}_{indiceStudente}_pg_{numeroPagina}</code>):</p>
+<table><thead><tr><th>Colonna Excel</th><th>Chiave base</th></tr></thead><tbody><tr><td>E</td><td>StNome</td></tr><tr><td>F</td><td>StCognome</td></tr><tr><td>G</td><td>StData</td></tr><tr><td>H</td><td>StScuola</td></tr><tr><td>I</td><td>StScuolaAnno</td></tr><tr><td>J</td><td>StProfessore</td></tr><tr><td>K</td><td>StRaccomandazione</td></tr><tr><td>L</td><td>StTipoOggetto</td></tr><tr><td>M</td><td>StTitolo</td></tr><tr><td>N</td><td>StTecnica</td></tr><tr><td>O</td><td>StDimensione</td></tr></tbody></table>
+<p><strong>Fine lettura Foglio 2:</strong> dopo <strong>3 righe consecutive vuote</strong> (colonne C–O tutte vuote).</p>
+<h4>Chiavi record_kv generate</h4>
+<table><thead><tr><th>Tipo</th><th>Esempio chiave</th></tr></thead><tbody><tr><td>Tipo scheda</td><td><code>card_type = SALON</code></td></tr><tr><td>Metadati Foglio 1</td><td><code>Titolo</code>, <code>Anno</code>, <code>Ente</code>, <code>SedeEspositiva</code>, <code>Descrizione</code></td></tr><tr><td>Immagine pagina</td><td><code>Pg_1_img</code>, <code>Pg_2_img</code>, … (valore = nome file)</td></tr><tr><td>Studente</td><td><code>StNome_1_pg_1</code>, <code>StCognome_1_pg_1</code>, …</td></tr></tbody></table>
+<h3>Archivio immagini (<code>.zip</code>)</h3>
+<table><thead><tr><th>Requisito</th><th>Valore</th></tr></thead><tbody><tr><td>Formati estratti</td><td><code>.jpg</code>, <code>.jpeg</code>, <code>.png</code></td></tr><tr><td>Altri file nello ZIP</td><td>Ignorati</td></tr><tr><td>Struttura</td><td>Flat o sottocartelle (ricerca ricorsiva)</td></tr><tr><td>Corrispondenza nomi</td><td>Il <strong>basename</strong> del file nello ZIP deve coincidere con il valore in colonna C / chiave <code>Pg_N_img</code></td></tr></tbody></table>
+<blockquote><p>In Step 1, se lo ZIP non contiene immagini ammesse, l&#x27;upload fallisce: <em>Lo zip non contiene immagini .jpg/.jpeg/.png.</em></p></blockquote>
+<hr>
+<h2>7.4 Step 1 — Upload dati</h2>
+<h3>Campi form</h3>
+<table><thead><tr><th>Campo</th><th>Obbligatorio</th><th>Descrizione</th></tr></thead><tbody><tr><td><strong>Codice scheda SALON (stable_id)</strong></td><td>Sì</td><td>Codice univoco Master</td></tr><tr><td><strong>Istituzione di riferimento</strong></td><td>Sì</td><td>Institution titolare</td></tr><tr><td><strong>File Excel (.xlsx)</strong></td><td>Sì</td><td>Template Salon compilato</td></tr><tr><td><strong>Archivio immagini (.zip)</strong></td><td>Sì</td><td>ZIP con le immagini pagina</td></tr></tbody></table>
+<h3>Pulsante</h3>
+<table><thead><tr><th>Pulsante</th><th>Azione</th></tr></thead><tbody><tr><td><strong>Upload (Step 1)</strong></td><td>Valida, copia file, estrae ZIP</td></tr></tbody></table>
+<h3>Validazioni pre-upload (Step 1)</h3>
+<p>Prima di salvare i file, il sistema verifica:</p>
+<p>1. Istituzione esistente. 2. <strong>`stable_id` non già presente</strong> su Master (errore immediato se duplicato). 3. <code>INGEST_FS_ROOT</code> valido e scrivibile.</p>
+<h3>Cosa succede sul server</h3>
+<pre><code class="language-text">INGEST_FS_ROOT/salons/{runId}/
+  data.xlsx
+  images/
+    (immagini estratte dallo ZIP)</code></pre>
+<p>Lo ZIP temporaneo viene eliminato dopo l&#x27;estrazione.</p>
+<h3>Indicatore stato upload</h3>
+<table><thead><tr><th>Stato</th><th>Messaggio</th></tr></thead><tbody><tr><td>In attesa</td><td><em>Dopo l&#x27;upload, premere «Upload (Step 1)» per procedere allo Step 2.</em></td></tr><tr><td>Completato</td><td><em>Upload completato. Cartella: salons/{runId}</em></td></tr></tbody></table>
+<h3>Notifiche Step 1</h3>
+<table><thead><tr><th>Titolo</th><th>Tipo</th><th>Quando</th></tr></thead><tbody><tr><td><strong>Istituzione non valida</strong></td><td>Danger</td><td>Institution ID inesistente</td></tr><tr><td><strong>Codice scheda già presente</strong></td><td>Danger</td><td><em>Esiste già una scheda con stable_id &#x27;…&#x27;</em></td></tr><tr><td><strong>INGEST_FS_ROOT non valido</strong></td><td>Danger</td><td>Path ingestion non configurato</td></tr><tr><td><strong>Step 1 completato</strong></td><td>Success</td><td><em>File salvati in INGEST_FS_ROOT/salons/{runId}. Procedere con Step 2.</em></td></tr><tr><td><strong>Errore upload</strong></td><td>Danger</td><td>ZIP senza immagini, Excel illeggibile, ecc. (cartella run rimossa in caso di errore)</td></tr></tbody></table>
+<hr>
+<h2>7.5 Step 2 — Creazione scheda Master SALON</h2>
+<p>Il pulsante <strong>Crea scheda Master SALON (Step 2)</strong> è visibile solo dopo Step 1 riuscito.</p>
+<table><thead><tr><th>Pulsante</th><th>Azione</th></tr></thead><tbody><tr><td><strong>Crea scheda Master SALON (Step 2)</strong></td><td>Import completo su Master</td></tr></tbody></table>
+<h3>Operazioni eseguite</h3>
+<p>1. Parsing <code>data.xlsx</code> (Foglio 1 + Foglio 2). 2. Validazione: ogni <code>Pg_N_img</code> con valore non vuoto deve avere il file corrispondente nello ZIP estratto. 3. Insert record Master con:</p>
+<ul><li class="nested" style="margin-left:36px"><code>card_type = SALON</code> (via record_kv)</li><li class="nested" style="margin-left:36px"><code>publish_state = draft</code></li><li class="nested" style="margin-left:36px"><code>is_translated = true</code> (testi EN duplicati dai valori IT)</li></ul>
+<p>4. Insert <code>record_kv</code> e <code>i18n_texts</code> per tutti i campi. 5. Per ogni pagina con immagine: copia in <code>IMAGES_ROOT</code>, registrazione IIIF in <code>web_resources</code>, aggiornamento valore <code>Pg_N_img</code> con URL IIIF. 6. Pulizia file immagine temporanei sotto ingestion dopo commit riuscito.</p>
+<h3>Notifiche Step 2</h3>
+<table><thead><tr><th>Titolo</th><th>Tipo</th><th>Quando</th></tr></thead><tbody><tr><td><strong>Step 1 mancante</strong></td><td>Danger</td><td>Step 2 senza upload</td></tr><tr><td><strong>Scheda SALON creata</strong></td><td>Success</td><td><em>Record Master, metadata e web_resources creati.</em> → redirect <strong>Master Data → View</strong></td></tr><tr><td><strong>Errore creazione scheda</strong></td><td>Danger</td><td>Immagine mancante, Excel malformato, IIIF non disponibile, ecc.</td></tr></tbody></table>
+<h3>Errori frequenti Step 2</h3>
+<table><thead><tr><th>Messaggio (esempio)</th><th>Causa</th></tr></thead><tbody><tr><td><em>Nel Foglio 2 è indicata l&#x27;immagine &#x27;…&#x27; ma il file non è presente nello zip</em></td><td>Nome file Excel ≠ file estratto</td></tr><tr><td><em>File Excel (data.xlsx) mancante…</em></td><td>Step 1 incompleto o cartella cancellata</td></tr><tr><td><em>Foglio 1: riga metadati (riga Excel 3) non trovata</em></td><td>Template Excel errato</td></tr><tr><td><em>IIIF_PUBLIC_BASE non configurato</em></td><td>Variabile ambiente mancante</td></tr><tr><td><em>IMAGES_ROOT non configurato o non scrivibile</em></td><td>Storage immagini non disponibile</td></tr></tbody></table>
+<hr>
+<h2>7.6 Consultazione post-import</h2>
+<p>Dopo Step 2, il sistema reindirizza al dettaglio scheda in <strong>Master Data</strong>.</p>
+<table><thead><tr><th>Filtro Master Data</th><th>Valore</th></tr></thead><tbody><tr><td><strong>CardType</strong></td><td><strong>SALON</strong> (codice <code>SALON_N</code> in filtro)</td></tr><tr><td><strong>Institutions</strong></td><td>Istituzione selezionata in import</td></tr></tbody></table>
+<p>Verificare tab <strong>Original Fields</strong>, <strong>Metadata</strong>, <strong>Images Preview</strong> (capitolo 4).</p>
+<blockquote><p>Le schede SALON hanno già <strong>Translated = Yes</strong> in elenco (flag impostato in creazione). Non è necessario avviare il Translation worker salvo aggiornamenti successivi che reimpostino <code>is_translated = false</code>.</p></blockquote>
+<hr>
+<h2>Checklist import Salon</h2>
+<ul class='checklist'><li class="checklist-item"><input type="checkbox" disabled > Template Excel compilato (Foglio 1 riga 3, Foglio 2 da riga 4)</li><li class="checklist-item"><input type="checkbox" disabled > Nomi immagine in colonna C presenti nello ZIP</li><li class="checklist-item"><input type="checkbox" disabled > <code>stable_id</code> univoco</li><li class="checklist-item"><input type="checkbox" disabled > <code>INGEST_FS_ROOT</code>, <code>IMAGES_ROOT</code>, <code>IIIF_PUBLIC_BASE</code> configurati</li><li class="checklist-item"><input type="checkbox" disabled > <strong>Upload (Step 1)</strong> completato senza errori</li><li class="checklist-item"><input type="checkbox" disabled > <strong>Crea scheda Master SALON (Step 2)</strong> completato con redirect a Master Data</li><li class="checklist-item"><input type="checkbox" disabled > Scheda visibile con CardType <strong>SALON</strong> e immagini in <strong>Images Preview</strong></li></ul>
+<h2>Prossimo passo</h2>
+<p>→ <span class="md-link">Capitolo 8 — Narrations</span></p>
+<h1 class="chapter-title">Capitolo 8 — Narrations</h1>
+<h2>Obiettivo</h2>
+<p>Gestire le <strong>narrazioni</strong> (<code>iartnet_master.narrations</code>): contenuti editoriali con nome, descrizione e JSON esteso, tramite CRUD completo nel pannello Master.</p>
+<h2>Quando usarlo</h2>
+<ul><li>Creazione di una nuova narrazione per il frontend o API pubbliche.</li><li>Aggiornamento testi o struttura JSON (<code>ext_json</code>) di una narrazione esistente.</li><li>Consultazione elenco narrazioni o eliminazione record obsoleti.</li></ul>
+<h2>Prerequisiti</h2>
+<ul><li>Accesso a <strong>Master → Narrations</strong> (admin, operatore o partner con sezioni operative).</li><li>Per integrazione frontend/API: endpoint pubblici <code>/api/narrationsList</code> e <code>/api/narrationData</code> (nessuna autenticazione).</li></ul>
+<blockquote><p><strong>Differenza rispetto a Interviews:</strong> le Narrations si creano con <strong>Create</strong> standard; non esiste un wizard di import da file.</p></blockquote>
+<hr>
+<h2>8.1 Elenco Narrations</h2>
+<p><strong>Menu:</strong> <code>Master</code> → <strong>Narrations</strong></p>
+<figure><img src="file:///C:/Development/DevIartnet/iartnet/docs/user/images/20-narrations-list.png" alt="Elenco Narrations"><figcaption>Elenco Narrations</figcaption></figure>
+<p><em>Figura 8.1 — Tabella narrazioni con pulsante Create e azioni riga.</em></p>
+<h3>Colonne tabella</h3>
+<table><thead><tr><th>Colonna</th><th>Descrizione</th></tr></thead><tbody><tr><td><strong>Name</strong></td><td>Nome narrazione (ricercabile, ordinabile)</td></tr><tr><td><strong>Description</strong></td><td>Descrizione breve (max 80 caratteri visibili, testo completo in tooltip se troncato)</td></tr><tr><td><strong>Created at</strong> / <strong>Updated at</strong></td><td>Timestamp (nascosti di default)</td></tr></tbody></table>
+<p>Ordinamento predefinito: <strong>Updated at</strong> decrescente.</p>
+<h3>Azioni header</h3>
+<table><thead><tr><th>Pulsante</th><th>Azione</th></tr></thead><tbody><tr><td><strong>Create</strong></td><td>Apre il form di creazione</td></tr></tbody></table>
+<h3>Azioni riga</h3>
+<table><thead><tr><th>Azione</th><th>Descrizione</th></tr></thead><tbody><tr><td><strong>View</strong></td><td>Dettaglio sola lettura</td></tr><tr><td><strong>Edit</strong></td><td>Modifica campi</td></tr><tr><td><strong>Delete</strong></td><td>Elimina la narrazione (con conferma Filament)</td></tr></tbody></table>
+<p><strong>Bulk delete:</strong> elimina le narrazioni selezionate.</p>
+<hr>
+<h2>8.2 Creazione (Create)</h2>
+<p><strong>Percorso:</strong> <code>Master</code> → <strong>Narrations</strong> → <strong>Create</strong></p>
+<h3>Campi form</h3>
+<table><thead><tr><th>Campo</th><th>Obbligatorio</th><th>Note</th></tr></thead><tbody><tr><td><strong>Name</strong></td><td>Sì</td><td>Max 255 caratteri</td></tr><tr><td><strong>Description</strong></td><td>No</td><td>Area di testo (5 righe)</td></tr><tr><td><strong>Ext JSON</strong></td><td>No</td><td>JSON libero; default visualizzato <code>{}</code> se vuoto</td></tr></tbody></table>
+<h4>Helper Ext JSON</h4>
+<blockquote><p><em>JSON libero. Visualizzazione formattata: modifica direttamente il testo (sintassi JSON valida).</em></p></blockquote>
+<p>Il campo accetta solo JSON sintatticamente valido (regola <code>ValidJson</code>). In salvataggio, JSON vuoto diventa <code>{}</code>.</p>
+<h3>Esito atteso</h3>
+<p>La narrazione compare nell&#x27;elenco e risulta disponibile via API se esposta dal frontend.</p>
+<hr>
+<h2>8.3 Dettaglio (View)</h2>
+<p><strong>Percorso:</strong> elenco → <strong>View</strong> su una riga</p>
+<p>Mostra gli stessi campi del form in sola lettura. Azione header disponibile: <strong>Edit</strong>.</p>
+<hr>
+<h2>8.4 Modifica (Edit)</h2>
+<p><strong>Percorso:</strong> elenco → <strong>Edit</strong>, oppure <strong>View</strong> → <strong>Edit</strong></p>
+<p>Stessi campi della creazione. Salvataggio aggiorna <code>updated_at</code>.</p>
+<hr>
+<h2>8.5 Eliminazione</h2>
+<p><strong>Delete</strong> (singola o bulk) rimuove la riga da <code>narrations</code>.</p>
+<p>A differenza delle <strong>Interviews</strong>, l&#x27;eliminazione di una Narration <strong>non</strong> cancella schede Master collegate: le narrazioni sono entità autonome, non legate a un <code>record_id</code> obbligatorio nel flusso Filament documentato.</p>
+<hr>
+<h2>8.6 API pubbliche (riferimento operativo)</h2>
+<p>Le narrazioni pubblicate nel database sono esposte senza autenticazione:</p>
+<table><thead><tr><th>Endpoint</th><th>Uso</th></tr></thead><tbody><tr><td><code>GET /api/narrationsList</code></td><td>Elenco narrazioni</td></tr><tr><td><code>GET /api/narrationData</code></td><td>Dettaglio singola narrazione (parametri query secondo implementazione controller)</td></tr></tbody></table>
+<p>Per verificare l&#x27;esposizione frontend dopo create/edit: controllare la risposta API o il sito pubblico configurato.</p>
+<hr>
+<h2>Checklist Narrations</h2>
+<ul class='checklist'><li class="checklist-item"><input type="checkbox" disabled > <strong>Name</strong> compilato e univoco nel contesto editoriale</li><li class="checklist-item"><input type="checkbox" disabled > <strong>Ext JSON</strong> valido (se usato dal frontend)</li><li class="checklist-item"><input type="checkbox" disabled > Record visibile in elenco <strong>Narrations</strong></li><li class="checklist-item"><input type="checkbox" disabled > (Se applicabile) Narrazione raggiungibile via API pubblica</li></ul>
+<h2>Riferimenti</h2>
+<ul><li><span class="md-link">Capitolo 4 — Gestione Master Data</span></li><li><span class="md-link">Capitolo 5 — Translation</span></li><li><span class="md-link">Capitolo 6 — Interviews</span></li><li><span class="md-link">Capitolo 7 — Salon</span></li><li><span class="md-link">Indice manuale</span></li></ul>
+</body>
+</html>

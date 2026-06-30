@@ -1,0 +1,49 @@
+.rich-text-field {
+  font-size: 0.875rem;
+}
+
+.rich-text-field__btn {
+  line-height: 1;
+  padding: 0.2rem 0.45rem;
+}
+
+.rich-text-field__source {
+  min-height: 6rem;
+  font-size: 0.8125rem;
+  resize: vertical;
+}
+
+.rich-text-field__source:focus {
+  box-shadow: none;
+}
+
+.rich-text-field__editor .tiptap img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.rich-text-field__editor .tiptap {
+  min-height: 6rem;
+  outline: none;
+}
+
+.rich-text-field__editor .tiptap p {
+  margin-bottom: 0.35rem;
+}
+
+.rich-text-field__editor .tiptap p:last-child {
+  margin-bottom: 0;
+}
+
+.rich-text-field__editor .tiptap:focus {
+  outline: none;
+}
+
+.rich-text-field__editor .ProseMirror-focused {
+  outline: none;
+}
+
+.rich-text-field .rich-text-field__toolbar .btn:focus-visible {
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}

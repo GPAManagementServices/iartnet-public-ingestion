@@ -1,0 +1,318 @@
+mappings:
+
+  # ============================================
+  # IDENTIFICATORI
+  # ============================================
+
+  - source_field: "CD/NCT/NCTR"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "identifier"
+    multiple: false
+    transform: "string"
+    description: "Numero Catalogo Regionale (dc:identifier)"
+
+  - source_field: "UB/INV/INVN"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "identifier"
+    multiple: true
+    transform: "string"
+    description: "Numero inventario (dc:identifier)"
+
+  - source_field: "UB/INV/INVN"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "inventory_number"
+    multiple: false
+    transform: "string"
+    description: "Numero inventario interno"    
+
+  # ============================================
+  # TITOLI
+  # ============================================
+
+  - source_field: "OG/SGT/SGTT"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "title"
+    multiple: false
+    transform: "string"
+    lang: "it"
+    description: "Titolo dell'opera (dc:title)"
+
+  - source_field: "OG/OGT/OGTV"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "alternative"
+    multiple: true
+    transform: "string"
+    lang: "it"
+    description: "Titolo alternativo / variante (dc:alternative)"
+
+  - source_field: "OG/OGN"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "title"
+    multiple: false
+    transform: "string"
+    lang: "it"
+    description: "Titolo dell'opera (dc:title)"    
+   
+
+  # ============================================
+  # TIPOLOGIA
+  # ============================================
+
+  - source_field: "OG/OGT/OGTT"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "type"
+    multiple: true
+    transform: "string"
+    lang: "it"
+    description: "Tipologia dell'oggetto (dc:type)"
+
+  - source_field: "OG/SGT/SGTI"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "subject"
+    multiple: true
+    transform: "string"
+    lang: "it"
+    description: "Descrizione dell'opera (dc:subject)"        
+
+    
+  # ============================================
+  # DESCRIZIONE
+  # ============================================
+
+  - source_field: "DA/DES/DESS"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "description"
+    multiple: true
+    transform: "string"
+    lang: "it"
+    description: "Descrizione dell'opera (dc:description)"
+
+ 
+  # ============================================
+  # AUTORI / AGENTI
+  # ============================================
+
+  - source_field: "AU/AUT/AUTN"
+    target_table: "agents"
+    target_field: "ext_json"
+    multiple: true
+    description: "Autore principale (dc:creator)"
+
+  - source_field: "AU/AUT/AUTA"
+    target_table: "agents"
+    target_field: "ext_json"
+    multiple: true
+    description: "Autore alternativo (dc:contributor)"
+
+  - source_field: "AU/AUT/AUTR"
+    target_table: "agents"
+    target_field: "ext_json"
+    multiple: true
+    description: "Ruolo autore (edm:hasMet)"
+
+  # ============================================
+  # LUOGHI
+  # ============================================
+
+  - source_field: "LC/LDC/LDCN"
+    target_table: "places"
+    target_field: "ext_json"
+    multiple: true
+    description: "Luogo di conservazione (edm:currentLocation)"
+
+  - source_field: "LC/LDC/LDCT"
+    target_table: "places"
+    target_field: "ext_json"
+    multiple: true
+    description: "Tipologia"    
+
+  - source_field: "LC/LDC/LDCQ"
+    target_table: "places"
+    target_field: "ext_json"
+    multiple: true
+    description: "Qualifica"   
+
+  - source_field: "LC/LDC/LDCC"
+    target_table: "places"
+    target_field: "ext_json"
+    multiple: true
+    description: "Complesso monumentale"    
+
+  - source_field: "LC/LDC/LDCU"
+    target_table: "places"
+    target_field: "ext_json"
+    multiple: true
+    description: "Denominazione spazio viabilstico"           
+
+  - source_field: "LC/LDC/LDCM"
+    target_table: "places"
+    target_field: "ext_json"
+    multiple: true
+    description: "Denominazione raccolta"      
+
+  - source_field: "LC/LDC/LDCs"
+    target_table: "places"
+    target_field: "ext_json"
+    multiple: true
+    description: "Specifiche"     
+  
+  - source_field: "LC/PVC/PVCS"
+    target_table: "places"
+    target_field: "ext_json"
+    multiple: true
+    description: "Stato"        
+
+  - source_field: "LC/PVC/PVCR"
+    target_table: "places"
+    target_field: "ext_json"
+    multiple: true
+    description: "Regione"      
+
+  - source_field: "LC/PVC/PVCP"
+    target_table: "places"
+    target_field: "ext_json"
+    multiple: true
+    description: "Provincia"      
+
+  - source_field: "LC/PVC/PVCC"
+    target_table: "places"
+    target_field: "ext_json"
+    multiple: true
+    description: "Luogo di provenienza - città (dc:coverage)"     
+
+  - source_field: "LC/PVC/PVCL"
+    target_table: "places"
+    target_field: "ext_json"
+    multiple: true
+    description: "Località"      
+
+  - source_field: "LC/PVC/PVCE"
+    target_table: "places"
+    target_field: "ext_json"
+    multiple: true
+    description: "Alto o provenienza estera"     
+
+  # ============================================
+  # DATAZIONE
+  # ============================================
+
+  - source_field: "DT/DTS/DTSI"
+    target_table: "timespans"
+    target_field: "begin_date"
+    multiple: false
+    transform: "date_parse"
+    description: "Datazione inizio (edm:begin)"
+
+  - source_field: "DT/DTS/DTSF"
+    target_table: "timespans"
+    target_field: "end_date"
+    multiple: false
+    transform: "date_parse"
+    description: "Datazione fine (edm:end)"
+
+  # ============================================
+  # RISORSE DIGITALI
+  # ============================================
+
+  - source_field: "DO/FTA/FTAN"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "img_identifier"
+    multiple: true
+    transform: "string"
+    description: "Nome file immagine (dc:identifier)"
+
+  # ============================================
+  # DATI TECNICI ICCD (EXT_JSON)
+  # ============================================
+
+  - source_field: "CD/TSK"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "card_type"
+    multiple: false
+    transform: "string"
+    lang: "it"
+    description: "Tipo scheda ICCD (TSK)"
+    ext:
+      source_xpath: "CD/TSK"
+      standard: "ICCD"
+
+  # =========================================================
+  # TECHNICAL — MEASUREMENTS (STRUCTURED)
+  # =========================================================
+  # MT/MIS viene importato come BLOCCO in records.ext_json.measurements
+  # Legge tutti i sotto-campi: MT/MIS/MISU (unità), MT/MIS/MISL (lunghezza),
+  # MT/MIS/MISA (altezza), MT/MIS/MISP (profondità)
+
+  - source_field: "MT/MIS"
+    target_table: "records"
+    target_field: "ext_json"
+    transform: "measurements_merge"
+    description: "Misure fisiche dell'opera (altezza, larghezza, unità)"
+
+  # =========================================================
+  # TECHNICAL — MATERIALS (dc:medium)
+  # =========================================================
+
+  - source_field: "MT/MTC"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "medium"
+    lang: "it"
+    transform: "string"
+    multiple: true
+    description: "Materiale dell'opera (dc:medium)"
+    ext:
+      source_xpath: "MT/MTC"
+      standard: "ICCD"
+
+  # =========================================================
+  # TECHNICAL — TECHNIQUE (dc:medium)
+  # =========================================================
+
+  - source_field: "MT/TEC/TECT"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "medium"
+    lang: "it"
+    transform: "string"
+    multiple: true
+    description: "Tecnica esecutiva (dc:medium)"
+    ext:
+      source_xpath: "MT/TEC/TECT"
+      standard: "ICCD"
+
+  # =========================================================
+  # SUPPORT / FORMAT
+  # =========================================================
+
+  - source_field: "MT/SUP/SUPT"
+    target_table: "record_kv"
+    target_field: "value_text"
+    kv_key: "format"
+    lang: "it"
+    transform: "string"
+    description: "Supporto materiale (dc:format)"
+    ext:
+      source_xpath: "MT/SUP/SUPT"
+      standard: "ICCD"
+
+config:
+  master_schema: "iartnet_master"
+  default_record:
+    edm_type: "TEXT"
+    publish_state: "draft"
+    primary_lang: "it"
+    is_translated: false
+  on_missing_field: "warn"
+  transaction_per_record: true
