@@ -1,0 +1,58 @@
+name: Bug report
+description: Segnala un errore riproducibile nel repository iartnet-public-ingestion
+title: "[Bug]: "
+labels:
+  - bug
+  - needs-triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Grazie per la segnalazione. Non inserire password, token, dati personali,
+        dump di database o altre informazioni riservate.
+
+  - type: input
+    id: version
+    attributes:
+      label: Versione, tag o commit
+      placeholder: "es. main / v1.2.3 / abc1234"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Descrizione del problema
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Passaggi per riprodurre
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportamento atteso
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Comportamento effettivo
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Verifiche preliminari
+      options:
+        - label: Ho verificato che non esista giÃ  una segnalazione equivalente.
+          required: true
+        - label: Ho rimosso password, token, dati personali e informazioni riservate.
+          required: true
