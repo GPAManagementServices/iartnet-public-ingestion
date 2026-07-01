@@ -1,5 +1,5 @@
 name: Bug report
-description: Segnala un errore riproducibile nel repository iartnet-public-ingestion
+description: Segnala pubblicamente un errore riproducibile che non riguarda la sicurezza
 title: "[Bug]: "
 labels:
   - bug
@@ -8,14 +8,31 @@ body:
   - type: markdown
     attributes:
       value: |
-        Grazie per la segnalazione. Non inserire password, token, dati personali,
-        dump di database o altre informazioni riservate.
+        Grazie per la segnalazione.
+
+        **Non usare questo modulo per vulnerabilità di sicurezza.**
+        Per una segnalazione privata usa:
+        https://github.com/GPAManagementServices/iartnet-public-ingestion/security/advisories/new
+
+        Non inserire password, token, dati personali, dump di database,
+        exploit o altre informazioni riservate.
+
+  - type: checkboxes
+    id: security-confirmation
+    attributes:
+      label: Conferma relativa alla sicurezza
+      description: |
+        Le vulnerabilità devono essere comunicate esclusivamente tramite
+        il canale privato indicato sopra.
+      options:
+        - label: "Confermo che questa segnalazione non riguarda una vulnerabilità di sicurezza e non contiene credenziali, dati riservati o dettagli di exploit."
+          required: true
 
   - type: input
     id: version
     attributes:
       label: Versione, tag o commit
-      placeholder: "es. main / v1.2.3 / abc1234"
+      placeholder: "Esempio: main, v1.2.3 oppure abc1234"
     validations:
       required: true
 
@@ -23,6 +40,7 @@ body:
     id: description
     attributes:
       label: Descrizione del problema
+      description: Descrivi in modo chiaro il comportamento osservato.
     validations:
       required: true
 
@@ -30,6 +48,10 @@ body:
     id: steps
     attributes:
       label: Passaggi per riprodurre
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
     validations:
       required: true
 
@@ -47,12 +69,22 @@ body:
     validations:
       required: true
 
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Contesto aggiuntivo
+      description: |
+        Puoi aggiungere log non sensibili, screenshot o altre informazioni utili.
+        Rimuovi sempre credenziali, token, dati personali e informazioni riservate.
+    validations:
+      required: false
+
   - type: checkboxes
-    id: checks
+    id: preliminary-checks
     attributes:
       label: Verifiche preliminari
       options:
-        - label: Ho verificato che non esista giÃ  una segnalazione equivalente.
+        - label: "Ho verificato che non esista già una segnalazione equivalente."
           required: true
-        - label: Ho rimosso password, token, dati personali e informazioni riservate.
+        - label: "Ho rimosso password, token, dati personali e informazioni riservate."
           required: true

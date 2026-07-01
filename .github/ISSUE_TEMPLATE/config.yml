@@ -1,2 +1,6 @@
 blank_issues_enabled: false
-contact_links: []
+
+contact_links:
+  - name: "Segnala privatamente una vulnerabilità di sicurezza"
+    url: "https://github.com/GPAManagementServices/iartnet-public-ingestion/security/advisories/new"
+    about: "Non pubblicare vulnerabilità, exploit, credenziali o dettagli sensibili in una Issue pubblica."
